@@ -58,7 +58,7 @@ class Detail extends Block
         $this->images = FrontendNewsModel::getAllImages($this->record['id']);
 
         // get the module settings
-        $this->settings = Model::getModuleSettings($this->module);
+        $this->settings = $this->get('fork.settings')->getForModule('News');
     }
 
     /**

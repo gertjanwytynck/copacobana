@@ -61,7 +61,7 @@ class AddImage extends AjaxAction
         );
 
         // get settings
-        $this->settings = Model::getModuleSettings($this->module);
+        $this->settings = $this->get('fork.settings')->getForModule('News');
     }
 
     private function validate()

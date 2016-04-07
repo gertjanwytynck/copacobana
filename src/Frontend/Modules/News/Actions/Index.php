@@ -80,7 +80,7 @@ class Index extends Block
         $this->items = FrontendNewsModel::getAll($this->pagination['limit'], $this->pagination['offset']);
 
         // get the module settings
-        $this->settings = Model::getModuleSettings($this->module);
+        $this->settings = $this->get('fork.settings')->getForModule('News');
 
         // get categories
         $this->categories = FrontendNewsModel::getAllCategories();

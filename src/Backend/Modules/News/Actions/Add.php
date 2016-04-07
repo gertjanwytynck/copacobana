@@ -60,7 +60,8 @@ class Add extends ActionAdd
         }
 
         // get module settings
-        $this->settings = Model::getModuleSettings($this->module);
+        //
+        $this->settings = $this->get('fork.settings')->getForModule('News');
     }
 
     /**

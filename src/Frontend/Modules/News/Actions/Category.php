@@ -98,7 +98,7 @@ class Category extends Block
         );
 
         // get the module settings
-        $this->settings = Model::getModuleSettings($this->module);
+        $this->settings = $this->get('fork.settings')->getForModule('News');
     }
 
     /**

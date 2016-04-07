@@ -51,6 +51,6 @@ class CustomDetail extends Detail
         if ($this->record === null) $this->redirect(Navigation::getURL(404));
 
         // get the module settings
-        $this->settings = Model::getModuleSettings($this->module);
+        $this->settings = $this->get('fork.settings')->getForModule('News');
     }
 }
