@@ -87,7 +87,7 @@ class AddArtist extends ActionAdd
         }
 
         // get module settings
-        $this->settings = $this->get('fork.settings')->getForModule('Festival');
+        $this->settings = $this->get('fork.settings')->getForModule($this->URL->getModule());
     }
     /**
      * Load the form

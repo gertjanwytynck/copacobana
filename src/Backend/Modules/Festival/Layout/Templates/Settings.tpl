@@ -13,7 +13,7 @@
         <div class="options">
             <p>
                 <label>{$lblFestivalYear|ucfirst}</label>
-                {$txtFestivalYear} {$txtFestivalYearError}
+                {$txtYear} {$txtYearError}
             </p>
         </div>
     </div>

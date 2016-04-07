@@ -52,22 +52,22 @@ class Settings extends ActionEdit
         $this->frm->addDropdown(
             'overview_num_items',
             array_combine(range(1, 30), range(1, 30)),
-            Model::getModuleSetting($this->URL->getModule(), 'overview_num_items', 10)
+            $this->get('fork.settings')->get($this->URL->getModule(), 'overview_num_items', 10)
         );
         $this->frm->addDropdown(
             'recent_articles_list_num_items',
             array_combine(range(1, 30), range(1, 30)),
-            Model::getModuleSetting($this->URL->getModule(), 'recent_articles_list_num_items', 5)
+            $this->get('fork.settings')->get($this->URL->getModule(), 'recent_articles_list_num_items', 5)
         );
 
         // add functions fields
-        $this->frm->addCheckbox('cover_image_enabled', Model::getModuleSetting($this->module, 'cover_image_enabled', false));
-        $this->frm->addCheckbox('cover_image_required', Model::getModuleSetting($this->module, 'cover_image_required', false));
-        $this->frm->addCheckbox('multi_images_enabled', Model::getModuleSetting($this->module, 'multi_images_enabled', false));
+        $this->frm->addCheckbox('cover_image_enabled', $this->get('fork.settings')->get($this->URL->getModule(), 'cover_image_enabled', false));
+        $this->frm->addCheckbox('cover_image_required', $this->get('fork.settings')->get($this->URL->getModule(), 'cover_image_required', false));
+        $this->frm->addCheckbox('multi_images_enabled', $this->get('fork.settings')->get($this->URL->getModule(), 'multi_images_enabled', false));
 
         // add god user only fields
         if ($this->godUser) {
-            $this->frm->addText('image_size_limit', (float) Model::getModuleSetting($this->module, 'image_size_limit', 10));
+            $this->frm->addText('image_size_limit', (float) $this->get('fork.settings')->get($this->URL->getModule(), 'image_size_limit', 10));
         }
     }
 

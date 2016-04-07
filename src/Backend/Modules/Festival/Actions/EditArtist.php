@@ -111,7 +111,7 @@ class EditArtist extends ActionEdit
                 'SignUp', 'en') . '/' . $this->record->getMeta()->getUrl() . '?token=' . $this->record->getToken();
 
         // get module settings
-        $this->settings = $this->get('fork.settings')->getForModule('Festival');
+        $this->settings = $this->get('fork.settings')->getForModule($this->URL->getModule());
     }
 
     /**

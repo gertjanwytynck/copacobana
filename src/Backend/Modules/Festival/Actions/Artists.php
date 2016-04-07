@@ -34,7 +34,7 @@ class Artists extends ActionIndex
      */
     private function loadDataGrid()
     {
-        $this->settings = $this->get('fork.settings')->getForModule('Festival');
+        $this->settings = $this->get('fork.settings')->getForModule($this->URL->getModule());
 
         $this->dataGrid = new DataGridDoctrine(
             BackendFestivalModel::ARTIST_ENTITY_CLASS,
