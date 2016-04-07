@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<name>Downloads</name>
+	<version>1.0.0</version>
+	<requirements>
+		<minimum_version>3.8.3</minimum_version>
+	</requirements>
+	<description>
+		<![CDATA[
+			Download module
+		]]>
+	</description>
+	<authors>
+		<author>
+			<name><![CDATA[Mathias Dewelde]]></name>
+			<url><![CDATA[http://www.studiorauw.be]]></url>
+		</author>
+	</authors>
+	<events>
+		<event application="backend" name="after_add"><![CDATA[Triggered when a download is added.]]></event>
+		<event application="backend" name="after_delete"><![CDATA[Triggered when a download is deleted.]]></event>
+		<event application="backend" name="after_edit"><![CDATA[Triggered when a download is edited.]]></event>
+	</events>
+</module>

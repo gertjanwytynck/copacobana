@@ -1,0 +1,51 @@
+.pull-right{
+    float: right !important;
+}
+
+a.iconImages span {
+    background: url('../images/image.png') 0 2px no-repeat;
+}
+
+body.newsSettings ul > li > ul { margin-left: 20px }
+
+
+
+span.label {
+    display: inline-block;
+    background: #777777;
+    line-height: 16px;
+    border-radius: 9px;
+    color: #ffffff;
+    padding: 0 10px 1px 10px;
+    font-size: 10px;
+}
+span.label {
+    background: white;
+    border: 1px solid #777777;
+    color: #777777;
+}
+span.label.white {
+    background: white;
+    border: 1px solid #777777;
+    color: #777777;
+}
+span.label.blue {
+    background: #428bca;
+    border: none;
+    color: white;
+}
+span.label.grey {
+    background: #777777;
+    border: none;
+    color: white;
+}
+span.label.green {
+    background: #5cb85c;
+    border: none;
+    color: white;
+}
+span.label.red {
+    background: #d9534f;
+    border: none;
+    color: white;
+}

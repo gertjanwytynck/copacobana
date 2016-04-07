@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<locale>
+    <Frontend>
+        <Core>
+            <item type="label" name="FestivalDate">
+                <translation language="nl"><![CDATA[26, 27 &amp; 28 JUNI 2015]]></translation>
+                <translation language="en"><![CDATA[26, 27 &amp; 28 JUNI 2015]]></translation>
+            </item>
+            <item type="label" name="FestivalLocation">
+                <translation language="nl"><![CDATA[Rozenbroekenslag 9040 Sint-Amandsberg]]></translation>
+                <translation language="en"><![CDATA[Rozenbroekenslag 9040 Sint-Amandsberg]]></translation>
+            </item>
+            <item type="label" name="FestivalHashtag">
+                <translation language="nl"><![CDATA[#copa15]]></translation>
+                <translation language="en"><![CDATA[#copa15]]></translation>
+            </item>
+            <item type="label" name="FestivalFb">
+                <translation language="nl"><![CDATA[http://www.facebook.com/CopacobanaFestival]]></translation>
+                <translation language="en"><![CDATA[http://www.facebook.com/CopacobanaFestival]]></translation>
+            </item>
+            <item type="label" name="FestivalTwitter">
+                <translation language="nl"><![CDATA[http://twitter.com/CopacobanaFest]]></translation>
+                <translation language="en"><![CDATA[http://twitter.com/CopacobanaFest]]></translation>
+            </item>
+            <item type="label" name="Copyright">
+                <translation language="nl"><![CDATA[copyright 2015]]></translation>
+                <translation language="en"><![CDATA[copyright 2015]]></translation>
+            </item>
+            <item type="label" name="Anamma">
+                <translation language="nl"><![CDATA[VZW Anamma]]></translation>
+                <translation language="en"><![CDATA[VZW Anamma]]></translation>
+            </item>
+            <item type="label" name="MailAnamma">
+                <translation language="nl"><![CDATA[info@anamma.be]]></translation>
+                <translation language="en"><![CDATA[info@anamma.be]]></translation>
+            </item>
+            <item type="label" name="StreetAnamma">
+                <translation language="nl"><![CDATA[Ledestraat 38]]></translation>
+                <translation language="en"><![CDATA[Ledestraat 38]]></translation>
+            </item>
+            <item type="label" name="ZipAnamma">
+                <translation language="nl"><![CDATA[9040 Gent]]></translation>
+                <translation language="en"><![CDATA[9040 Gent]]></translation>
+            </item>
+            <item type="label" name="At">
+                <translation language="nl"><![CDATA[te]]></translation>
+                <translation language="en"><![CDATA[te]]></translation>
+            </item>
+            <item type="label" name="BtwNumber">
+                <translation language="nl"><![CDATA[0886.879.017]]></translation>
+                <translation language="en"><![CDATA[0886.879.017]]></translation>
+            </item>
+            <item type="label" name="ArtworkBy">
+                <translation language="nl"><![CDATA[artwork door <a href="">Laura</a>]]></translation>
+                <translation language="en"><![CDATA[artwork door <a href="">Laura</a>]]></translation>
+            </item>
+            <item type="label" name="DevelopmentBy">
+                <translation language="nl"><![CDATA[development door Gertjan]]></translation>
+                <translation language="en"><![CDATA[development door Gertjan]]></translation>
+            </item>
+            <item type="label" name="BecomeVolunteer">
+                <translation language="nl"><![CDATA[word vrijwilliger]]></translation>
+                <translation language="en"><![CDATA[word vrijwilliger]]></translation>
+            </item>
+            <item type="label" name="DownloadPoster">
+                <translation language="nl"><![CDATA[download poster]]></translation>
+                <translation language="en"><![CDATA[download poster]]></translation>
+            </item>
+        </Core>
+    </Frontend>
+</locale>

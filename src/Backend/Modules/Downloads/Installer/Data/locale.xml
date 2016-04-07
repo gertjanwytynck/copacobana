@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<locale>
+  <Backend>
+    <Core>
+      <item type="label" name="Downloads">
+        <translation language="nl"><![CDATA[downloads]]></translation>
+        <translation language="en"><![CDATA[downloads]]></translation>
+      </item>
+      <item type="label" name="Download">
+        <translation language="nl"><![CDATA[download]]></translation>
+        <translation language="en"><![CDATA[download]]></translation>
+      </item>
+    </Core>
+    <Downloads>
+      <item type="label" name="BackendTitle">
+        <translation language="nl"><![CDATA[backend titel]]></translation>
+        <translation language="en"><![CDATA[backend title]]></translation>
+      </item>
+      <item type="message" name="Added">
+        <translation language="nl"><![CDATA[De download "%1$s" werd toegevoegd.]]></translation>
+        <translation language="en"><![CDATA[The download "%1$s" was added.]]></translation>
+      </item>
+      <item type="message" name="ConfirmDelete">
+        <translation language="nl"><![CDATA[Ben je zeker dat je de download "%1$s" wil verwijderen?]]></translation>
+        <translation language="en"><![CDATA[Are your sure you want to delete the download "%1$s"?]]></translation>
+      </item>
+      <item type="message" name="Deleted">
+        <translation language="nl"><![CDATA[De download "%1$s" werd verwijderd.]]></translation>
+        <translation language="en"><![CDATA[The download "%1$s" was deleted.]]></translation>
+      </item>
+      <item type="message" name="EditDownload">
+        <translation language="nl"><![CDATA[bewerk download "%1$s"]]></translation>
+        <translation language="en"><![CDATA[edit download "%1$s"]]></translation>
+      </item>
+      <item type="message" name="Edited">
+        <translation language="nl"><![CDATA[De download "%1$s" werd opgeslagen.]]></translation>
+        <translation language="en"><![CDATA[The download "%1$s" was saved.]]></translation>
+       </item>
+    </Downloads>
+  </Backend>
+</locale>

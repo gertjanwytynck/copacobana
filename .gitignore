@@ -1,0 +1,15 @@
+.project
+.cache
+.buildpath
+.settings
+.*.swp
+.DS_Store
+/app/cache/*
+/app/logs/*
+/backend/cache/navigation/
+/vendor/
+/app/config/parameters.yml
+/bin/
+/bundles/
+/js/
+/css/

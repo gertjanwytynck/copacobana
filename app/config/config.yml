@@ -1,0 +1,136 @@
+imports:
+    - { resource: parameters.yml }
+
+framework:
+    secret:          %kernel.secret%
+    router:
+        resource: "%kernel.root_dir%/config/routing.yml"
+        strict_requirements: ~
+    form:            ~
+    csrf_protection: ~
+    templating:
+        engines: ['twig']
+    session:
+        handler_id: session.handler.native_file
+        save_path: "%kernel.root_dir%/sessions"
+
+# Assetic Configuration
+assetic:
+    debug:          "%kernel.debug%"
+    use_controller: false
+    bundles:        [ 'ForkCMSInstallerBundle' ]
+    filters:
+        cssrewrite: ~
+
+# Doctrine Configuration
+doctrine:
+    dbal:
+        # This pdo_ prefix should be cleaned up in the future, when completely moved to doctrine
+        driver:   "pdo_%database.driver%"
+        host:     "%database.host%"
+        port:     "%database.port%"
+        dbname:   "%database.name%"
+        user:     "%database.user%"
+        password: "%database.password%"
+        charset:  UTF8
+
+        # Remove when we don't have legacy tables anymore
+        mapping_types:
+            enum:       string
+    orm:
+        result_cache_driver: xcache
+        auto_generate_proxy_classes: "%kernel.debug%"
+        auto_mapping: true
+        mappings:
+            Core:
+                type: annotation
+                dir: %kernel.root_dir%/../src/Backend/Core/Entity
+                prefix: Backend\Core\Entity
+            News:
+                type: annotation
+                dir: %kernel.root_dir%/../src/Backend/Modules/News/Entity
+                prefix: Backend\Modules\News\Entity
+            Festival:
+                type: annotation
+                dir: %kernel.root_dir%/../src/Backend/Modules/Festival/Entity
+                prefix: Backend\Modules\Festival\Entity
+            Downloads:
+                type: annotation
+                dir: %kernel.root_dir%/../src/Backend/Modules/Downloads/Entity
+                prefix: Backend\Modules\Downloads\Entity
+
+twig:
+    debug:            "%kernel.debug%"
+    strict_variables: "%kernel.debug%"
+
+
+monolog:
+    handlers:
+        main:
+            type:  stream
+            path:  %site.path_www%/app/logs/%kernel.environment%.log
+            level: debug
+
+        # swift:
+        #     type:       swift_mailer
+        #     from_email: %fork.debug_email%
+        #     to_email:   %fork.debug_email%
+        #     subject:    %site.default_title% %fork.debug_message%
+        #     level:      critical
+
+swiftmailer:
+    transport: "mail"
+
+services:
+    database:
+        class: SpoonDatabase
+        arguments:
+            - %database.driver%
+            - %database.host%
+            - %database.user%
+            - %database.password%
+            - %database.name%
+            - %database.port%
+        calls:
+            - [ execute, [ 'SET CHARACTER SET :charset, NAMES :charset, time_zone = "+0:00"', { 'charset': 'utf8' } ] ]
+            - [ setDebug, [ %kernel.debug% ]]
+    mailer_configurator:
+        class: Common\Mailer\Configurator
+        tags:
+            - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
+            - { name: kernel.event_listener, event: console.command, method: onConsoleCommand }
+        arguments:
+            - "@fork.settings"
+            - "@service_container"
+
+    cache.filesystem.adapter:
+        class: League\Flysystem\Adapter\Local
+        arguments:
+            - %kernel.cache_dir%
+    cache.filesystem.filesystem:
+        class: League\Flysystem\Filesystem
+        arguments:
+            - "@cache.filesystem.adapter"
+    cache.adapter:
+        class: MatthiasMullie\Scrapbook\Adapters\Flysystem
+        arguments:
+            - "@cache.filesystem.filesystem"
+    cache.buffer:
+        class: MatthiasMullie\Scrapbook\Buffered\BufferedStore
+        arguments:
+            - "@cache.adapter"
+    cache.pool:
+        class: MatthiasMullie\Scrapbook\Psr6\Pool
+        arguments:
+            - "@cache.buffer"
+
+    fork.settings:
+        class: Common\ModulesSettings
+        arguments:
+            - "@database"
+            - "@cache.pool"
+
+    fork.response_securer:
+        class: Common\EventListener\ResponseSecurer
+        tags:
+            - { name: kernel.event_listener, event: kernel.response, method: onKernelResponse }

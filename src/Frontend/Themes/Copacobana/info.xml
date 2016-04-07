@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<theme>
+	<name>Copacobana</name>
+	<version>1.0.0</version>
+	<requirements>
+		<minimum_version>3.8.0</minimum_version>
+	</requirements>
+	<thumbnail>thumbnail.png</thumbnail>
+	<description>
+		<![CDATA[
+			Copacobana theme created by Gertjan Wytynck.
+		]]>
+	</description>
+	<authors>
+		<author>
+			<name>Gertjan Wytynck</name>
+			<url>http://www.copacobana.be</url>
+		</author>
+	</authors>
+	<metanavigation supported="false" />
+	<templates>
+		<template label="Index" path="Core/Layout/Templates/Index.tpl">
+			<positions>
+				<position name="main" />
+			</positions>
+			<format>
+				[main]
+			</format>
+		</template>
+	</templates>
+</theme>

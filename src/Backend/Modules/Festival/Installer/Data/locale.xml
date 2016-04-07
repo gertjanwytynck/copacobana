@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="utf-8"?>
+<locale>
+  <Backend>
+    <Core>
+      <item type="label" name="Copacobana">
+        <translation language="nl"><![CDATA[copacobana]]></translation>
+        <translation language="en"><![CDATA[copacobana]]></translation>
+      </item>
+      <item type="label" name="Festival">
+        <translation language="nl"><![CDATA[festival]]></translation>
+        <translation language="en"><![CDATA[festival]]></translation>
+      </item>
+    </Core>
+    <Festival>
+      <item type="label" name="Features">
+        <translation language="nl"><![CDATA[functies]]></translation>
+        <translation language="en"><![CDATA[features]]></translation>
+      </item>
+      <item type="label" name="ArtistUrlToShare">
+        <translation language="nl"><![CDATA[link om te delen]]></translation>
+        <translation language="en"><![CDATA[artist url to share]]></translation>
+      </item>
+      <item type="label" name="Print">
+        <translation language="nl"><![CDATA[print]]></translation>
+        <translation language="en"><![CDATA[print]]></translation>
+      </item>
+      <item type="label" name="SignUp">
+        <translation language="nl"><![CDATA[inschrijven]]></translation>
+        <translation language="en"><![CDATA[sign up]]></translation>
+      </item>
+      <item type="label" name="Finalize">
+        <translation language="nl"><![CDATA[afronden]]></translation>
+        <translation language="en"><![CDATA[finalize]]></translation>
+      </item>
+      <item type="label" name="Pratical">
+        <translation language="nl"><![CDATA[praktisch]]></translation>
+        <translation language="en"><![CDATA[pratical]]></translation>
+      </item>
+      <item type="label" name="SignUpOpen">
+        <translation language="nl"><![CDATA[inschrijving open]]></translation>
+        <translation language="en"><![CDATA[sign op open]]></translation>
+      </item>
+      <item type="label" name="CoverImage">
+        <translation language="nl"><![CDATA[omslagfoto]]></translation>
+        <translation language="en"><![CDATA[cover image]]></translation>
+      </item>
+      <item type="label" name="MultiImages">
+        <translation language="nl"><![CDATA[multi afbeeldingen]]></translation>
+        <translation language="en"><![CDATA[multi images]]></translation>
+      </item>
+      <item type="label" name="GodUserSettings">
+        <translation language="nl"><![CDATA[god user instellingen]]></translation>
+        <translation language="en"><![CDATA[god user settings]]></translation>
+      </item>
+      <item type="label" name="ImageSizeLimit">
+        <translation language="nl"><![CDATA[limiet bestandsgrootte (afbeeldingen)]]></translation>
+        <translation language="en"><![CDATA[limit filesize (images)]]></translation>
+      </item>
+      <item type="label" name="Festival">
+        <translation language="nl"><![CDATA[festival]]></translation>
+        <translation language="en"><![CDATA[festival]]></translation>
+      </item>
+      <item type="label" name="Spotlight">
+        <translation language="nl"><![CDATA[in de kijker]]></translation>
+        <translation language="en"><![CDATA[spotlight]]></translation>
+      </item>
+      <item type="label" name="FestivalYear">
+        <translation language="nl"><![CDATA[jaar van het festival]]></translation>
+        <translation language="en"><![CDATA[year of the festival]]></translation>
+      </item>
+      <item type="label" name="StageName">
+        <translation language="nl"><![CDATA[podium naam]]></translation>
+        <translation language="en"><![CDATA[stage name]]></translation>
+      </item>
+      <item type="label" name="ContactPerson">
+        <translation language="nl"><![CDATA[Contact persoon voor het festival]]></translation>
+        <translation language="en"><![CDATA[contactperson]]></translation>
+      </item>
+      <item type="label" name="ContactName">
+        <translation language="nl"><![CDATA[contact naam]]></translation>
+        <translation language="en"><![CDATA[contact name]]></translation>
+      </item>
+      <item type="label" name="ContactFirstName">
+        <translation language="nl"><![CDATA[contact voornaam]]></translation>
+        <translation language="en"><![CDATA[contact firstname]]></translation>
+      </item>
+      <item type="label" name="ContactEmail">
+        <translation language="nl"><![CDATA[contact email]]></translation>
+        <translation language="en"><![CDATA[contact email]]></translation>
+      </item>
+      <item type="label" name="ContactPhone">
+        <translation language="nl"><![CDATA[contact telefoon]]></translation>
+        <translation language="en"><![CDATA[contact phone]]></translation>
+      </item>
+      <item type="label" name="Backstage">
+        <translation language="nl"><![CDATA[backstage]]></translation>
+        <translation language="en"><![CDATA[backstage]]></translation>
+      </item>
+      <item type="label" name="Onstage">
+        <translation language="nl"><![CDATA[onstage]]></translation>
+        <translation language="en"><![CDATA[onstage]]></translation>
+      </item>
+      <item type="label" name="Remark">
+        <translation language="nl"><![CDATA[opmerking]]></translation>
+        <translation language="en"><![CDATA[remark]]></translation>
+      </item>
+      <item type="label" name="SoundEngineer">
+        <translation language="nl"><![CDATA[geluidstechnieker]]></translation>
+        <translation language="en"><![CDATA[sound engineer]]></translation>
+      </item>
+      <item type="label" name="HotMeal">
+        <translation language="nl"><![CDATA[maaltijd met vlees]]></translation>
+        <translation language="en"><![CDATA[hot meal]]></translation>
+      </item>
+      <item type="label" name="VeggieMeal">
+        <translation language="nl"><![CDATA[vegetarische maaltijd]]></translation>
+        <translation language="en"><![CDATA[veggie meal]]></translation>
+      </item>
+      <item type="label" name="TotalCars">
+        <translation language="nl"><![CDATA[totaal aantal wagens]]></translation>
+        <translation language="en"><![CDATA[total cars]]></translation>
+      </item>
+      <item type="label" name="Files">
+        <translation language="nl"><![CDATA[bestanden]]></translation>
+        <translation language="en"><![CDATA[files]]></translation>
+      </item>
+      <item type="label" name="TechnicalFile">
+        <translation language="nl"><![CDATA[technische fiche]]></translation>
+        <translation language="en"><![CDATA[technical file]]></translation>
+      </item>
+      <item type="label" name="ContractFile">
+        <translation language="nl"><![CDATA[contract]]></translation>
+        <translation language="en"><![CDATA[contract]]></translation>
+      </item>
+      <item type="label" name="Bio">
+        <translation language="nl"><![CDATA[Bio]]></translation>
+        <translation language="en"><![CDATA[Bio]]></translation>
+      </item>
+      <item type="label" name="Download">
+        <translation language="nl"><![CDATA[download]]></translation>
+        <translation language="en"><![CDATA[download]]></translation>
+      </item>
+      <item type="label" name="Actions">
+        <translation language="nl"><![CDATA[acties]]></translation>
+        <translation language="en"><![CDATA[actions]]></translation>
+      </item>
+      <item type="label" name="Stages">
+        <translation language="nl"><![CDATA[podia's]]></translation>
+        <translation language="en"><![CDATA[stages]]></translation>
+      </item>
+      <item type="label" name="Stage">
+        <translation language="nl"><![CDATA[podium]]></translation>
+        <translation language="en"><![CDATA[stage]]></translation>
+      </item>
+      <item type="label" name="AddStage">
+        <translation language="nl"><![CDATA[podium toevoegen]]></translation>
+        <translation language="en"><![CDATA[add stage]]></translation>
+      </item>
+      <item type="label" name="EditStage">
+        <translation language="nl"><![CDATA[podium aanpassen]]></translation>
+        <translation language="en"><![CDATA[edit stage]]></translation>
+      </item>
+      <item type="label" name="AddArtist">
+        <translation language="nl"><![CDATA[artiest toevoegen]]></translation>
+        <translation language="en"><![CDATA[add artist]]></translation>
+      </item>
+      <item type="label" name="Artist">
+        <translation language="nl"><![CDATA[artiest]]></translation>
+        <translation language="en"><![CDATA[artist]]></translation>
+      </item>
+      <item type="label" name="ArtistName">
+        <translation language="nl"><![CDATA[naam van de artiest]]></translation>
+        <translation language="en"><![CDATA[name of the artist]]></translation>
+      </item>
+      <item type="label" name="ArtistImage">
+        <translation language="nl"><![CDATA[afbeelding van de artiest]]></translation>
+        <translation language="en"><![CDATA[image of the artist]]></translation>
+      </item>
+      <item type="label" name="Genre">
+        <translation language="nl"><![CDATA[genre van de artiest]]></translation>
+        <translation language="en"><![CDATA[genre of the artist]]></translation>
+      </item>
+      <item type="label" name="GenreName">
+        <translation language="nl"><![CDATA[naam van het genre]]></translation>
+        <translation language="en"><![CDATA[name of the genre]]></translation>
+      </item>
+      <item type="label" name="Social">
+        <translation language="nl"><![CDATA[sociale media van de artiest]]></translation>
+        <translation language="en"><![CDATA[social media of the artist]]></translation>
+      </item>
+      <item type="label" name="Facebook">
+        <translation language="nl"><![CDATA[facebook]]></translation>
+        <translation language="en"><![CDATA[facebook]]></translation>
+      </item>
+      <item type="label" name="Twitter">
+        <translation language="nl"><![CDATA[twitter]]></translation>
+        <translation language="en"><![CDATA[twitter]]></translation>
+      </item>
+      <item type="label" name="Instagram">
+        <translation language="nl"><![CDATA[instagram]]></translation>
+        <translation language="en"><![CDATA[instagram]]></translation>
+      </item>
+      <item type="label" name="Soundcloud">
+        <translation language="nl"><![CDATA[soundcloud]]></translation>
+        <translation language="en"><![CDATA[soundcloud]]></translation>
+      </item>
+      <item type="label" name="Youtube">
+        <translation language="nl"><![CDATA[youtube]]></translation>
+        <translation language="en"><![CDATA[youtube]]></translation>
+      </item>
+      <item type="label" name="RelatedFestival">
+        <translation language="nl"><![CDATA[gerelateerde artiesten]]></translation>
+        <translation language="en"><![CDATA[related artists]]></translation>
+      </item>
+      <item type="label" name="RelatedFestivalName">
+        <translation language="nl"><![CDATA[gerelateerde naam van de artiest]]></translation>
+        <translation language="en"><![CDATA[related artists name]]></translation>
+      </item>
+      <item type="label" name="Practical">
+        <translation language="nl"><![CDATA[Praktische info]]></translation>
+        <translation language="en"><![CDATA[practical info]]></translation>
+      </item>
+      <item type="label" name="Day">
+        <translation language="nl"><![CDATA[Dag]]></translation>
+        <translation language="en"><![CDATA[day]]></translation>
+      </item>
+      <item type="label" name="StartOn">
+        <translation language="nl"><![CDATA[startuur]]></translation>
+        <translation language="en"><![CDATA[start hour]]></translation>
+      </item>
+      <item type="label" name="SaveChanges">
+        <translation language="nl"><![CDATA[Artiest opslaan]]></translation>
+        <translation language="en"><![CDATA[Save artist]]></translation>
+      </item>
+      <item type="label" name="EndOn">
+        <translation language="nl"><![CDATA[einduur]]></translation>
+        <translation language="en"><![CDATA[end hour]]></translation>
+      </item>
+      <item type="label" name="IsHidden">
+        <translation language="nl"><![CDATA[Verborgen]]></translation>
+        <translation language="en"><![CDATA[hidden]]></translation>
+      </item>
+      <item type="label" name="Stage">
+        <translation language="nl"><![CDATA[podium]]></translation>
+        <translation language="en"><![CDATA[stage]]></translation>
+      </item>
+
+      <item type="label" name="Genres">
+        <translation language="nl"><![CDATA[genres]]></translation>
+        <translation language="en"><![CDATA[genres]]></translation>
+      </item>
+      <item type="label" name="AddGenre">
+        <translation language="nl"><![CDATA[genre toevoegen]]></translation>
+        <translation language="en"><![CDATA[add genre]]></translation>
+      </item>
+      <item type="label" name="AddFestival">
+        <translation language="nl"><![CDATA[artiesten toevoegen]]></translation>
+        <translation language="en"><![CDATA[add artists]]></translation>
+      </item>
+      <item type="label" name="Active">
+        <translation language="nl"><![CDATA[actief]]></translation>
+        <translation language="en"><![CDATA[active]]></translation>
+      </item>
+      <item type="label" name="Closed">
+        <translation language="nl"><![CDATA[gesloten]]></translation>
+        <translation language="en"><![CDATA[closed]]></translation>
+      </item>
+      <item type="label" name="Deleted">
+        <translation language="nl"><![CDATA[verwijderd]]></translation>
+        <translation language="en"><![CDATA[deleted]]></translation>
+      </item>
+      <item type="label" name="Finalized">
+        <translation language="nl"><![CDATA[gefinaliseerd]]></translation>
+        <translation language="en"><![CDATA[finalized]]></translation>
+      </item>
+      <item type="label" name="Info">
+        <translation language="nl"><![CDATA[info]]></translation>
+        <translation language="en"><![CDATA[info]]></translation>
+      </item>
+      <item type="label" name="Information">
+        <translation language="nl"><![CDATA[informatie]]></translation>
+        <translation language="en"><![CDATA[information]]></translation>
+      </item>
+      <item type="label" name="NotFilledIn">
+        <translation language="nl"><![CDATA[niet ingevuld]]></translation>
+        <translation language="en"><![CDATA[not filled in]]></translation>
+      </item>
+      <item type="label" name="Open">
+        <translation language="nl"><![CDATA[open]]></translation>
+        <translation language="en"><![CDATA[open]]></translation>
+      </item>
+      <item type="message" name="Visible">
+        <translation language="nl"><![CDATA[zichtbaar op we website]]></translation>
+        <translation language="en"><![CDATA[visible on website]]></translation>
+      </item>
+      <item type="message" name="PersonsBackstage">
+        <translation language="nl"><![CDATA[Aantal personen aanwezig op de backstage]]></translation>
+        <translation language="en"><![CDATA[Persons on backstage]]></translation>
+      </item>
+      <item type="message" name="PersonsOnstage">
+        <translation language="nl"><![CDATA[Aantal personen aanwezig onstage]]></translation>
+        <translation language="en"><![CDATA[Persons onstage]]></translation>
+      </item>
+      <item type="message" name="ConfirmDelete">
+        <translation language="nl"><![CDATA[Ben je zeker dat je "%1$s" wil verwijderen?]]></translation>
+        <translation language="en"><![CDATA[Are you sure you want to delete "%1$s"?]]></translation>
+      </item>
+      <item type="message" name="NoFestival">
+        <translation language="nl"><![CDATA[Er zijn op dit moment geen artiesten toegevoegd.]]></translation>
+        <translation language="en"><![CDATA[No artists added.]]></translation>
+      </item>
+      <item type="message" name="NoGenres">
+        <translation language="nl"><![CDATA[Er zijn op dit moment geen genres toegevoegd.]]></translation>
+        <translation language="en"><![CDATA[No genres added.]]></translation>
+      </item>
+      <item type="message" name="NoStages">
+        <translation language="nl"><![CDATA[Er zijn op dit moment geen podiums toegevoegd.]]></translation>
+        <translation language="en"><![CDATA[No stages added.]]></translation>
+      </item>
+      <item type="message" name="ArtistDeleted">
+        <translation language="nl"><![CDATA[Artiest werd verwijderd.]]></translation>
+        <translation language="en"><![CDATA[The artist was deleted.]]></translation>
+      </item>
+      <item type="message" name="Saved">
+        <translation language="nl"><![CDATA[Artiest "%1$s" werd opgeslagen.]]></translation>
+        <translation language="en"><![CDATA[Artist "%1$s" was saved.]]></translation>
+      </item>
+      <item type="message" name="NumItemsInRecentFestivalList">
+        <translation language="nl"><![CDATA[Aantal items in recente artikelen (lijst) widget]]></translation>
+        <translation language="en">
+          <![CDATA[Number of items in the recent articles (list) widget]]></translation>
+      </item>
+      <item type="message" name="AddedStage">
+        <translation language="nl"><![CDATA[Het podium "%1$s" werd toegevoegd.]]></translation>
+        <translation language="en"><![CDATA[The stage "%1$s" was added.]]></translation>
+      </item>
+      <item type="message" name="EditedStage">
+        <translation language="nl"><![CDATA[Het podium "%1$s" werd aangepast.]]></translation>
+        <translation language="en"><![CDATA[The stage "%1$s" was edited.]]></translation>
+      </item>
+      <item type="error" name="CreateAStageFirst">
+        <translation language="nl"><![CDATA[Je moet eerst een podium toevoegen.]]></translation>
+        <translation language="en"><![CDATA[Add a stage.]]></translation>
+      </item>
+      <item type="error" name="EmailExists">
+        <translation language="nl"><![CDATA[Dit e-mailadres is al in gebruik.]]></translation>
+        <translation language="en"><![CDATA[This e-mailaddress is in use.]]></translation>
+      </item>
+      <item type="error" name="UnknownAction">
+        <translation language="nl"><![CDATA[Onbekende actie.]]></translation>
+        <translation language="en"><![CDATA[Unknown action.]]></translation>
+      </item>
+      <item type="error" name="CannotDeleteTheArtist">
+        <translation language="nl"><![CDATA[Kan de artiest niet verwijderen.]]></translation>
+        <translation language="en"><![CDATA[Cannot delete the artist.]]></translation>
+      </item>
+      <item type="error" name="CreateACategoryFirst">
+        <translation language="nl"><![CDATA[Je moet eerst een category toevoegen.]]></translation>
+        <translation language="en"><![CDATA[Create a category.]]></translation>
+      </item>
+      <item type="error" name="CreateAStageFirst">
+        <translation language="nl"><![CDATA[Je moet eerst een podium toevoegen.]]></translation>
+        <translation language="en"><![CDATA[Create a stage.]]></translation>
+      </item>
+    </Festival>
+  </Backend>
+  <Frontend>
+    <Core>
+      <item type="error" name="EmailIsNotValid">
+        <translation language="nl"><![CDATA[Jouw emailadres is niet geldig.]]></translation>
+        <translation language="en"><![CDATA[Email not valid]]></translation>
+      </item>
+      <item type="error" name="Url">
+        <translation language="nl"><![CDATA[Deze url klopt niet.]]></translation>
+        <translation language="en"><![CDATA[Email not valid]]></translation>
+      </item>
+      <item type="label" name="SignUpForm">
+        <translation language="nl"><![CDATA[registratieformulier]]></translation>
+        <translation language="en"><![CDATA[sign up]]></translation>
+      </item>
+      <item type="label" name="SignUpOpen">
+        <translation language="nl"><![CDATA[Maak mijn aanpassingen definitief]]></translation>
+        <translation language="en"><![CDATA[sign up open]]></translation>
+      </item>
+      <item type="label" name="Stage">
+        <translation language="nl"><![CDATA[podium]]></translation>
+        <translation language="en"><![CDATA[stage]]></translation>
+      </item>
+      <item type="label" name="PracticalInfo">
+        <translation language="nl"><![CDATA[paktische informatie]]></translation>
+        <translation language="en"><![CDATA[practical info]]></translation>
+      </item>
+      <item type="label" name="WebsiteInfo">
+        <translation language="nl"><![CDATA[informatie voor de website]]></translation>
+        <translation language="en"><![CDATA[website information]]></translation>
+      </item>
+      <item type="label" name="Name">
+        <translation language="nl"><![CDATA[naam]]></translation>
+        <translation language="en"><![CDATA[name]]></translation>
+      </item>
+      <item type="label" name="ContactPerson">
+        <translation language="nl"><![CDATA[contact persoon]]></translation>
+        <translation language="en"><![CDATA[contact person]]></translation>
+      </item>
+      <item type="label" name="FirstName">
+        <translation language="nl"><![CDATA[voornaam]]></translation>
+        <translation language="en"><![CDATA[firtsname]]></translation>
+      </item>
+      <item type="label" name="Phone">
+        <translation language="nl"><![CDATA[telefoon]]></translation>
+        <translation language="en"><![CDATA[telefoon]]></translation>
+      </item>
+      <item type="label" name="Email">
+        <translation language="nl"><![CDATA[email adres]]></translation>
+        <translation language="en"><![CDATA[email]]></translation>
+      </item>
+      <item type="label" name="Backstage">
+        <translation language="nl"><![CDATA[extra backstage]]></translation>
+        <translation language="en"><![CDATA[extra backstage]]></translation>
+      </item>
+      <item type="label" name="Onstage">
+        <translation language="nl"><![CDATA[bandleden]]></translation>
+        <translation language="en"><![CDATA[on stage]]></translation>
+      </item>
+      <item type="label" name="ExtraInfo">
+        <translation language="nl"><![CDATA[extra informatie]]></translation>
+        <translation language="en"><![CDATA[extra information]]></translation>
+      </item>
+      <item type="label" name="SoundEngineer">
+        <translation language="nl"><![CDATA[breng je een eigen geluidstechnieker mee?]]></translation>
+        <translation language="en"><![CDATA[sound engineer]]></translation>
+      </item>
+      <item type="label" name="HotMeal">
+        <translation language="nl"><![CDATA[warme maaltijd]]></translation>
+        <translation language="en"><![CDATA[hot meal]]></translation>
+      </item>
+      <item type="label" name="VeggieMeal">
+        <translation language="nl"><![CDATA[vegetarische maaltijd]]></translation>
+        <translation language="en"><![CDATA[veggie meal]]></translation>
+      </item>
+      <item type="label" name="TotalCars">
+        <translation language="nl"><![CDATA[total aantal wagens]]></translation>
+        <translation language="en"><![CDATA[total cars]]></translation>
+      </item>
+      <item type="label" name="Files">
+        <translation language="nl"><![CDATA[Contract & technische fiche]]></translation>
+        <translation language="en"><![CDATA[files]]></translation>
+      </item>
+      <item type="label" name="UploadedFile">
+        <translation language="nl"><![CDATA[Er is al een bestand upgeload. Je kan hieronder een ander bestand toevoegen.]]></translation>
+        <translation language="en"><![CDATA[Je hebt al een bestand upgeload.]]></translation>
+      </item>
+      <item type="label" name="OtherFile">
+        <translation language="nl"><![CDATA[Voeg een ander bestand toe.]]></translation>
+        <translation language="en"><![CDATA[Voeg een ander bestand toe.]]></translation>
+      </item>
+      <item type="label" name="UploadContract">
+        <translation language="nl"><![CDATA[upload contract]]></translation>
+        <translation language="en"><![CDATA[upload contract]]></translation>
+      </item>
+      <item type="label" name="UploadTechnical">
+        <translation language="nl"><![CDATA[upload technische fiche]]></translation>
+        <translation language="en"><![CDATA[rider]]></translation>
+      </item>
+      <item type="label" name="Remark">
+        <translation language="nl"><![CDATA[opmerking]]></translation>
+        <translation language="en"><![CDATA[remark]]></translation>
+      </item>
+      <item type="label" name="Cover">
+        <translation language="nl"><![CDATA[Afbeelding]]></translation>
+        <translation language="en"><![CDATA[Afbeelding]]></translation>
+      </item>
+      <item type="label" name="UploadCover">
+        <translation language="nl"><![CDATA[upload jouw afbeelding]]></translation>
+        <translation language="en"><![CDATA[upload contract]]></translation>
+      </item>
+      <item type="label" name="Download">
+        <translation language="nl"><![CDATA[download]]></translation>
+        <translation language="en"><![CDATA[download]]></translation>
+      </item>
+      <item type="label" name="Delete">
+        <translation language="nl"><![CDATA[verwijder]]></translation>
+        <translation language="en"><![CDATA[verwijder]]></translation>
+      </item>
+      <item type="label" name="SocialMedia">
+        <translation language="nl"><![CDATA[sociale media]]></translation>
+        <translation language="en"><![CDATA[sociale media]]></translation>
+      </item>
+      <item type="label" name="Facebook">
+        <translation language="nl"><![CDATA[facebook]]></translation>
+        <translation language="en"><![CDATA[facebook]]></translation>
+      </item>
+      <item type="label" name="Twitter">
+        <translation language="nl"><![CDATA[twitter]]></translation>
+        <translation language="en"><![CDATA[twitter]]></translation>
+      </item>
+      <item type="label" name="Soundcloud">
+        <translation language="nl"><![CDATA[soundcloud]]></translation>
+        <translation language="en"><![CDATA[soundcloud]]></translation>
+      </item>
+      <item type="label" name="Instagram">
+        <translation language="nl"><![CDATA[instagram]]></translation>
+        <translation language="en"><![CDATA[instagram]]></translation>
+      </item>
+      <item type="label" name="Youtube">
+        <translation language="nl"><![CDATA[youtube]]></translation>
+        <translation language="en"><![CDATA[youtube]]></translation>
+      </item>
+      <item type="label" name="Website">
+        <translation language="nl"><![CDATA[website]]></translation>
+        <translation language="en"><![CDATA[website]]></translation>
+      </item>
+      <item type="label" name="Bio">
+        <translation language="nl"><![CDATA[bio]]></translation>
+        <translation language="en"><![CDATA[bio]]></translation>
+      </item>
+      <item type="message" name="HelpMaxFileSizeMB">
+        <translation language="nl"><![CDATA[Maximale bestandsgrootte: %1$s MB]]></translation>
+        <translation language="en"><![CDATA[Maximum file size: %1$s MB]]></translation>
+      </item>
+      <item type="message" name="Backstage">
+        <translation language="nl">
+          <![CDATA[Welke personen zullen er extra aanwezig zijn in de backstage? (Naam + Voornaam).]]></translation>
+        <translation language="en"><![CDATA[Total persons backstage]]></translation>
+      </item>
+      <item type="message" name="Onstage">
+        <translation language="nl">
+          <![CDATA[Wie komt er op het podium? (Voornaam is voldoende). ]]></translation>
+        <translation language="en"><![CDATA[Total persons on stage]]></translation>
+      </item>
+      <item type="message" name="Bio">
+        <translation language="nl"><![CDATA[Vul hier jouw biografie in, deze zal op de website komen]]></translation>
+        <translation language="en"><![CDATA[Message bio]]></translation>
+      </item>
+      <item type="message" name="Cover">
+        <translation language="nl">
+          <![CDATA[Voeg hier jouw persoonlijke afbeelding toe. Deze zal dienen als coverfoto.]]></translation>
+        <translation language="en"><![CDATA[message cover]]></translation>
+      </item>
+      <item type="message" name="FileContract">
+        <translation language="nl"><![CDATA[Voeg hier je contract toe.]]></translation>
+        <translation language="en"><![CDATA[message files]]></translation>
+      </item>
+      <item type="message" name="FileTechnical">
+        <translation language="nl"><![CDATA[Voeg hier je technische fiche toe.]]></translation>
+        <translation language="en"><![CDATA[message files]]></translation>
+      </item>
+      <item type="message" name="OnTime">
+        <translation language="nl"><![CDATA[Gelieve 2uur op voorhand aan te melden.]]></translation>
+        <translation language="en"><![CDATA[message files]]></translation>
+      </item>
+      <item type="message" name="Meal">
+        <translation language="nl">
+          <![CDATA[Jullie kunnen voor of na het optreden genieten van een maaltijd. <strong>Tijdstip af te stemmen met de backstage verantwoordelijke.</strong>]]></translation>
+        <translation language="en"><![CDATA[message files]]></translation>
+      </item>
+      <item type="message" name="Cars">
+        <translation language="nl">
+          <![CDATA[Probeer het aantal auto's te beperken tot een minimum. De artiesteningang is te bereiken via de parking van <strong>S&R Rozebroekenslag Victor Braeckmanlaan 180, 9040 Gent</strong>. Volg de pijltjes. Geef 5min voor aankomst een seintje (0472 66 66 50). ]]></translation>
+        <translation language="en"><![CDATA[message files]]></translation>
+      </item>
+      <item type="error" name="IsUrl">
+        <translation language="nl">
+          <![CDATA[De opgegeven url klopt niet. Voorbeeld <strong>http://www.</strong>facebook.com/CopacobanaFestival]]></translation>
+        <translation language="en"><![CDATA[message files]]></translation>
+      </item>
+      <item type="message" name="SocialUrl">
+        <translation language="nl">
+          <![CDATA[Hier kan je jouw sociale media ingeven. Voorbeeld: <strong>http://www.</strong>facebook.com/CopacobanaFestival]]></translation>
+        <translation language="en"><![CDATA[message files]]></translation>
+      </item>
+      <item type="message" name="Bio">
+        <translation language="nl">
+          <![CDATA[Voeg een korte beschrijving of bio toe.]]></translation>
+        <translation language="en"><![CDATA[message files]]></translation>
+      </item>
+      <item type="message" name="DeadLineWebsite">
+        <translation language="nl">
+          <![CDATA[De absolute deadline voor het in vullen van deze informatie: 17 juni 2015]]></translation>
+        <translation language="en"><![CDATA[message files]]></translation>
+      </item>
+      <item type="message" name="DeadLinePractical">
+        <translation language="nl">
+          <![CDATA[De absolute deadline voor het in vullen van deze informatie: 17 juni 2015]]></translation>
+        <translation language="en"><![CDATA[message files]]></translation>
+      </item>
+      <item type="message" name="ContactPerson">
+        <translation language="nl"><![CDATA[Vul hier de gegevens in van de persoon die we mogen contacteren bij vragen of opmerkingen.]]></translation>
+        <translation language="en"><![CDATA[message files]]></translation>
+      </item>
+      <item type="message" name="WebsiteInfo">
+        <translation language="nl"><![CDATA[Deze informatie wordt gepubliceerd op onze website.]]></translation>
+        <translation language="en"><![CDATA[message files]]></translation>
+      </item>
+      <item type="message" name="Remark">
+        <translation language="nl"><![CDATA[Voeg een opmerking toe]]></translation>
+        <translation language="en"><![CDATA[Message remark]]></translation>
+      </item>
+      <item type="message" name="ContactCopa">
+        <translation language="nl"><![CDATA[Voeg een opmerking toe]]></translation>
+        <translation language="en"><![CDATA[Message remark]]></translation>
+      </item>
+      <item type="message" name="SignUpOpen">
+        <translation language="nl">
+          <![CDATA[Wanneer al jouw gegevens correct zijn ingevuld vink je deze box aan.<br /> <span class="highlight">Let op: Wanneer je dit aanvinkt zal je jouw formulier niet meer kunnen aanpassen.</span>]]></translation>
+        <translation language="en"><![CDATA[Message bio]]></translation>
+      </item>
+    </Core>
+  </Frontend>
+</locale>

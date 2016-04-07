@@ -1,0 +1,130 @@
+
+
+span.label {
+	display: inline-block;
+	background: #777777;
+	line-height: 16px;
+	border-radius: 9px;
+	color: #ffffff;
+	padding: 0 10px 1px 10px;
+	font-size: 10px;
+}
+span.label {
+	background: white;
+	border: 1px solid #777777;
+	color: #777777;
+}
+span.label.white {
+	background: white;
+	border: 1px solid #777777;
+	color: #777777;
+}
+span.label.blue {
+	background: #428bca;
+	border: none;
+	color: white;
+}
+span.label.grey {
+	background: #777777;
+	border: none;
+	color: white;
+}
+span.label.green {
+	background: #5cb85c;
+	border: none;
+	color: white;
+}
+span.label.red {
+	background: #d9534f;
+	border: none;
+	color: white;
+}
+
+/* to float less important tabs to the right */
+.floatRight {
+    float: right !important;
+}
+
+#imageUploadUploader:active,
+#imageUploadUploader:focus {
+    outline: 0;
+}
+
+.leftSubproductColumn {
+    width: 59%;
+    float: left;
+}
+.rightSubproductColumn {
+    width: 39%;
+    float: right;
+}
+.pricesHolder {
+    margin-bottom: 10px;
+}
+.propertyField, .propertyValueField{
+    width: 350px;
+}
+
+#generatorSidebar {
+    width: 180px;
+}
+#generatorSidebar div.box div.options {
+    padding: 0;
+}
+#generatorSidebar div.options h3 {
+    padding: 0 13px;
+    line-height: 34px;
+    /*cursor: move;
+    background: #efefef url('/src/Backend/Core/Layout/images/move_handle.gif') no-repeat right 5px center;*/
+    background: #efefef;
+    border-top: 1px solid #D7D7D7;
+}
+#generatorSidebar div.options div.sortable-wrapper:first-of-type h3 {
+    border-top: none;
+}
+#generatorSidebar div.options ul li {
+    padding: 5px 5px 5px 14px;
+    border-top: 1px solid #D7D7D7;
+    font-size: 11px;
+    background: #fff;
+}
+#generatorSidebar a#generateSubproducts {
+    margin: 6px;
+}
+#generatorSidebar div.autoPricing div.options {
+    padding: 8px 13px;
+}
+#generatorSidebar div.autoPricing div.options input {
+    width: 98%;
+}
+
+#subproductTable th {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #D7D7D7;
+}
+#subproductTable td {
+    padding-top: 12px;
+}
+
+.ui-state-highlight {
+    background: #fff !important;
+    border: none !important;
+}
+
+.text-center{
+    text-align: center;
+}
+#generatorOverlay {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.1);
+}
+#generatorContentWrapper{
+    overflow: hidden;
+    position: relative;
+}
+.subproductsPlaceholder{
+    width: 100%;
+}
