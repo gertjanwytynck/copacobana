@@ -28,11 +28,11 @@ class ArtistStage
     private $id;
 
     /**
-     * @var ArrayCollection
+     * @var Stage
      *
-     * @ORM\OneToMany(targetEntity="Artist", mappedBy="stage", cascade={"persist", "remove"})
+     * @ORM\OneToMany(targetEntity="ArtistDate", mappedBy="stage", cascade={"persist", "remove"})
      */
-    private $artists;
+    private $stage;
 
     /**
      * @var string
@@ -97,7 +97,7 @@ class ArtistStage
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -120,7 +120,7 @@ class ArtistStage
     /**
      * Get stageName
      *
-     * @return string 
+     * @return string
      */
     public function getStageName()
     {
@@ -143,7 +143,7 @@ class ArtistStage
     /**
      * Get number
      *
-     * @return integer 
+     * @return integer
      */
     public function getNumber()
     {
@@ -166,7 +166,7 @@ class ArtistStage
     /**
      * Get url
      *
-     * @return string 
+     * @return string
      */
     public function getUrl()
     {
@@ -189,7 +189,7 @@ class ArtistStage
     /**
      * Get createdOn
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getCreatedOn()
     {
@@ -212,7 +212,7 @@ class ArtistStage
     /**
      * Get editedOn
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getEditedOn()
     {
@@ -245,7 +245,7 @@ class ArtistStage
     /**
      * Get artists
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getFestival()
     {
@@ -255,10 +255,34 @@ class ArtistStage
     /**
      * Get artists
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getArtists()
     {
         return $this->artists;
+    }
+
+    /**
+     * Set artist
+     *
+     * @param \Backend\Modules\Festival\Entity\ArtistDate $artist
+     *
+     * @return ArtistStage
+     */
+    public function setArtist(\Backend\Modules\Festival\Entity\ArtistDate $artist)
+    {
+        $this->artist = $artist;
+
+        return $this;
+    }
+
+    /**
+     * Get artist
+     *
+     * @return \Backend\Modules\Festival\Entity\ArtistDate
+     */
+    public function getArtist()
+    {
+        return $this->artist;
     }
 }

@@ -69,42 +69,50 @@
                             </div>
                         </div>
 
-						<div class="box">
-							<div class="heading">
-								<h3>{$lblPractical|ucfirst}</h3>
-							</div>
-
-							<div class="options">
-                                <p class="p0"><label for="publishOnDate">{$lblStartOn|ucfirst}</label></p>
+			            <div class="box playDates">
+                          <div class="heading">
+                                <h3>{$lblPractical|ucfirst}</h3>
+                            </div>
+                            {iteration:dates}
+                            <div class="options pickDate">
                                 <div class="oneLiner">
                                     <p>
-                                        {$txtStartOnDate} {$txtStartOnDateError}
+                                        <input type="text" value="" name="dates[]" name="" maxlength="10" data-mask="dd/mm/yy" class="inputText generatePicker" data-firstday="1">
                                     </p>
                                     <p>
                                         <label for="publishOnTime">{$lblAt}</label>
                                     </p>
                                     <p>
-                                        {$txtStartOnTime} {$txtStartOnTimeError}
+                                         <input name="times[]" type="text" value="17:00" maxlength="5" data-mask="dd/mm/yy" class="inputText inputTime" data-firstday="1">
                                     </p>
                                     <p>
                                         <label for="publishOnTime">uu:mm</label>
                                     </p>
                                 </div>
-							</div>
-                            <div class="options">
-                                <p>
-                                    <label for="stageId">{$lblStage|ucfirst}</label>
-                                    {$ddmStageId} {$ddmStageIdError}
-                                </p>
+                                <div class="oneLiner">
+                                    <p>
+                                        <label>{$lblStage|ucfirst}: </label>
+                                        <select name="stages[]" class="select" size="1">
+                                            {iteration:stages}
+                                                <option value="{$stages.id}">{$stages.name}</option>
+                                            {/iteration:stages}
+                                        </select>
+                                    </p>
+                                </div>
+                                <div class="oneLiner">
+                                    <p>
+                                        <label>{$lblCategory|ucfirst}: </label>
+                                        <select name="categories[]" class="select" size="1">
+                                            {iteration:categories}
+                                                <option value="{$categories.id}">{$categories.name}</option>
+                                            {/iteration:categories}
+                                        </select>
+                                    </p>
+                                </div>
+                                <p class="remove hidden">Remove</p>
                             </div>
-
-                            <div class="options">
-                                <p>
-                                    <label for="stageId">{$lblCategory|ucfirst}</label>
-                                    {$ddmCategoryId} {$ddmCategoryIdError}
-                                </p>
-                            </div>
-						</div>
+                            {/iteration:dates}
+                        </div>
 						<div id="publishOptions" class="box">
 							<div class="heading">
 								<h3>{$lblStatus|ucfirst}</h3>
@@ -196,13 +204,13 @@
 
                         <div class="box">
                             <div class="heading">
-                                <h3>{$lblOnstage|ucfirst} ({$totalOnstage})</h3>
+                                <h3>{$lblCar|ucfirst} ({$totalCars})</h3>
                             </div>
                             <div class="options">
 
-                                {iteration:personsOnstage}
-                                    <label>{$lblName|ucfirst}:</label> {$personsOnstage.name} <br />
-                                {/iteration:personsOnstage}
+                                {iteration:cars}
+                                    <label>{$lblPlate|ucfirst}:</label> {$cars.licence} <br />
+                                {/iteration:cars}
                             </div>
                         </div>
 
@@ -246,8 +254,8 @@
 
                             <div class="options">
                                 <p>
-                                    <label for="totalCars">{$lblTotalCars|ucfirst}</label>
-                                    {$txtTotalCars} {$txtTotalCarsError}
+                                    <label for="totalCars">{$lblVeganMeal|ucfirst}</label>
+                                    {$txtVeganMeal} {$txtVeganMealError}
                                 </p>
                             </div>
                         </div>
@@ -282,6 +290,20 @@
                                 <p>
                                     <label for="contractFile">{$lblContractFile|ucfirst}</label>
                                     {$fileContractFile}{$fileContractFileError}
+                                </p>
+                            </div>
+
+                            <div class="options">
+                              {option:practical.stageFilename}
+                                    <p class="downloadHolder">
+                                        <a href="{$FRONTEND_FILES_URL}/festival/artists/files/stages/{$practical.stageFilename}" target="_blank">{$lblDownload|ucfirst}</a>
+                                        <label for="deleteImage">{$chkDeleteStage} {$lblDelete|ucfirst}</label>
+                                        {$chkDeleteStageError}
+                                    </p>
+                                {/option:practical.stageFilename}
+                                <p>
+                                    <label for="stageFile">{$lblStageFile|ucfirst}</label>
+                                    {$fileStageFile}{$fileStageFileError}
                                 </p>
                             </div>
                         </div>

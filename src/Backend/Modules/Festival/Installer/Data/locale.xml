@@ -16,6 +16,18 @@
         <translation language="nl"><![CDATA[functies]]></translation>
         <translation language="en"><![CDATA[features]]></translation>
       </item>
+      <item type="label" name="Car">
+        <translation language="nl"><![CDATA[auto]]></translation>
+        <translation language="en"><![CDATA[car]]></translation>
+      </item>
+      <item type="label" name="Licence">
+        <translation language="nl"><![CDATA[nummerplaat]]></translation>
+        <translation language="en"><![CDATA[licence plate]]></translation>
+      </item>
+       <item type="label" name="StageFile">
+        <translation language="nl"><![CDATA[stage file]]></translation>
+        <translation language="en"><![CDATA[stage file]]></translation>
+      </item>
       <item type="label" name="ArtistUrlToShare">
         <translation language="nl"><![CDATA[link om te delen]]></translation>
         <translation language="en"><![CDATA[artist url to share]]></translation>
@@ -111,6 +123,14 @@
       <item type="label" name="HotMeal">
         <translation language="nl"><![CDATA[maaltijd met vlees]]></translation>
         <translation language="en"><![CDATA[hot meal]]></translation>
+      </item>
+       <item type="label" name="Remove">
+        <translation language="nl"><![CDATA[verwijder]]></translation>
+        <translation language="en"><![CDATA[remove]]></translation>
+      </item>
+      <item type="label" name="VeganMeal">
+        <translation language="nl"><![CDATA[vegan maaltijd]]></translation>
+        <translation language="en"><![CDATA[vegan meal]]></translation>
       </item>
       <item type="label" name="VeggieMeal">
         <translation language="nl"><![CDATA[vegetarische maaltijd]]></translation>
@@ -410,21 +430,21 @@
         <translation language="nl"><![CDATA[telefoon]]></translation>
         <translation language="en"><![CDATA[telefoon]]></translation>
       </item>
+      <item type="label" name="LicencePlate">
+        <translation language="nl"><![CDATA[nummerplaat]]></translation>
+        <translation language="en"><![CDATA[licence plate]]></translation>
+      </item>
       <item type="label" name="Email">
         <translation language="nl"><![CDATA[email adres]]></translation>
         <translation language="en"><![CDATA[email]]></translation>
       </item>
-      <item type="label" name="Backstage">
-        <translation language="nl"><![CDATA[extra backstage]]></translation>
-        <translation language="en"><![CDATA[extra backstage]]></translation>
-      </item>
-      <item type="label" name="Onstage">
-        <translation language="nl"><![CDATA[bandleden]]></translation>
-        <translation language="en"><![CDATA[on stage]]></translation>
-      </item>
       <item type="label" name="ExtraInfo">
         <translation language="nl"><![CDATA[extra informatie]]></translation>
         <translation language="en"><![CDATA[extra information]]></translation>
+      </item>
+      <item type="label" name="SoundEngineerTitle">
+        <translation language="nl"><![CDATA[geluidstechnieker]]></translation>
+        <translation language="en"><![CDATA[sound engineer]]></translation>
       </item>
       <item type="label" name="SoundEngineer">
         <translation language="nl"><![CDATA[breng je een eigen geluidstechnieker mee?]]></translation>
@@ -437,6 +457,10 @@
       <item type="label" name="VeggieMeal">
         <translation language="nl"><![CDATA[vegetarische maaltijd]]></translation>
         <translation language="en"><![CDATA[veggie meal]]></translation>
+      </item>
+      <item type="label" name="VeganMeal">
+        <translation language="nl"><![CDATA[vegan maaltijd]]></translation>
+        <translation language="en"><![CDATA[vegan meal]]></translation>
       </item>
       <item type="label" name="TotalCars">
         <translation language="nl"><![CDATA[total aantal wagens]]></translation>
@@ -519,18 +543,39 @@
         <translation language="en"><![CDATA[Maximum file size: %1$s MB]]></translation>
       </item>
       <item type="message" name="Backstage">
-        <translation language="nl">
-          <![CDATA[Welke personen zullen er extra aanwezig zijn in de backstage? (Naam + Voornaam).]]></translation>
+        <translation language="nl"><![CDATA[Welke personen zullen er extra aanwezig zijn? (Naam + Voornaam).]]></translation>
         <translation language="en"><![CDATA[Total persons backstage]]></translation>
       </item>
-      <item type="message" name="Onstage">
-        <translation language="nl">
-          <![CDATA[Wie komt er op het podium? (Voornaam is voldoende). ]]></translation>
-        <translation language="en"><![CDATA[Total persons on stage]]></translation>
+      <item type="label" name="Crew">
+        <translation language="nl"><![CDATA[crew]]></translation>
+        <translation language="en"><![CDATA[crew]]></translation>
       </item>
-      <item type="message" name="Bio">
-        <translation language="nl"><![CDATA[Vul hier jouw biografie in, deze zal op de website komen]]></translation>
-        <translation language="en"><![CDATA[Message bio]]></translation>
+      <item type="label" name="Cars">
+        <translation language="nl"><![CDATA[auto's]]></translation>
+        <translation language="en"><![CDATA[cars]]></translation>
+      </item>
+      <item type="label" name="At">
+        <translation language="nl"><![CDATA[om]]></translation>
+        <translation language="en"><![CDATA[at]]></translation>
+      </item>
+       <item type="label" name="Stage">
+        <translation language="nl"><![CDATA[podium]]></translation>
+        <translation language="en"><![CDATA[podium]]></translation>
+      </item>
+       <item type="label" name="Time">
+        <translation language="nl"><![CDATA[tijdstip]]></translation>
+        <translation language="en"><![CDATA[time]]></translation>
+      </item>
+      <item type="message" name="PracticalInfoText">
+        <translation language="nl"><![CDATA[Contactgegevens <strong>voor en na</strong> het festival: artiest@copacobana.be - 0497 19 18 66</br>
+                            Contactgegevens <strong>tijdens</strong> het festival: 0472 66 66 50</br>
+                            Verantwoordelijke klank & licht: La Roy (Michiel) - techniek@copacobana.be - 0496 75 74 11</br>
+                            Verantwoordelijke stage manager: Mathieu - techniek@copacobana.be - 0472 33 44 63</br>]]></translation>
+        <translation language="en"><![CDATA[Crew]]></translation>
+      </item>
+        <item type="label" name="Meal">
+        <translation language="nl"><![CDATA[maaltijd]]></translation>
+        <translation language="en"><![CDATA[meal]]></translation>
       </item>
       <item type="message" name="Cover">
         <translation language="nl">
@@ -541,42 +586,39 @@
         <translation language="nl"><![CDATA[Voeg hier je contract toe.]]></translation>
         <translation language="en"><![CDATA[message files]]></translation>
       </item>
+      <item type="message" name="FileStage">
+        <translation language="nl"><![CDATA[Voeg hier je stagefile toe.]]></translation>
+        <translation language="en"><![CDATA[message files]]></translation>
+      </item>
       <item type="message" name="FileTechnical">
         <translation language="nl"><![CDATA[Voeg hier je technische fiche toe.]]></translation>
         <translation language="en"><![CDATA[message files]]></translation>
       </item>
-      <item type="message" name="OnTime">
-        <translation language="nl"><![CDATA[Gelieve 2uur op voorhand aan te melden.]]></translation>
-        <translation language="en"><![CDATA[message files]]></translation>
-      </item>
       <item type="message" name="Meal">
         <translation language="nl">
-          <![CDATA[Jullie kunnen voor of na het optreden genieten van een maaltijd. <strong>Tijdstip af te stemmen met de backstage verantwoordelijke.</strong>]]></translation>
+          <![CDATA[Jullie kunnen voor of na het optreden genieten van een maaltijd. Tijdstip af te stemmen met de backstage verantwoordelijke.]]></translation>
         <translation language="en"><![CDATA[message files]]></translation>
       </item>
       <item type="message" name="Cars">
         <translation language="nl">
-          <![CDATA[Probeer het aantal auto's te beperken tot een minimum. De artiesteningang is te bereiken via de parking van <strong>S&R Rozebroekenslag Victor Braeckmanlaan 180, 9040 Gent</strong>. Volg de pijltjes. Geef 5min voor aankomst een seintje (0472 66 66 50). ]]></translation>
+          <![CDATA[Probeer het aantal auto's te beperken tot een minimum. De artiesteningang is te bereiken via de parking van S&R Rozebroekenslag Victor Braeckmanlaan 180, 9040 Gent. Volg de pijltjes. Geef 5min voor aankomst een seintje (0472 66 66 50). ]]></translation>
         <translation language="en"><![CDATA[message files]]></translation>
       </item>
       <item type="error" name="IsUrl">
         <translation language="nl">
-          <![CDATA[De opgegeven url klopt niet. Voorbeeld <strong>http://www.</strong>facebook.com/CopacobanaFestival]]></translation>
+          <![CDATA[De opgegeven url klopt niet. Voorbeeld http://www.facebook.com/CopacobanaFestival]]></translation>
         <translation language="en"><![CDATA[message files]]></translation>
       </item>
       <item type="message" name="SocialUrl">
-        <translation language="nl">
-          <![CDATA[Hier kan je jouw sociale media ingeven. Voorbeeld: <strong>http://www.</strong>facebook.com/CopacobanaFestival]]></translation>
+        <translation language="nl"><![CDATA[Hier kan je jouw sociale media ingeven. Voorbeeld: http://www.facebook.com/CopacobanaFestival]]></translation>
         <translation language="en"><![CDATA[message files]]></translation>
       </item>
       <item type="message" name="Bio">
-        <translation language="nl">
-          <![CDATA[Voeg een korte beschrijving of bio toe.]]></translation>
+        <translation language="nl"><![CDATA[Voeg een korte beschrijving of bio toe.]]></translation>
         <translation language="en"><![CDATA[message files]]></translation>
       </item>
-      <item type="message" name="DeadLineWebsite">
-        <translation language="nl">
-          <![CDATA[De absolute deadline voor het in vullen van deze informatie: 17 juni 2015]]></translation>
+      <item type="message" name="NoFileStage">
+        <translation language="nl"><![CDATA[Geen stage file toegevoegd.]]></translation>
         <translation language="en"><![CDATA[message files]]></translation>
       </item>
       <item type="message" name="DeadLinePractical">
@@ -599,11 +641,6 @@
       <item type="message" name="ContactCopa">
         <translation language="nl"><![CDATA[Voeg een opmerking toe]]></translation>
         <translation language="en"><![CDATA[Message remark]]></translation>
-      </item>
-      <item type="message" name="SignUpOpen">
-        <translation language="nl">
-          <![CDATA[Wanneer al jouw gegevens correct zijn ingevuld vink je deze box aan.<br /> <span class="highlight">Let op: Wanneer je dit aanvinkt zal je jouw formulier niet meer kunnen aanpassen.</span>]]></translation>
-        <translation language="en"><![CDATA[Message bio]]></translation>
       </item>
     </Core>
   </Frontend>

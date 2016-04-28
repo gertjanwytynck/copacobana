@@ -8,7 +8,7 @@ use Symfony\Component\Finder\Finder;
 use Symfony\Component\Filesystem\Filesystem;
 
 /**
- * This is the Artist Categories Entity
+ * This is the Artist Category Entity
  *
  * @author Gertjan Wytynck <gertjan.wytynck@gmail.com>
  *
@@ -27,12 +27,12 @@ class ArtistCategories
      */
     private $id;
 
-    /**
-     * @var ArrayCollection
+     /**
+     * @var Category
      *
-     * @ORM\OneToMany(targetEntity="Artist", mappedBy="category", cascade={"persist", "remove"})
+     * @ORM\OneToMany(targetEntity="ArtistDate", mappedBy="category", cascade={"persist", "remove"})
      */
-    private $artist;
+    private $cat;
 
     /**
      * @var string
@@ -76,7 +76,7 @@ class ArtistCategories
     {
         $this->artist = new ArrayCollection();
     }
-    
+
     /**
      * @ORM\PrePersist
      */
@@ -96,7 +96,7 @@ class ArtistCategories
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -119,7 +119,7 @@ class ArtistCategories
     /**
      * Get number
      *
-     * @return integer 
+     * @return integer
      */
     public function getNumber()
     {
@@ -142,7 +142,7 @@ class ArtistCategories
     /**
      * Get url
      *
-     * @return string 
+     * @return string
      */
     public function getUrl()
     {
@@ -175,7 +175,7 @@ class ArtistCategories
     /**
      * Get artist
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getArtist()
     {
@@ -198,7 +198,7 @@ class ArtistCategories
     /**
      * Get category
      *
-     * @return string 
+     * @return string
      */
     public function getCategory()
     {
@@ -221,7 +221,7 @@ class ArtistCategories
     /**
      * Get createdOn
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getCreatedOn()
     {
@@ -244,10 +244,106 @@ class ArtistCategories
     /**
      * Get editedOn
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getEditedOn()
     {
         return $this->editedOn;
+    }
+
+    /**
+     * Set artist
+     *
+     * @param \Backend\Modules\Festival\Entity\ArtistDate $artist
+     *
+     * @return ArtistCategories
+     */
+    public function setArtist(\Backend\Modules\Festival\Entity\ArtistDate $artist)
+    {
+        $this->artist = $artist;
+
+        return $this;
+    }
+
+    /**
+     * Set categoryName
+     *
+     * @param string $categoryName
+     *
+     * @return ArtistCategoriesse
+     */
+    public function setCategoryName($categoryName)
+    {
+        $this->categoryName = $categoryName;
+
+        return $this;
+    }
+
+    /**
+     * Get categoryName
+     *
+     * @return string
+     */
+    public function getCategoryName()
+    {
+        return $this->categoryName;
+    }
+
+    /**
+     * Add category
+     *
+     * @param \Backend\Modules\Festival\Entity\ArtistDate $category
+     *
+     * @return ArtistCategories
+     */
+    public function addCategory(\Backend\Modules\Festival\Entity\ArtistDate $category)
+    {
+        $this->category[] = $category;
+
+        return $this;
+    }
+
+    /**
+     * Remove category
+     *
+     * @param \Backend\Modules\Festival\Entity\ArtistDate $category
+     */
+    public function removeCategory(\Backend\Modules\Festival\Entity\ArtistDate $category)
+    {
+        $this->category->removeElement($category);
+    }
+
+    /**
+     * Add cat
+     *
+     * @param \Backend\Modules\Festival\Entity\ArtistDate $cat
+     *
+     * @return ArtistCategories
+     */
+    public function addCat(\Backend\Modules\Festival\Entity\ArtistDate $cat)
+    {
+        $this->cat[] = $cat;
+
+        return $this;
+    }
+
+    /**
+     * Remove cat
+     *
+     * @param \Backend\Modules\Festival\Entity\ArtistDate $cat
+     */
+    public function removeCat(\Backend\Modules\Festival\Entity\ArtistDate $cat)
+    {
+        $this->cat->removeElement($cat);
+    }
+
+    /**
+     * Get cat
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCat()
+    {
+        return $this->cat;
     }
 }

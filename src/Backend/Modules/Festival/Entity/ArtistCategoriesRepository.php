@@ -41,7 +41,8 @@ class ArtistCategoriesRepository extends EntityRepository
 
         $categories = array();
         foreach ($results as $key => $result) {
-            $categories[$result['id']] = $result['category'];
+            $categories[$key]['id'] = $result['id'];
+            $categories[$key]['name'] = $result['category'];
         }
 
         return $categories;

@@ -133,7 +133,7 @@ class ArtistWebsite
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -156,7 +156,7 @@ class ArtistWebsite
     /**
      * Get facebookUrl
      *
-     * @return string 
+     * @return string
      */
     public function getFacebookUrl()
     {
@@ -179,7 +179,7 @@ class ArtistWebsite
     /**
      * Get twitterUrl
      *
-     * @return string 
+     * @return string
      */
     public function getTwitterUrl()
     {
@@ -202,7 +202,7 @@ class ArtistWebsite
     /**
      * Get youtubeUrl
      *
-     * @return string 
+     * @return string
      */
     public function getYoutubeUrl()
     {
@@ -225,7 +225,7 @@ class ArtistWebsite
     /**
      * Get instagramUrl
      *
-     * @return string 
+     * @return string
      */
     public function getInstagramUrl()
     {
@@ -248,7 +248,7 @@ class ArtistWebsite
     /**
      * Get soundcloudUrl
      *
-     * @return string 
+     * @return string
      */
     public function getSoundcloudUrl()
     {
@@ -271,7 +271,7 @@ class ArtistWebsite
     /**
      * Get websiteUrl
      *
-     * @return string 
+     * @return string
      */
     public function getWebsiteUrl()
     {
@@ -294,7 +294,7 @@ class ArtistWebsite
     /**
      * Get bio
      *
-     * @return string 
+     * @return string
      */
     public function getBio()
     {
@@ -317,7 +317,7 @@ class ArtistWebsite
     /**
      * Get createdOn
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getCreatedOn()
     {
@@ -340,7 +340,7 @@ class ArtistWebsite
     /**
      * Get editedOn
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getEditedOn()
     {
@@ -373,7 +373,7 @@ class ArtistWebsite
     /**
      * Get locales
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getLocales()
     {

@@ -12,7 +12,7 @@ use Symfony\Component\Filesystem\Filesystem;
  *
  * @author Gertjan Wytynck <gertjan.wytynck@gmail.com>
  *
- * @ORM\Entity(repositoryClass="Backend\Modules\Festival\Entity\ArtistPracticalRepository")
+ * @ORM\Entity
  * @ORM\Table(name="ArtistPractical")
  * @ORM\HasLifecycleCallbacks
  */
@@ -46,9 +46,9 @@ class ArtistPractical
     /**
      * @var ArrayCollection
      *
-     * @ORM\OneToMany(targetEntity="ArtistPracticalOnstage", mappedBy="artist", cascade={"persist", "remove"})
+     * @ORM\OneToMany(targetEntity="ArtistPracticalCar", mappedBy="artist", cascade={"persist", "remove"})
      */
-    private $onstage;
+    private $car;
 
     /**
      * @var string
@@ -104,7 +104,7 @@ class ArtistPractical
      *
      * @ORM\Column(type="integer", nullable=true)
      */
-    private $totalCars;
+    private $veganMeal;
 
     /**
      * @var string
@@ -119,6 +119,13 @@ class ArtistPractical
      * @ORM\Column(type="string", nullable=true)
      */
     private $contractFilename;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $stageFilename;
 
     /**
      * @var string
@@ -147,8 +154,7 @@ class ArtistPractical
     public function __construct()
     {
         $this->backstage = new ArrayCollection();
-        $this->onstage = new ArrayCollection();
-
+        $this->car = new ArrayCollection();
     }
 
     /**
@@ -175,12 +181,13 @@ class ArtistPractical
     {
         $this->removeTechnical();
         $this->removeContract();
+        $this->removeStage();
     }
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -203,7 +210,7 @@ class ArtistPractical
     /**
      * Get contactName
      *
-     * @return string 
+     * @return string
      */
     public function getContactName()
     {
@@ -226,7 +233,7 @@ class ArtistPractical
     /**
      * Get contactFirstName
      *
-     * @return string 
+     * @return string
      */
     public function getContactFirstName()
     {
@@ -249,7 +256,7 @@ class ArtistPractical
     /**
      * Get contactPhone
      *
-     * @return string 
+     * @return string
      */
     public function getContactPhone()
     {
@@ -272,7 +279,7 @@ class ArtistPractical
     /**
      * Get contactEmail
      *
-     * @return string 
+     * @return string
      */
     public function getContactEmail()
     {
@@ -295,7 +302,7 @@ class ArtistPractical
     /**
      * Get soundEngineer
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getSoundEngineer()
     {
@@ -318,7 +325,7 @@ class ArtistPractical
     /**
      * Get hotMeal
      *
-     * @return integer 
+     * @return integer
      */
     public function getHotMeal()
     {
@@ -341,7 +348,7 @@ class ArtistPractical
     /**
      * Get veggieMeal
      *
-     * @return integer 
+     * @return integer
      */
     public function getVeggieMeal()
     {
@@ -364,7 +371,7 @@ class ArtistPractical
     /**
      * Get totalCars
      *
-     * @return integer 
+     * @return integer
      */
     public function getTotalCars()
     {
@@ -387,7 +394,7 @@ class ArtistPractical
     /**
      * Get technicalFilename
      *
-     * @return string 
+     * @return string
      */
     public function getTechnicalFilename()
     {
@@ -437,7 +444,7 @@ class ArtistPractical
     /**
      * Get contractFilename
      *
-     * @return string 
+     * @return string
      */
     public function getContractFilename()
     {
@@ -488,7 +495,7 @@ class ArtistPractical
     /**
      * Get remark
      *
-     * @return string 
+     * @return string
      */
     public function getRemark()
     {
@@ -511,7 +518,7 @@ class ArtistPractical
     /**
      * Get createdOn
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getCreatedOn()
     {
@@ -534,7 +541,7 @@ class ArtistPractical
     /**
      * Get editedOn
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getEditedOn()
     {
@@ -590,7 +597,7 @@ class ArtistPractical
     /**
      * Get backstage
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getBackstage()
     {
@@ -623,10 +630,120 @@ class ArtistPractical
     /**
      * Get onstage
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getOnstage()
     {
         return $this->onstage;
+    }
+
+    /**
+     * Set veganMeal
+     *
+     * @param integer $veganMeal
+     *
+     * @return ArtistPractical
+     */
+    public function setVeganMeal($veganMeal)
+    {
+        $this->veganMeal = $veganMeal;
+
+        return $this;
+    }
+
+    /**
+     * Get veganMeal
+     *
+     * @return integer
+     */
+    public function getVeganMeal()
+    {
+        return $this->veganMeal;
+    }
+
+    /**
+     * Set stageFilename
+     *
+     * @param string $stageFilename
+     *
+     * @return ArtistPractical
+     */
+    public function setStageFilename($stageFilename)
+    {
+        $this->stageFilename = $stageFilename;
+
+        return $this;
+    }
+
+    /**
+     * Get stageFilename
+     *
+     * @return string
+     */
+    public function getStageFilename()
+    {
+        return $this->stageFilename;
+    }
+
+
+    /* Remove file image
+    *
+    * @return bool
+    */
+    public function removeStage()
+    {
+        if ($this->stageFilename !== null) {
+            $finder = new Finder();
+            $fs = new Filesystem();
+            $imagePath = FRONTEND_FILES_PATH . '/festival/artists/files/stages';
+
+            foreach ($finder->directories()->in($imagePath) as $directory) {
+                $file = $directory . '/' . $this->stageFilename;
+
+                if (is_file($file)) {
+                    $fs->remove($file);
+                }
+            }
+
+            $this->stageFilename = null;
+
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Add car
+     *
+     * @param \Backend\Modules\Festival\Entity\ArtistPracticalCar $car
+     *
+     * @return ArtistPractical
+     */
+    public function addCar(\Backend\Modules\Festival\Entity\ArtistPracticalCar $car)
+    {
+        $this->car[] = $car;
+
+        return $this;
+    }
+
+    /**
+     * Remove car
+     *
+     * @param \Backend\Modules\Festival\Entity\ArtistPracticalCar $car
+     */
+    public function removeCar(\Backend\Modules\Festival\Entity\ArtistPracticalCar $car)
+    {
+        $this->car->removeElement($car);
+    }
+
+    /**
+     * Get car
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCar()
+    {
+        return $this->car;
     }
 }

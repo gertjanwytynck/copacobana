@@ -12,7 +12,7 @@ use Symfony\Component\Filesystem\Filesystem;
  *
  * @author Gertjan Wytynck <gertjan.wytynck@gmail.com>
  *
- * @ORM\Entity(repositoryClass="Backend\Modules\Festival\Entity\ArtistWebsiteLocaleRepository")
+ * @ORM\Entity
  * @ORM\Table(name="ArtistWebsiteLocale")
  * @ORM\HasLifecycleCallbacks
  */
@@ -53,7 +53,7 @@ class ArtistWebsiteLocale
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -76,7 +76,7 @@ class ArtistWebsiteLocale
     /**
      * Get language
      *
-     * @return string 
+     * @return string
      */
     public function getLanguage()
     {
@@ -99,7 +99,7 @@ class ArtistWebsiteLocale
     /**
      * Get bio
      *
-     * @return string 
+     * @return string
      */
     public function getBio()
     {

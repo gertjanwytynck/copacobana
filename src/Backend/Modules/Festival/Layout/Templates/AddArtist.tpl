@@ -18,7 +18,7 @@
 		<div id="tabArtist" class="ui-tabs-hide">
 			<table border="0" cellspacing="0" cellpadding="0" width="100%">
 				<tr>
-					<td id="leftColumn">
+					<td id="leftColumnArtist">
 						<div class="box">
 							<div class="heading">
 								<h3>{$lblArtistName|ucfirst}</h3>
@@ -33,7 +33,7 @@
 						<div class="box">
 							<div class="heading">
 								<h3>{$lblArtistImage|ucfirst}</h3>
-							</div>
+						</div>
 							<div class="options">
 								<p>
 									<label for="coverImage">{$lblArtistImage|ucfirst}</label>
@@ -44,39 +44,49 @@
 					</td>
 
 					<td id="sidebar">
-						<div class="box">
-							<div class="heading">
+						<div class="box playDates">
+						  <div class="heading">
 								<h3>{$lblPractical|ucfirst}</h3>
 							</div>
-
-							<div class="options">
-                                <p class="p0"><label for="publishOnDate">{$lblStartOn|ucfirst}</label></p>
+							<div class="options pickDate">
                                 <div class="oneLiner">
                                     <p>
-                                        {$txtStartOnDate} {$txtStartOnDateError}
+                                        <input type="text" value="" name="dates[]" name="" maxlength="10" data-mask="dd/mm/yy" class="inputText generatePicker" data-firstday="1">
                                     </p>
                                     <p>
                                         <label for="publishOnTime">{$lblAt}</label>
                                     </p>
                                     <p>
-                                        {$txtStartOnTime} {$txtStartOnTimeError}
+                                         <input name="times[]" type="text" value="17:00" maxlength="5" data-mask="dd/mm/yy" class="inputText inputTime" data-firstday="1">
                                     </p>
                                     <p>
                                         <label for="publishOnTime">uu:mm</label>
                                     </p>
                                 </div>
-							</div>
-                            <div class="options">
-                                <p>
-                                    <label for="stageId">{$lblStage|ucfirst}</label>
-                                    {$ddmStageId} {$ddmStageIdError}
-                                </p>
+                                <div class="oneLiner">
+                                    <p>
+                                        <label>{$lblStage|ucfirst}: </label>
+                                        <select name="stages[]" class="select" size="1">
+                                            {iteration:stages}
+                                                <option value="{$stages.id}">{$stages.name}</option>
+                                            {/iteration:stages}
+                                        </select>
+                                    </p>
+                                </div>
+                                <div class="oneLiner">
+                                    <p>
+                                        <label>{$lblCategory|ucfirst}: </label>
+                                        <select name="categories[]" class="select" size="1">
+                                            {iteration:categories}
+                                                <option value="{$categories.id}">{$categories.name}</option>
+                                            {/iteration:categories}
+                                        </select>
+                                    </p>
+                                </div>
+                                <p class="remove hidden">{$lblRemove}</p>
                             </div>
-                            <div class="options">
-                                <p>
-                                    <label for="stageId">{$lblCategory|ucfirst}</label>
-                                    {$ddmCategoryId} {$ddmCategoryIdError}
-                                </p>
+                            <div class="options copyDate">
+                               <p>Add another date</p>
                             </div>
 						</div>
 						<div id="publishOptions" class="box">
@@ -89,7 +99,7 @@
 									{iteration:hidden}
 										<li>
 											{$hidden.rbtHidden}
-											<label for="{$hidden.id}">{$hidden.label}</label>
+											<label for="{$hidden.id}">{$hidden.label|ucfirst}</label>
 										</li>
 									{/iteration:hidden}
 								</ul>
@@ -194,8 +204,8 @@
 
                             <div class="options">
                                 <p>
-                                    <label for="totalCars">{$lblTotalCars|ucfirst}</label>
-                                    {$txtTotalCars} {$txtTotalCarsError}
+                                    <label for="totalCars">{$lblVeganMeal|ucfirst}</label>
+                                    {$txtVeganMeal} {$txtVeganMealError}
                                 </p>
                             </div>
                         </div>
@@ -216,6 +226,12 @@
                                 <p>
                                     <label for="contractFile">{$lblContractFile|ucfirst}</label>
                                     {$fileContractFile}{$fileContractFileError}
+                                </p>
+                            </div>
+                            <div class="options">
+                                <p>
+                                    <label for="contractFile">{$lblStageFile|ucfirst}</label>
+                                    {$fileStageFile}{$fileStageFileError}
                                 </p>
                             </div>
                         </div>

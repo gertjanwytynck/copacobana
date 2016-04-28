@@ -1,4 +1,7 @@
 
+.clear {
+    clear: both;
+}
 
 span.label {
 	display: inline-block;
@@ -38,6 +41,26 @@ span.label.red {
 	background: #d9534f;
 	border: none;
 	color: white;
+}
+
+#leftColumnArtist {
+    width: 65%;
+}
+
+.playDates input {
+    width: 85px;
+}
+
+.remove {
+    padding: 5px 15px !important;
+    border-radius: 5px;
+    margin-top: 15px;
+    background: #ef433f;
+    color: white;
+}
+
+.copyDate {
+    background: #d2ebe5 !important;
 }
 
 /* to float less important tabs to the right */

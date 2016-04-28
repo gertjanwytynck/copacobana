@@ -13,7 +13,7 @@ use Doctrine\ORM\Query;
 class ArtistRepository extends EntityRepository
 {
     /**
-     * Fetch a product line locale based on it's id and language
+     * Fetch an artist on it's id and language
      *
      * @param  string  $url         The url for the product line
      * @param  int     $ignoreId    The id of the product line we don't want to fetch
@@ -75,13 +75,14 @@ class ArtistRepository extends EntityRepository
     public function _findByUrl($url, $ignoreId = null)
     {
         $qb = $this->createQueryBuilder('a')
-            ->select('a', 'ap', 'ars', 'ab', 'm', 'apb', 'apo')
-            ->innerJoin('a.stage', 'ars')
+            ->select('a', 'ap', 'ars', 'ab', 'ad', 'm', 'apb', 'ac')
             ->innerJoin('a.meta', 'm')
             ->leftJoin('a.practical', 'ap')
             ->leftJoin('ap.backstage', 'apb')
-            ->leftJoin('ap.onstage', 'apo')
             ->leftJoin('a.website', 'ab')
+            ->leftJoin('a.date', 'ad')
+            ->leftJoin('ad.stage', 'ars')
+            ->leftJoin('ap.car', 'ac')
             ->where('m.url = :url')
             ->setParameters(array(
                 'url' => $url
@@ -128,9 +129,7 @@ class ArtistRepository extends EntityRepository
     public function _getAll()
     {
         $qb = $this->createQueryBuilder('a')
-            ->select('a', 'aw', 'awl', 's', 'c')
-            ->leftJoin('a.stage', 's')
-            ->leftJoin('a.category', 'c')
+            ->select('a', 'aw', 'awl')
             ->leftJoin('a.website', 'aw')
             ->leftJoin('aw.locales', 'awl')
             ->where('a.isHidden = :hidden' )
@@ -154,9 +153,7 @@ class ArtistRepository extends EntityRepository
     public function _getAllSpotlight()
     {
         $qb = $this->createQueryBuilder('a')
-            ->select('a', 'aw', 'awl', 's', 'c')
-            ->leftJoin('a.stage', 's')
-            ->leftJoin('a.category', 'c')
+            ->select('a', 'aw', 'awl')
             ->leftJoin('a.website', 'aw')
             ->leftJoin('aw.locales', 'awl')
             ->where('a.isHidden = :hidden' )

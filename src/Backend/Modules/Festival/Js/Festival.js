@@ -6,7 +6,56 @@ jsBackend.festival =
 	// init, something like a constructor
 	init: function()
 	{
-		if($('#name').length > 0) $('#name').doMeta();
+        if (jsBackend.current.action == 'AddArtist') {
+            $('.generatePicker').datepicker({
+                dateFormat: 'dd/mm/yy',
+                firstDate: 1,
+            }).datepicker("setDate", '24/06/2016');
+        }
+
+        if (jsBackend.current.action == 'EditArtist') {
+            var dates = jsBackend.data.get('Festival.dates');
+            var inputDates = document.querySelectorAll("input[name='dates[]']");
+            var inputTimes = document.querySelectorAll("input[name='times[]']");
+            var selectStages = document.querySelectorAll("select[name='stages[]']");
+            var selectCategories = document.querySelectorAll("select[name='categories[]']");
+
+            // set dates
+            for (i = 0; i < inputDates.length; i++) {
+                $(inputDates[i])
+                .attr("id", "")
+                .removeClass('hasDatepicker')
+                .removeData('datepicker')
+                .unbind()
+                .datepicker({
+                    dateFormat: 'dd/mm/yy',
+                    firstDate: 1
+                }).datepicker("setDate", dates[i]['date']);
+            }
+
+            // set times
+            for (i = 0; i < inputTimes.length; i++) {
+                $(inputTimes[i]).attr('value', dates[i]['time'])
+            }
+
+            // set stages
+            for (i = 0; i < selectStages.length; i++) {
+                for(j = 0; j < selectStages[i].options.length; j++){
+                    if(selectStages[i].options[j].value == dates[i]['stage'] ){
+                        selectStages[i].options[j].selected = true;
+                    }
+                }
+            }
+
+            // set categories
+            for (i = 0; i < selectCategories.length; i++) {
+                for(j = 0; j < selectCategories[i].options.length; j++){
+                    if(selectCategories[i].options[j].value == dates[i]['category'] ){
+                        selectCategories[i].options[j].selected = true;
+                    }
+                }
+            }
+        }
 
 		if(jsBackend.current.action == 'AddArtist' || jsBackend.current.action == 'EditArtist')
 		{
@@ -53,6 +102,34 @@ jsBackend.festival =
 
 			});
 		}
+
+
+        if($('#name').length > 0) $('#name').doMeta();
+
+        $('.copyDate').click(function(e) {
+            var last = ($('.playDates .pickDate').last());
+            var newItem = last.clone();
+
+            $(last).hasClass('hidden') ? $(last).removeClass('hidden') : $(newItem).insertBefore('.copyDate');
+
+            if ($(newItem).find('.remove').hasClass('hidden')) {
+                $(newItem).find('.remove').removeClass('hidden')
+            }
+
+            $(newItem).find('.generatePicker')
+            .attr("id", "")
+            .removeClass('hasDatepicker')
+            .removeData('datepicker')
+            .unbind()
+            .datepicker({
+                dateFormat: 'dd/mm/yy',
+                firstDate: 1
+            });
+
+            $('.remove').click(function(e) {
+                $(this).parent().remove()
+            })
+        });
 
 	}
 };

@@ -40,12 +40,19 @@ class ArtistPracticalBackstage
      *
      * @ORM\Column(type="string")
      */
+    private $type;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="string")
+     */
     private $name;
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -68,7 +75,7 @@ class ArtistPracticalBackstage
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -96,5 +103,29 @@ class ArtistPracticalBackstage
     public function getArtist()
     {
         return $this->artist;
+    }
+
+    /**
+     * Set type
+     *
+     * @param string $type
+     *
+     * @return ArtistPracticalBackstage
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
     }
 }

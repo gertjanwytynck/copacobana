@@ -62,7 +62,7 @@ class Edit extends ActionEdit
         }
 
         // get module settings
-        $this->settings = $this->get('fork.settings')->getForModule('News');
+        $this->settings = $this->get('fork.settings')->getForModule($this->URL->getModule());
     }
 
     /**

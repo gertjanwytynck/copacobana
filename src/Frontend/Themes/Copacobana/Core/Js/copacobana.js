@@ -20,14 +20,8 @@ jsFrontend.copacobana = {
 			moduleHero.height(height);
 		});
 
-		// $(window).scroll(function() {
-		// 	var homeSHeight = moduleHero.height();
-		// 	var topScroll = $(document).scrollTop();
-
-		// 	if (($(this).scrollTop() <= homeSHeight)) {
-		// 		moduleHero.css('top', topScroll * 0.35);
-		// 	}
-		// });
+		// tooltip
+	 	$('[data-toggle="tooltip"]').tooltip()
 
 		// disable grid:
 		$('.og-grid a').click(function(e){

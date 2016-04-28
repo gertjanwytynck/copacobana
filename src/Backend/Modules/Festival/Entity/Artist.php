@@ -44,10 +44,9 @@ class Artist
     /**
      * @var ArrayCollection
      *
-     * @ORM\ManyToOne(targetEntity="ArtistCategories", inversedBy="artist")
-     * @ORM\JoinColumn(name="categoryId", referencedColumnName="id", nullable=false)
+     * @ORM\OneToMany(targetEntity="ArtistDate", mappedBy="artist", cascade={"persist", "remove"})
      */
-    private $category;
+    private $date;
 
     /**
      * @var Meta
@@ -56,14 +55,6 @@ class Artist
      * @ORM\JoinColumn(name="metaId", referencedColumnName="id", nullable=false)
      **/
     private $meta;
-
-    /**
-     * @var Stage
-     *
-     * @ORM\ManyToOne(targetEntity="ArtistStage", inversedBy="artists")
-     * @ORM\JoinColumn(name="stageId", referencedColumnName="id", nullable=false)
-     */
-    private $stage;
 
     /**
      * @var int
@@ -92,13 +83,6 @@ class Artist
      * @ORM\Column(type="string")
      */
     private $year;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(type="datetime")
-     */
-    private $startOn;
 
     /**
      * @var boolean
@@ -156,7 +140,7 @@ class Artist
     {
         $this->practical = new ArrayCollection();
         $this->website = new ArrayCollection();
-        $this->category = new ArrayCollection();
+        $this->date = new ArrayCollection();
     }
 
     /**
@@ -187,7 +171,7 @@ class Artist
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -210,7 +194,7 @@ class Artist
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -233,7 +217,7 @@ class Artist
     /**
      * Get cover
      *
-     * @return string 
+     * @return string
      */
     public function getCover()
     {
@@ -285,7 +269,7 @@ class Artist
     /**
      * Get year
      *
-     * @return string 
+     * @return string
      */
     public function getYear()
     {
@@ -308,7 +292,7 @@ class Artist
     /**
      * Get startOn
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getStartOn()
     {
@@ -331,7 +315,7 @@ class Artist
     /**
      * Get endOn
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getEndOn()
     {
@@ -354,7 +338,7 @@ class Artist
     /**
      * Get signUpOpen
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getSignUpOpen()
     {
@@ -377,7 +361,7 @@ class Artist
     /**
      * Get finalized
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getFinalized()
     {
@@ -400,7 +384,7 @@ class Artist
     /**
      * Get spotlight
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getSpotlight()
     {
@@ -423,7 +407,7 @@ class Artist
     /**
      * Get isHidden
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getIsHidden()
     {
@@ -446,7 +430,7 @@ class Artist
     /**
      * Get createdOn
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getCreatedOn()
     {
@@ -469,7 +453,7 @@ class Artist
     /**
      * Get editedOn
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getEditedOn()
     {
@@ -502,7 +486,7 @@ class Artist
     /**
      * Get practical
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getPractical()
     {
@@ -535,7 +519,7 @@ class Artist
     /**
      * Get website
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getWebsite()
     {
@@ -558,7 +542,7 @@ class Artist
     /**
      * Get meta
      *
-     * @return \Backend\Core\Entity\Meta 
+     * @return \Backend\Core\Entity\Meta
      */
     public function getMeta()
     {
@@ -604,7 +588,7 @@ class Artist
     /**
      * Get authorId
      *
-     * @return integer 
+     * @return integer
      */
     public function getAuthorId()
     {
@@ -627,7 +611,7 @@ class Artist
     /**
      * Get category
      *
-     * @return \Backend\Modules\Festival\Entity\ArtistCategories 
+     * @return \Backend\Modules\Festival\Entity\ArtistCategories
      */
     public function getCategory()
     {
@@ -650,10 +634,44 @@ class Artist
     /**
      * Get token
      *
-     * @return string 
+     * @return string
      */
     public function getToken()
     {
         return $this->token;
+    }
+
+    /**
+     * Add date
+     *
+     * @param \Backend\Modules\Festival\Entity\ArtistDate $date
+     *
+     * @return Artist
+     */
+    public function addDate(\Backend\Modules\Festival\Entity\ArtistDate $date)
+    {
+        $this->date[] = $date;
+
+        return $this;
+    }
+
+    /**
+     * Remove date
+     *
+     * @param \Backend\Modules\Festival\Entity\ArtistDate $date
+     */
+    public function removeDate(\Backend\Modules\Festival\Entity\ArtistDate $date)
+    {
+        $this->date->removeElement($date);
+    }
+
+    /**
+     * Get date
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getDate()
+    {
+        return $this->date;
     }
 }

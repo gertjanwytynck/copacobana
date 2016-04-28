@@ -41,7 +41,8 @@ class ArtistStageRepository extends EntityRepository
 
         $stages = array();
         foreach ($results as $key => $result) {
-            $stages[$result['id']] = $result['stageName'];
+            $stages[$key]['id'] = $result['id'];
+            $stages[$key]['name'] = $result['stageName'];
         }
 
         return $stages;

@@ -11,6 +11,7 @@ use Backend\Core\Engine\Model;
 use Backend\Core\Engine\MetaMultilanguage;
 use Backend\Core\Entity\Meta;
 use Backend\Modules\Festival\Entity\Artist;
+use Backend\Modules\Festival\Entity\ArtistDate;
 use Backend\Modules\Festival\Entity\ArtistPractical;
 use Backend\Modules\Festival\Entity\ArtistWebsite;
 use Backend\Modules\Festival\Entity\ArtistWebsiteLocale;
@@ -105,12 +106,6 @@ class AddArtist extends ActionAdd
         $this->frm->addText('name',  null, 255, 'inputText title', 'inputTextError title');
         $this->frm->addImage('cover');
 
-        // create practical info
-        $this->frm->addDate('start_on_date');
-        $this->frm->addTime('start_on_time');
-        $this->frm->addDropdown('stageId', $this->stages, '');
-        $this->frm->addDropdown('categoryId', $this->categories, '');
-
         // create status settings
         $this->frm->addRadiobutton('hidden', $rbtHiddenValues, 'Y');
         $this->frm->addDropdown('userId', BackendUsersModel::getUsers(), BackendAuthentication::getUser()->getUserId());
@@ -126,9 +121,10 @@ class AddArtist extends ActionAdd
         $this->frm->addCheckbox('soundEngineer');
         $this->frm->addText('hotMeal', null, 255, 'inputText title', 'inputTextError title');
         $this->frm->addText('veggieMeal', null, 255, 'inputText title', 'inputTextError title');
-        $this->frm->addText('totalCars',  null, 255, 'inputText title', 'inputTextError title');
+        $this->frm->addText('veganMeal', null, 255, 'inputText title', 'inputTextError title');
         $this->frm->addFile('technicalFile');
         $this->frm->addFile('contractFile');
+        $this->frm->addFile('stageFile');
         $this->frm->addEditor('remark');
 
         // create social elements
@@ -170,6 +166,8 @@ class AddArtist extends ActionAdd
     {
         parent::parse();
 
+        $this->tpl->assign('stages', $this->stages);
+        $this->tpl->assign('categories', $this->categories);
         $this->tpl->assign('languages', $this->languages);
     }
 
@@ -178,6 +176,19 @@ class AddArtist extends ActionAdd
      */
     private function validateForm()
     {
+        $arrDates = array();
+        if (!empty($_POST['dates']) && !empty($_POST['times'])) {
+            foreach($_POST['dates'] as $key=>$date) {
+                if (!empty($date)) {
+                    $startOn = new \DateTime();
+                    $timeStamp = \DateTime::createFromFormat('d/m/Y H:i', $date . ' ' . $_POST['times'][$key])->format('U');
+                    $arrDates[$key]['date'] = $startOn->setTimestamp($timeStamp);
+                    $arrDates[$key]['stage'] = $_POST['stages'][$key];
+                    $arrDates[$key]['category'] = $_POST['categories'][$key];
+                }
+            }
+        }
+
         // is the form submitted?
         if ($this->frm->isSubmitted()) {
             // cleanup the submitted fields, ignore fields that were added by hackers
@@ -200,29 +211,11 @@ class AddArtist extends ActionAdd
             if ($this->frm->isCorrect()) {
                 // create artist repo
                 $em = Model::get('doctrine.orm.entity_manager');
-                $stageRepo = $em->getRepository(BackendFestivalModel::ARTIST_STAGE_ENTITY_CLASS);
-                $categoryRepo = $em->getRepository(BackendFestivalModel::ARTIST_CATEGORIES_ENTITY_CLASS);
 
                 $artist = new Artist();
                 $artistPractical = new ArtistPractical();
                 $artistWebsite = new ArtistWebsite();
                 $artist->setName($this->frm->getField('name')->getValue());
-
-                // get the stage
-                if ($this->frm->getField('stageId')->isFilled(Language::err('FieldIsRequired'))) {
-                    $stageRepo = $stageRepo->find($this->frm->getField('stageId')->getValue());
-                    if ($stageRepo === null) {
-                        $this->frm->getField('stageId')->setError(Language::err('InvalidValue'));
-                    }
-                }
-
-                // get the stage
-                if ($this->frm->getField('categoryId')->isFilled(Language::err('FieldIsRequired'))) {
-                    $categoryRepo = $categoryRepo->find($this->frm->getField('categoryId')->getValue());
-                    if ($categoryRepo === null) {
-                        $this->frm->getField('categoryId')->setError(Language::err('InvalidValue'));
-                    }
-                }
 
                 // upload the cover
                 if ($this->frm->getField('cover')->isFilled()) {
@@ -232,13 +225,6 @@ class AddArtist extends ActionAdd
                     );
                     $this->frm->getField('cover')->generateThumbnails($imagePath, $artist->getCover());
                 }
-
-                // get start on datetime
-                $startOn = new \DateTime();
-                $startOn = $startOn->setTimestamp(Model::getUTCTimestamp(
-                    $this->frm->getField('start_on_date'),
-                    $this->frm->getField('start_on_time')
-                ));
 
                 // get the meta
                 $meta = $this->meta['meta'];
@@ -252,13 +238,29 @@ class AddArtist extends ActionAdd
                 $artist->setSpotlight($this->frm->getField('spotlight')->isChecked());
                 $artist->setIsHidden(($this->frm->getField('hidden')->getValue() == 'Y'));
                 $artist->setAuthorId($this->frm->getField('userId')->getValue());
-                $artist->setStage($stageRepo);
                 $artist->setToken(uniqid());
-                $artist->setCategory($categoryRepo);
                 $artist->setMeta($meta->save());
 
                 // insert the artist
                 $em->persist($artist);
+
+                // add dates
+                foreach ($arrDates as $date) {
+                    $stageRepo = $em->getRepository(BackendFestivalModel::ARTIST_STAGE_ENTITY_CLASS);
+                    $categoryRepo = $em->getRepository(BackendFestivalModel::ARTIST_CATEGORIES_ENTITY_CLASS);
+                    $stageRepo = $stageRepo->find($date['stage']);
+                    $categoryRepo = $categoryRepo->find($date['category']);
+
+                    if ($stageRepo != null && $categoryRepo != null) {
+                        $artistDate = new ArtistDate();
+                        $artistDate->setArtist($artist);
+                        $artistDate->setStartOn($date['date']);
+                        $artistDate->setStage($stageRepo);
+                        $artistDate->setCategory($categoryRepo);
+                        $em->persist($artistDate);
+                        $em->flush();
+                    }
+                }
 
                 // set artist pratical
                 $artistPractical->setArtist($artist);
@@ -269,7 +271,7 @@ class AddArtist extends ActionAdd
                 $artistPractical->setSoundEngineer($this->frm->getField('soundEngineer')->isChecked());
                 $artistPractical->setHotMeal($this->frm->getField('hotMeal')->getValue());
                 $artistPractical->setVeggieMeal($this->frm->getField('veggieMeal')->getValue());
-                $artistPractical->setTotalCars($this->frm->getField('totalCars')->getValue());
+                $artistPractical->setVeganMeal($this->frm->getField('veganMeal')->getValue());
                 $artistPractical->setRemark($this->frm->getField('remark')->getValue());
 
                 // upload the technical file
@@ -289,6 +291,15 @@ class AddArtist extends ActionAdd
                     $this->frm->getField('contractFile')->moveFile($imagePath . '/' . $artistPractical->getContractFilename());
 
                 }
+                // upload stage file
+                if ($this->frm->getField('stageFile')->isFilled()) {
+                    $imagePath = FRONTEND_FILES_PATH . '/festival/artists/files/stages';
+                    $artistPractical->setContractFilename(CommonUri::getUrl((string)$this->frm->getField('stageFile')->getFileName(false) . '_' . uniqid())
+                        . '.' . $this->frm->getField('stageFile')->getExtension()
+                    );
+                    $this->frm->getField('stageFile')->moveFile($imagePath . '/' . $artistPractical->getStageFileName());
+
+                }
                 // insert the artist
                 $em->persist($artistPractical);
 
@@ -303,7 +314,6 @@ class AddArtist extends ActionAdd
                 $artistWebsite->setBio($this->frm->getField('bio')->getValue());
                 // insert the artist
                 $em->persist($artistWebsite);
-
 
                 // loop through all languages
                 foreach ($this->languages as $abbreviation => $language) {

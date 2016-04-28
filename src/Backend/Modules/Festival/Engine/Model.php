@@ -14,6 +14,7 @@ use Backend\Core\Engine\Model as BackendModel;
 class Model
 {
     const ARTIST_ENTITY_CLASS =                             'Backend\Modules\Festival\Entity\Artist';
+    const ARTIST_DATE_ENTITY_CLASS =                        'Backend\Modules\Festival\Entity\ArtistDate';
     const ARTIST_REPOSITORY_ENTITY_CLASS =                  'Backend\Modules\Festival\Entity\ArtistRepository';
     const ARTIST_CATEGORIES_ENTITY_CLASS =                  'Backend\Modules\Festival\Entity\ArtistCategories';
     const ARTIST_PRACTICAL_ENTITY_CLASS =                   'Backend\Modules\Festival\Entity\ArtistPractical';
