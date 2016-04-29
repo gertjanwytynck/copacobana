@@ -30,7 +30,9 @@ class RecentArticlesList extends Widget
     protected function parse()
     {
         // get the item
-        $items = FrontendNewsModel::getAll(Model::getModuleSetting('News', 'recent_articles_list_num_items', 3), 0, null, true);
+        // $items = FrontendNewsModel::getAll(Model::get('fork.settings')->getForModule('News', 'recent_articles_list_num_items', 3), 0, null, true);
+        //
+        $items = FrontendNewsModel::getAll(3, 0, null, true);
 
         // append slideKey
         $i = 0;

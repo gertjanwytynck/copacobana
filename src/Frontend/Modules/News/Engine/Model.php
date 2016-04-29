@@ -103,7 +103,7 @@ class Model implements FrontendTagsInterface
                     $categoryLink . '/' . $result->getArticle()->getCategory()->getLocale(FRONTEND_LANGUAGE)->getMeta()->getUrl()
             );
 
-            if (FrontendModel::getModuleSetting('News', 'cover_image_enabled')) {
+            if (FrontendModel::get('fork.settings')->getForModule('News', 'cover_image_enabled')) {
                 $return[$result->getId()]['cover_image'] = $result->getArticle()->getCoverImage();
             }
         }
@@ -323,11 +323,11 @@ class Model implements FrontendTagsInterface
             'youtube_url' =>  $result->getArticle()->getYoutubeUrl()
         );
 
-        if (FrontendModel::getModuleSetting('News', 'cover_image_enabled')) {
+        if (FrontendModel::get('fork.settings')->getForModule('News', 'cover_image_enabled')) {
             $article['cover_image'] = $result->getArticle()->getCoverImage();
         }
 
-        if (FrontendModel::getModuleSetting('News', 'multi_images_enabled')) {
+        if (FrontendModel::get('fork.settings')->getForModule('News', 'multi_images_enabled')) {
             $qb = $em->createQueryBuilder();
             $query = $qb->select('ai')
                 ->from(self::ARTICLE_IMAGE_ENTITY_CLASS, 'ai')
@@ -402,11 +402,11 @@ class Model implements FrontendTagsInterface
             'full_url' => $link . '/' . $result->getMeta()->getUrl()
         );
 
-        if (FrontendModel::getModuleSetting('News', 'cover_image_enabled')) {
+        if (FrontendModel::get('fork.settings')->getForModule('News', 'cover_image_enabled')) {
             $article['cover_image'] = $result->getArticle()->getCoverImage();
         }
 
-        if (FrontendModel::getModuleSetting('News', 'multi_images_enabled')) {
+        if (FrontendModel::get('fork.settings')->getForModule('News', 'multi_images_enabled')) {
             $qb = $em->createQueryBuilder();
             $query = $qb->select('ai')
                 ->from(self::ARTICLE_IMAGE_ENTITY_CLASS, 'ai')
@@ -649,7 +649,7 @@ class Model implements FrontendTagsInterface
                     'category_title' => $result->getArticle()->getCategory()->getLocale(FRONTEND_LANGUAGE)->getTitle(),
                 );
 
-                if (FrontendModel::getModuleSetting('News', 'cover_image_enabled')) {
+                if (FrontendModel::get('fork.settings')->getForModule('News', 'cover_image_enabled')) {
                     $items[$result->getArticle()->getId()]['cover_image'] = $result->getArticle()->getCoverImage();
                 }
             }

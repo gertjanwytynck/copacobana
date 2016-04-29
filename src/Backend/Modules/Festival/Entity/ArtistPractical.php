@@ -605,39 +605,6 @@ class ArtistPractical
     }
 
     /**
-     * Add onstage
-     *
-     * @param \Backend\Modules\Festival\Entity\ArtistPracticalOnstage $onstage
-     * @return ArtistPractical
-     */
-    public function addOnstage(\Backend\Modules\Festival\Entity\ArtistPracticalOnstage $onstage)
-    {
-        $this->onstage[] = $onstage;
-
-        return $this;
-    }
-
-    /**
-     * Remove onstage
-     *
-     * @param \Backend\Modules\Festival\Entity\ArtistPracticalOnstage $onstage
-     */
-    public function removeOnstage(\Backend\Modules\Festival\Entity\ArtistPracticalOnstage $onstage)
-    {
-        $this->onstage->removeElement($onstage);
-    }
-
-    /**
-     * Get onstage
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getOnstage()
-    {
-        return $this->onstage;
-    }
-
-    /**
      * Set veganMeal
      *
      * @param integer $veganMeal

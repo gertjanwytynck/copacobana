@@ -266,7 +266,7 @@ class EditArtist extends ActionEdit
         $this->tpl->assign('personsBackstage', $this->arrBackstage);
         $this->tpl->assign('totalBackstage', count($this->arrBackstage));
         $this->tpl->assign('cars', $this->arrCar);
-        $this->tpl->assign('totalCars', count($this->arrBackstage));
+        $this->tpl->assign('totalCars', count($this->arrCar));
     }
 
     /**

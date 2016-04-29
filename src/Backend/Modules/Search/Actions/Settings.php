@@ -57,7 +57,7 @@ class Settings extends BackendBaseActionEdit
         $this->frm = new BackendForm('settings');
 
         // get current settings
-        $this->settings = BackendSearchModel::getModuleSettings();
+        $this->settings =$this->get('fork.settings')->getForModule('Search');
 
         // add field for pagination
         $this->frm->addDropdown(

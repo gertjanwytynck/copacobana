@@ -242,15 +242,15 @@ class ArtistStage
         $this->artists->removeElement($artists);
     }
 
-    /**
-     * Get artists
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getFestival()
-    {
-        return $this->artists;
-    }
+    // *
+    //  * Get artists
+    //  *
+    //  * @return \Doctrine\Common\Collections\Collection
+
+    // public function getFestival()
+    // {
+    //     return $this->artists;
+    // }
 
     /**
      * Get artists
