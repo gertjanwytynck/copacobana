@@ -152,6 +152,10 @@
         <translation language="nl"><![CDATA[contract]]></translation>
         <translation language="en"><![CDATA[contract]]></translation>
       </item>
+      <item type="label" name="ExtraFile">
+        <translation language="nl"><![CDATA[extra bestand]]></translation>
+        <translation language="en"><![CDATA[extra file]]></translation>
+      </item>
       <item type="label" name="Bio">
         <translation language="nl"><![CDATA[Bio]]></translation>
         <translation language="en"><![CDATA[Bio]]></translation>
@@ -392,21 +396,21 @@
       </item>
       <item type="error" name="Url">
         <translation language="nl"><![CDATA[Deze url klopt niet.]]></translation>
-        <translation language="en"><![CDATA[Email not valid]]></translation>
+        <translation language="en"><![CDATA[Url not valid]]></translation>
       </item>
       <item type="label" name="SignUpForm">
         <translation language="nl"><![CDATA[registratieformulier]]></translation>
-        <translation language="en"><![CDATA[sign up]]></translation>
+        <translation language="en"><![CDATA[registration form]]></translation>
       </item>
       <item type="label" name="SignUpOpen">
         <translation language="nl"><![CDATA[Maak mijn aanpassingen definitief]]></translation>
-        <translation language="en"><![CDATA[sign up open]]></translation>
+        <translation language="en"><![CDATA[Confirm my adjustments]]></translation>
       </item>
       <item type="label" name="Stage">
         <translation language="nl"><![CDATA[podium]]></translation>
         <translation language="en"><![CDATA[stage]]></translation>
       </item>
-      <item type="label" name="PracticalInfo">
+      <item type="message" name="PracticalInfo">
         <translation language="nl"><![CDATA[paktische informatie]]></translation>
         <translation language="en"><![CDATA[practical info]]></translation>
       </item>
@@ -424,15 +428,15 @@
       </item>
       <item type="label" name="FirstName">
         <translation language="nl"><![CDATA[voornaam]]></translation>
-        <translation language="en"><![CDATA[firtsname]]></translation>
+        <translation language="en"><![CDATA[first name]]></translation>
       </item>
       <item type="label" name="Phone">
         <translation language="nl"><![CDATA[telefoon]]></translation>
-        <translation language="en"><![CDATA[telefoon]]></translation>
+        <translation language="en"><![CDATA[phone]]></translation>
       </item>
       <item type="label" name="LicencePlate">
         <translation language="nl"><![CDATA[nummerplaat]]></translation>
-        <translation language="en"><![CDATA[licence plate]]></translation>
+        <translation language="en"><![CDATA[license plate]]></translation>
       </item>
       <item type="label" name="Email">
         <translation language="nl"><![CDATA[email adres]]></translation>
@@ -448,7 +452,7 @@
       </item>
       <item type="label" name="SoundEngineer">
         <translation language="nl"><![CDATA[breng je een eigen geluidstechnieker mee?]]></translation>
-        <translation language="en"><![CDATA[sound engineer]]></translation>
+        <translation language="en"><![CDATA[Do you bring a sound engineer?]]></translation>
       </item>
       <item type="label" name="HotMeal">
         <translation language="nl"><![CDATA[warme maaltijd]]></translation>
@@ -468,23 +472,31 @@
       </item>
       <item type="label" name="Files">
         <translation language="nl"><![CDATA[Contract & technische fiche]]></translation>
-        <translation language="en"><![CDATA[files]]></translation>
+        <translation language="en"><![CDATA[Contact & technical files]]></translation>
       </item>
       <item type="label" name="UploadedFile">
         <translation language="nl"><![CDATA[Er is al een bestand upgeload. Je kan hieronder een ander bestand toevoegen.]]></translation>
-        <translation language="en"><![CDATA[Je hebt al een bestand upgeload.]]></translation>
+        <translation language="en"><![CDATA[There is already uploaded a file. You can add another file below.]]></translation>
       </item>
       <item type="label" name="OtherFile">
         <translation language="nl"><![CDATA[Voeg een ander bestand toe.]]></translation>
-        <translation language="en"><![CDATA[Voeg een ander bestand toe.]]></translation>
+        <translation language="en"><![CDATA[Add another file.]]></translation>
       </item>
       <item type="label" name="UploadContract">
         <translation language="nl"><![CDATA[upload contract]]></translation>
         <translation language="en"><![CDATA[upload contract]]></translation>
       </item>
+       <item type="label" name="UploadExtra">
+        <translation language="nl"><![CDATA[upload een extra bestand.]]></translation>
+        <translation language="en"><![CDATA[upload an extra file.]]></translation>
+      </item>
+       <item type="label" name="UploadExtra">
+        <translation language="nl"><![CDATA[upload een extra file]]></translation>
+        <translation language="en"><![CDATA[upload an extra file]]></translation>
+      </item>
       <item type="label" name="UploadTechnical">
         <translation language="nl"><![CDATA[upload technische fiche]]></translation>
-        <translation language="en"><![CDATA[rider]]></translation>
+        <translation language="en"><![CDATA[upload rider]]></translation>
       </item>
       <item type="label" name="Remark">
         <translation language="nl"><![CDATA[opmerking]]></translation>
@@ -492,11 +504,11 @@
       </item>
       <item type="label" name="Cover">
         <translation language="nl"><![CDATA[Afbeelding]]></translation>
-        <translation language="en"><![CDATA[Afbeelding]]></translation>
+        <translation language="en"><![CDATA[Image]]></translation>
       </item>
       <item type="label" name="UploadCover">
         <translation language="nl"><![CDATA[upload jouw afbeelding]]></translation>
-        <translation language="en"><![CDATA[upload contract]]></translation>
+        <translation language="en"><![CDATA[upload image]]></translation>
       </item>
       <item type="label" name="Download">
         <translation language="nl"><![CDATA[download]]></translation>
@@ -504,11 +516,11 @@
       </item>
       <item type="label" name="Delete">
         <translation language="nl"><![CDATA[verwijder]]></translation>
-        <translation language="en"><![CDATA[verwijder]]></translation>
+        <translation language="en"><![CDATA[delete]]></translation>
       </item>
       <item type="label" name="SocialMedia">
         <translation language="nl"><![CDATA[sociale media]]></translation>
-        <translation language="en"><![CDATA[sociale media]]></translation>
+        <translation language="en"><![CDATA[social media]]></translation>
       </item>
       <item type="label" name="Facebook">
         <translation language="nl"><![CDATA[facebook]]></translation>
@@ -543,8 +555,8 @@
         <translation language="en"><![CDATA[Maximum file size: %1$s MB]]></translation>
       </item>
       <item type="message" name="Backstage">
-        <translation language="nl"><![CDATA[Welke personen zullen er extra aanwezig zijn? (Naam + Voornaam).]]></translation>
-        <translation language="en"><![CDATA[Total persons backstage]]></translation>
+        <translation language="nl"><![CDATA[Welke personen zullen er aanwezig zijn? (Naam + Voornaam).]]></translation>
+        <translation language="en"><![CDATA[Which persons 'll be attending the backstage area? (Name + first name).]]></translation>
       </item>
       <item type="label" name="Crew">
         <translation language="nl"><![CDATA[crew]]></translation>
@@ -560,7 +572,7 @@
       </item>
        <item type="label" name="Stage">
         <translation language="nl"><![CDATA[podium]]></translation>
-        <translation language="en"><![CDATA[podium]]></translation>
+        <translation language="en"><![CDATA[stage]]></translation>
       </item>
        <item type="label" name="Time">
         <translation language="nl"><![CDATA[tijdstip]]></translation>
@@ -571,7 +583,10 @@
                             Contactgegevens <strong>tijdens</strong> het festival: 0472 66 66 50</br>
                             Verantwoordelijke klank & licht: La Roy (Michiel) - techniek@copacobana.be - 0496 75 74 11</br>
                             Verantwoordelijke stage manager: Mathieu - techniek@copacobana.be - 0472 33 44 63</br>]]></translation>
-        <translation language="en"><![CDATA[Crew]]></translation>
+        <translation language="en"><![CDATA[Contact <strong>before and after</strong> the festival: artiest@copacobana.be - 0497 19 18 66</br>
+                            Contact <strong>during</strong> the festival: 0472 66 66 50</br>
+                            Responsible sound & light: La Roy (Michiel) - techniek@copacobana.be - 0496 75 74 11</br>
+                            Responsible stage manager: Mathieu - techniek@copacobana.be - 0472 33 44 63</br>]]></translation>
       </item>
         <item type="label" name="Meal">
         <translation language="nl"><![CDATA[maaltijd]]></translation>
@@ -580,67 +595,71 @@
       <item type="message" name="Cover">
         <translation language="nl">
           <![CDATA[Voeg hier jouw persoonlijke afbeelding toe. Deze zal dienen als coverfoto.]]></translation>
-        <translation language="en"><![CDATA[message cover]]></translation>
+        <translation language="en"><![CDATA[Upload your cover photo]]></translation>
       </item>
       <item type="message" name="FileContract">
         <translation language="nl"><![CDATA[Voeg hier je contract toe.]]></translation>
-        <translation language="en"><![CDATA[message files]]></translation>
+        <translation language="en"><![CDATA[Upload your contract]]></translation>
+      </item>
+      <item type="message" name="FileExtra">
+        <translation language="nl"><![CDATA[Voeg hier een extra bestand toe.]]></translation>
+        <translation language="en"><![CDATA[Upload an extra file.]]></translation>
       </item>
       <item type="message" name="FileStage">
-        <translation language="nl"><![CDATA[Voeg hier je stagefile toe.]]></translation>
-        <translation language="en"><![CDATA[message files]]></translation>
+        <translation language="nl"><![CDATA[Voeg hier je stageplan toe.]]></translation>
+        <translation language="en"><![CDATA[Upload your stageplan]]></translation>
       </item>
       <item type="message" name="FileTechnical">
         <translation language="nl"><![CDATA[Voeg hier je technische fiche toe.]]></translation>
-        <translation language="en"><![CDATA[message files]]></translation>
+        <translation language="en"><![CDATA[Upload your rider]]></translation>
       </item>
       <item type="message" name="Meal">
-        <translation language="nl">
-          <![CDATA[Jullie kunnen voor of na het optreden genieten van een maaltijd. Tijdstip af te stemmen met de backstage verantwoordelijke.]]></translation>
-        <translation language="en"><![CDATA[message files]]></translation>
+        <translation language="nl"><![CDATA[Jullie kunnen voor of na het optreden genieten van een maaltijd. Tijdstip af te stemmen met de backstage verantwoordelijke.]]></translation>
+        <translation language="en"><![CDATA[You can enjoy a meal before or after your performance. You can plan the specific time with our backstage manager.]]></translation>
+      </item>
+      <item type="message" name="NoFileStage">
+        <translation language="nl"><![CDATA[Geen stage plan toegevoegd.]]></translation>
+        <translation language="en"><![CDATA[No added stage file.]]></translation>
+      </item>
+      <item type="message" name="NoFileExtra">
+        <translation language="nl"><![CDATA[Geen extra bestand toegevoegd.]]></translation>
+        <translation language="en"><![CDATA[No extra file.]]></translation>
       </item>
       <item type="message" name="Cars">
-        <translation language="nl">
-          <![CDATA[Probeer het aantal auto's te beperken tot een minimum. De artiesteningang is te bereiken via de parking van S&R Rozebroekenslag Victor Braeckmanlaan 180, 9040 Gent. Volg de pijltjes. Geef 5min voor aankomst een seintje (0472 66 66 50). ]]></translation>
-        <translation language="en"><![CDATA[message files]]></translation>
+        <translation language="nl"><![CDATA[Probeer het aantal auto's te beperken tot een minimum. De artiesteningang is te bereiken via de parking van S&R Rozebroeken, Victor Braeckmanlaan 180, 9040 Gent. Volg de pijltjes. Geef 5min voor aankomst een seintje (0472 66 66 50). ]]></translation>
+        <translation language="en"><![CDATA[Try to limit the number of cars to a minimum. The stage door is accessible from the parking lot of S&R Rozebroeken, Victor Braeckmanlaan 180, 9040 Ghent. Follow the arrows. Give 5min before arrival a call (0472 66 66 50). ]]></translation>
       </item>
       <item type="error" name="IsUrl">
-        <translation language="nl">
-          <![CDATA[De opgegeven url klopt niet. Voorbeeld http://www.facebook.com/CopacobanaFestival]]></translation>
-        <translation language="en"><![CDATA[message files]]></translation>
+        <translation language="nl"><![CDATA[De opgegeven url klopt niet. Voorbeeld http://www.facebook.com/CopacobanaFestival]]></translation>
+        <translation language="en"><![CDATA[Url not valid. Example: http://www.facebook.com/CopacobanaFestival]]></translation>
       </item>
       <item type="message" name="SocialUrl">
-        <translation language="nl"><![CDATA[Hier kan je jouw sociale media ingeven. Voorbeeld: http://www.facebook.com/CopacobanaFestival]]></translation>
-        <translation language="en"><![CDATA[message files]]></translation>
+        <translation language="nl"><![CDATA[Hier kan je jouw sociale media ingeven. Voorbeeld: http://www....]]></translation>
+        <translation language="en"><![CDATA[Insert your social media. Example: http://www....]]></translation>
       </item>
       <item type="message" name="Bio">
         <translation language="nl"><![CDATA[Voeg een korte beschrijving of bio toe.]]></translation>
-        <translation language="en"><![CDATA[message files]]></translation>
-      </item>
-      <item type="message" name="NoFileStage">
-        <translation language="nl"><![CDATA[Geen stage file toegevoegd.]]></translation>
-        <translation language="en"><![CDATA[message files]]></translation>
+        <translation language="en"><![CDATA[Insert a confine bio.]]></translation>
       </item>
       <item type="message" name="DeadLinePractical">
-        <translation language="nl">
-          <![CDATA[De absolute deadline voor het in vullen van deze informatie: 17 juni 2015]]></translation>
-        <translation language="en"><![CDATA[message files]]></translation>
+        <translation language="nl"><![CDATA[De absolute deadline voor het in vullen van deze informatie: 5 juni 2016]]></translation>
+        <translation language="en"><![CDATA[The deadline for filling in this form is 5 Juni 2016]]></translation>
       </item>
       <item type="message" name="ContactPerson">
         <translation language="nl"><![CDATA[Vul hier de gegevens in van de persoon die we mogen contacteren bij vragen of opmerkingen.]]></translation>
-        <translation language="en"><![CDATA[message files]]></translation>
+        <translation language="en"><![CDATA[Fill in the details of the person we can contact in case of questions or comments.]]></translation>
       </item>
       <item type="message" name="WebsiteInfo">
         <translation language="nl"><![CDATA[Deze informatie wordt gepubliceerd op onze website.]]></translation>
-        <translation language="en"><![CDATA[message files]]></translation>
+        <translation language="en"><![CDATA[This information 'll be published on our site.]]></translation>
       </item>
       <item type="message" name="Remark">
         <translation language="nl"><![CDATA[Voeg een opmerking toe]]></translation>
-        <translation language="en"><![CDATA[Message remark]]></translation>
+        <translation language="en"><![CDATA[Add a comment]]></translation>
       </item>
       <item type="message" name="ContactCopa">
         <translation language="nl"><![CDATA[Voeg een opmerking toe]]></translation>
-        <translation language="en"><![CDATA[Message remark]]></translation>
+        <translation language="en"><![CDATA[Add a comment]]></translation>
       </item>
     </Core>
   </Frontend>

@@ -230,8 +230,14 @@
                             </div>
                             <div class="options">
                                 <p>
-                                    <label for="contractFile">{$lblStageFile|ucfirst}</label>
+                                    <label for="stageFile">{$lblStageFile|ucfirst}</label>
                                     {$fileStageFile}{$fileStageFileError}
+                                </p>
+                            </div>
+                             <div class="options">
+                                <p>
+                                    <label for="extraFile">{$lblExtraFile|ucfirst}</label>
+                                    {$fileExtraFile}{$fileExtraFileError}
                                 </p>
                             </div>
                         </div>

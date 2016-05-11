@@ -306,6 +306,20 @@
                                     {$fileStageFile}{$fileStageFileError}
                                 </p>
                             </div>
+
+                             <div class="options">
+                                {option:practical.extraFilename}
+                                    <p class="downloadHolder">
+                                        <a href="{$FRONTEND_FILES_URL}/festival/artists/files/extra/{$practical.extraFilename}" target="_blank">{$lblDownload|ucfirst}</a>
+                                        <label for="deleteImage">{$chkDeleteExtra} {$lblDelete|ucfirst}</label>
+                                        {$chkDeleteExtraError}
+                                    </p>
+                                {/option:practical.extraFilename}
+                                <p>
+                                    <label for="stageFile">{$lblExtraFile|ucfirst}</label>
+                                    {$fileExtraFile}{$fileExtraFileError}
+                                </p>
+                            </div>
                         </div>
 					</td>
 				</tr>

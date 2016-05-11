@@ -125,6 +125,7 @@ class AddArtist extends ActionAdd
         $this->frm->addFile('technicalFile');
         $this->frm->addFile('contractFile');
         $this->frm->addFile('stageFile');
+        $this->frm->addFile('extraFile');
         $this->frm->addEditor('remark');
 
         // create social elements
@@ -294,10 +295,20 @@ class AddArtist extends ActionAdd
                 // upload stage file
                 if ($this->frm->getField('stageFile')->isFilled()) {
                     $imagePath = FRONTEND_FILES_PATH . '/festival/artists/files/stages';
-                    $artistPractical->setContractFilename(CommonUri::getUrl((string)$this->frm->getField('stageFile')->getFileName(false) . '_' . uniqid())
+                    $artistPractical->setStageFilename(CommonUri::getUrl((string)$this->frm->getField('stageFile')->getFileName(false) . '_' . uniqid())
                         . '.' . $this->frm->getField('stageFile')->getExtension()
                     );
                     $this->frm->getField('stageFile')->moveFile($imagePath . '/' . $artistPractical->getStageFileName());
+
+                }
+
+                 // upload extra file
+                if ($this->frm->getField('extraFile')->isFilled()) {
+                    $imagePath = FRONTEND_FILES_PATH . '/festival/artists/files/extra';
+                    $artistPractical->setExtraFilename(CommonUri::getUrl((string)$this->frm->getField('extraFile')->getFileName(false) . '_' . uniqid())
+                        . '.' . $this->frm->getField('extraFile')->getExtension()
+                    );
+                    $this->frm->getField('extraFile')->moveFile($imagePath . '/' . $artistPractical->getExtraFilename());
 
                 }
                 // insert the artist

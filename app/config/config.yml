@@ -80,6 +80,7 @@ monolog:
 
 swiftmailer:
     transport: "mail"
+    disable_delivery:  false
 
 services:
     database:

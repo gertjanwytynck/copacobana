@@ -130,6 +130,13 @@ class ArtistPractical
     /**
      * @var string
      *
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $extraFilename;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(type="text", nullable=true)
      */
     private $remark;
@@ -182,6 +189,7 @@ class ArtistPractical
         $this->removeTechnical();
         $this->removeContract();
         $this->removeStage();
+        $this->removeExtra();
     }
 
     /**
@@ -712,5 +720,56 @@ class ArtistPractical
     public function getCar()
     {
         return $this->car;
+    }
+
+    /**
+     * Set extraFilename
+     *
+     * @param string $extraFilename
+     *
+     * @return ArtistPractical
+     */
+    public function setExtraFilename($extraFilename)
+    {
+        $this->extraFilename = $extraFilename;
+
+        return $this;
+    }
+
+    /**
+     * Get extraFilename
+     *
+     * @return string
+     */
+    public function getExtraFilename()
+    {
+        return $this->extraFilename;
+    }
+
+    /* Remove file image
+    *
+    * @return bool
+    */
+    public function removeExtra()
+    {
+        if ($this->extraFilename !== null) {
+            $finder = new Finder();
+            $fs = new Filesystem();
+            $imagePath = FRONTEND_FILES_PATH . '/festival/artists/files/extra';
+
+            foreach ($finder->directories()->in($imagePath) as $directory) {
+                $file = $directory . '/' . $this->extraFilename;
+
+                if (is_file($file)) {
+                    $fs->remove($file);
+                }
+            }
+
+            $this->extraFilename = null;
+
+            return true;
+        }
+
+        return false;
     }
 }

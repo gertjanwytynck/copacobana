@@ -174,6 +174,8 @@ class EditArtist extends ActionEdit
             $this->frm->addCheckbox('delete_contract');
             $this->frm->addFile('stageFile', $practic->getStageFilename());
             $this->frm->addCheckbox('delete_stage');
+            $this->frm->addFile('extraFile', $practic->getExtraFilename());
+            $this->frm->addCheckbox('delete_extra');
             $this->frm->addTextarea('remark', $practic->getRemark());
 
             // get backstage artist
@@ -415,6 +417,21 @@ class EditArtist extends ActionEdit
                             . '.' . $this->frm->getField('stageFile')->getExtension()
                         );
                         $this->frm->getField('stageFile')->moveFile($imagePath . '/' . $content->getStageFilename());
+                    }
+
+                     // delete the stage
+                    if ($this->frm->getField('delete_extra')->isChecked()) {
+                        $content->removeExtra();
+                    }
+
+                    // upload the file
+                    if ($this->frm->getField('extraFile')->isFilled()) {
+                        $content->removeExtra();
+                        $imagePath = FRONTEND_FILES_PATH . '/festival/artists/files/extra';
+                        $content->setExtraFilename(CommonUri::getUrl((string)$this->frm->getField('extraFile')->getFileName(false) . '_' . uniqid())
+                            . '.' . $this->frm->getField('extraFile')->getExtension()
+                        );
+                        $this->frm->getField('extraFile')->moveFile($imagePath . '/' . $content->getExtraFilename());
                     }
 
                     // insert the practical
