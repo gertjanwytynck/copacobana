@@ -70,7 +70,7 @@
                         </div>
 
 			            <div class="box playDates">
-                          <div class="heading">
+                            <div class="heading">
                                 <h3>{$lblPractical|ucfirst}</h3>
                             </div>
                             {iteration:dates}
@@ -112,6 +112,9 @@
                                 <p class="remove hidden">Remove</p>
                             </div>
                             {/iteration:dates}
+                            <div class="options copyDate">
+                               <p>Add another date</p>
+                            </div>
                         </div>
 						<div id="publishOptions" class="box">
 							<div class="heading">
