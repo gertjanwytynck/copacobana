@@ -54,7 +54,7 @@ class Images extends ActionAdd
         }
 
         // get module settings
-        $this->settings = $this->get('fork.settings')->getForModule($this->URL->getModule());
+        $this->settings = $this->get('fork.settings')->getForModule('News');
     }
 
     /**

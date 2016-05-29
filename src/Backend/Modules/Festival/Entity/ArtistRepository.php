@@ -75,13 +75,15 @@ class ArtistRepository extends EntityRepository
     public function _findByUrl($url, $ignoreId = null)
     {
         $qb = $this->createQueryBuilder('a')
-            ->select('a', 'ap', 'ars', 'ab', 'ad', 'm', 'apb', 'ac')
+            ->select('a','c', 'ap', 'ars', 'awl', 'ab', 'ad', 'm', 'apb', 'ac')
             ->innerJoin('a.meta', 'm')
             ->leftJoin('a.practical', 'ap')
             ->leftJoin('ap.backstage', 'apb')
             ->leftJoin('a.website', 'ab')
+            ->leftJoin('ab.locales', 'awl')
             ->leftJoin('a.date', 'ad')
             ->leftJoin('ad.stage', 'ars')
+            ->leftJoin('ad.category', 'c')
             ->leftJoin('ap.car', 'ac')
             ->where('m.url = :url')
             ->setParameters(array(
@@ -129,12 +131,15 @@ class ArtistRepository extends EntityRepository
     public function _getAll()
     {
         $qb = $this->createQueryBuilder('a')
-            ->select('a', 'aw', 'awl')
+            ->select('a', 'm', 'aw', 'awl', 'ad', 'ars')
+            ->leftJoin('a.meta', 'm')
             ->leftJoin('a.website', 'aw')
             ->leftJoin('aw.locales', 'awl')
-            ->where('a.isHidden = :hidden' )
-            ->where('a.year = :year' )
-            ->orderBy('a.startOn', 'ASC')
+            ->leftJoin('a.date', 'ad')
+            ->leftJoin('ad.stage', 'ars')
+            ->where('a.isHidden = :hidden')
+            ->andWhere('a.year = :year')
+            ->orderBy('a.name', 'ASC')
             ->setParameters(array(
                 'hidden' => '0',
                 'year' => '2016'
@@ -153,9 +158,11 @@ class ArtistRepository extends EntityRepository
     public function _getAllSpotlight()
     {
         $qb = $this->createQueryBuilder('a')
-            ->select('a', 'aw', 'awl')
+            ->select('a', 'm', 'aw', 'awl', 'ad')
+            ->leftJoin('a.meta', 'm')
             ->leftJoin('a.website', 'aw')
             ->leftJoin('aw.locales', 'awl')
+            ->leftJoin('a.date', 'ad')
             ->where('a.isHidden = :hidden' )
             ->andWhere('a.spotlight = :spotlight' )
             ->andWhere('a.year = :year' )
@@ -166,6 +173,30 @@ class ArtistRepository extends EntityRepository
                 'year' => '2016'
             ))
 
+        ;
+
+        return (array) $qb->getQuery()->getResult(Query::HYDRATE_ARRAY);
+    }
+
+      /**
+     * Get all info for an artist
+     *
+     * @return Artists|array  All the artists for spotlight
+     */
+    public function _getRandomArtists()
+    {
+        $qb = $this->createQueryBuilder('a')
+            ->select('a', 'm', 'aw', 'awl', 'ad')
+            ->leftJoin('a.meta', 'm')
+            ->leftJoin('a.website', 'aw')
+            ->leftJoin('aw.locales', 'awl')
+            ->leftJoin('a.date', 'ad')
+            ->where('a.isHidden = :hidden' )
+            ->andWhere('a.year = :year' )
+            ->setParameters(array(
+                'hidden' => '0',
+                'year' => '2016'
+            ))
         ;
 
         return (array) $qb->getQuery()->getResult(Query::HYDRATE_ARRAY);

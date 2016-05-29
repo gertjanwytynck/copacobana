@@ -6335,8 +6335,8 @@ main {
 .btn-all-news a,
 .btn-all-news input {
   width: 300px;
-  background: rgba(255, 255, 255, 0.3) url('../images/arrow-next.svg') no-repeat top 5px right 10px;
-  background-size: 30px 30px;
+  background: rgba(255, 255, 255, 0.3) url('../images/arrow-next.svg') no-repeat top 7.5px right 10px;
+  background-size: 25px 25px;
   padding: 10px 100px 10px 10px;
   border: 2px solid #3189c9;
   border-radius: 5px;
@@ -6655,6 +6655,13 @@ main {
   font-weight: 400;
   text-align: left;
 }
+.intro .news article .read-more {
+  margin-top: 10px;
+  color: #3189c9;
+}
+.intro .news article .read-more span {
+  font-size: 0.8em;
+}
 .intro .news article a {
   color: #2aa2c2;
 }
@@ -6831,7 +6838,7 @@ main {
 #mappie {
   position: relative;
   width: 100%;
-  border-top: 1px solid #29a2c2;
+  border-top: 1px solid #3189c9;
   color: #174556;
 }
 #newsItemsIndex {
@@ -6907,6 +6914,17 @@ main {
   -moz-transition: opacity 0.55s ease-in-out;
   -webkit-transition: opacity 0.55s ease-in-out;
 }
+.share {
+  margin-top: 30px;
+}
+.share .fb_iframe_widget {
+  display: block;
+  float: left;
+}
+.share .tweet {
+  margin: 4px 0px 0px 10px;
+  float: left;
+}
 #newsItemsIndex .tags,
 #newsDetail .tags {
   color: #77c58c;
@@ -6957,9 +6975,6 @@ main {
 }
 #newsDetail a:hover {
   color: #77c58c;
-}
-#newsDetail .share {
-  margin-top: 30px;
 }
 #newsDetail .image-box {
   padding: 0px;
@@ -7019,14 +7034,6 @@ main {
 #newsDetail .tags {
   margin-top: 0px;
 }
-#newsDetail .fb_iframe_widget {
-  display: block;
-  float: left;
-}
-#newsDetail .tweet {
-  margin: 4px 0px 0px 10px;
-  float: left;
-}
 #newsDetail .youtube {
   position: relative;
   width: 100%;
@@ -7085,6 +7092,121 @@ main {
 .sitemap img {
   margin: 40px auto;
   text-align: center;
+}
+.artist-content {
+  padding-top: 30px;
+}
+.sub-nav-artists {
+  margin-top: 133px;
+  width: 100%;
+  background: #ef433f;
+  border-bottom: 1px solid #fcdd04;
+  color: white;
+  text-transform: uppercase;
+}
+.sub-nav-artists li {
+  padding: 20px 20px;
+  display: inline-block;
+}
+.sub-nav-artists li a {
+  color: #fdfbf0;
+  font-weight: 700;
+}
+.sub-nav-artists li .active-sub {
+  background: #fdfbf0;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: #ef433f;
+}
+.bg-pattern-dark {
+  background: url('../images/pattern-spikels-blue-dark.svg');
+  color: #faf7e3;
+}
+#artistDetail svg:hover path {
+  fill: #38bb9d;
+}
+#artistDetail .artist {
+  position: relative;
+}
+#artistDetail .artist .back-button {
+  z-index: 10000;
+  position: absolute;
+  left: -50px;
+  top: 0px;
+}
+#artistDetail .img-block div {
+  width: 100%;
+  min-height: 400px;
+  text-align: center;
+  background-size: cover;
+  background-position: center top;
+}
+#artistDetail .share {
+  float: right;
+  margin-top: 15px !important;
+}
+#artistDetail .artist-bio {
+  margin-top: 15px;
+}
+#artistDetail .content-block h1 {
+  margin-top: 0px;
+  text-align: left;
+  font-size: 2.7em;
+  color: #38bb9d;
+}
+#artistDetail .content-block h2 {
+  text-align: center;
+}
+#artistDetail .content-block svg {
+  fill: #eec155;
+}
+#artistDetail .content-block .artist-social {
+  margin: 30px 0px;
+}
+#artistDetail .content-block .artist-social a {
+  margin-right: 15px;
+}
+#artistDetail .content-block .artist-social a:hover {
+  text-decoration: none;
+}
+#artistDetail .content-block .artist-genre {
+  font-size: 1.2em;
+  text-transform: uppercase;
+  color: #38bb9d;
+}
+#artistDetail .content-block .artist-genre p {
+  margin-bottom: 0px;
+}
+#artistDetail .artist-genre {
+  font-size: 1.2em;
+  text-transform: uppercase;
+  color: #38bb9d;
+}
+#artistDetail .artist-genre p {
+  margin-bottom: 0px;
+}
+#artistDetail .artist-dates {
+  font-size: 1.3em;
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+#artistDetail .artist-dates p {
+  margin-bottom: 5px;
+}
+#artistDetail .artist-dates span {
+  font-weight: 700;
+}
+#artistDetail .sound-cloud-webplayer {
+  margin: 38px 0px;
+}
+.artist-random {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-color: #fff !important;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHhtbG5zOnhsaW5rPSdodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rJyB3aWR0aD0nMTQwJyBoZWlnaHQ9JzI1Jz4KCTxkZWZzPgoJCTxnIGlkPSdjdXJ2ZXMnPgoJCQk8cGF0aCBmaWxsPScjZmVmNGUyJyBzdHJva2U9JyNmZmYnIGQ9J00wIDIwYzIwLDIwLCA1MCwyMCA3MCwwdi0xMDBoLTcweicvPgoJCQk8cGF0aCBmaWxsPScjZmVmNGUyJyBzdHJva2U9JyNmZmYnIGQ9J00wIDE1YzIwLDIwLCA1MCwyMCA3MCwwJy8+CgkJCTxwYXRoIGZpbGw9JyNmZWY0ZTInIHN0cm9rZT0nI2ZmZicgZD0nTTAgMTBjMjAsMjAsIDUwLDIwIDcwLDAnLz4KCQkJPHBhdGggZmlsbD0nI2ZlZjRlMicgc3Ryb2tlPScjZmZmJyBkPSdNMCA1YzIwLDIwLCA1MCwyMCA3MCwwJy8+CgkJCTxwYXRoIGZpbGw9JyNmZWY0ZTInIHN0cm9rZT0nI2ZmZicgZD0nTTAgMGMyMCwyMCwgNTAsMjAgNzAsMCcvPgoJCTwvZz4KCTwvZGVmcz4KCTxyZWN0IHdpZHRoPScxMDIlJyB4PSctMSUnIHk9Jy0xJScgaGVpZ2h0PScxMDIlJyBmaWxsPScjZmVmNGUyJz48L3JlY3Q+Cgk8dXNlIHg9JzAnIHk9Jy0yJyB4bGluazpocmVmPScjY3VydmVzJyAvPgoJPHVzZSB4PSc3MCcgeT0nLTInIHhsaW5rOmhyZWY9JyNjdXJ2ZXMnIC8+Cgk8dXNlIHg9Jy0zNScgeT0nLTEyJyB4bGluazpocmVmPScjY3VydmVzJyAvPgoJPHVzZSB4PSczNScgeT0nLTEyJyB4bGluazpocmVmPScjY3VydmVzJyAvPgoJPHVzZSB4PScxMDUnIHk9Jy0xMicgeGxpbms6aHJlZj0nI2N1cnZlcycgLz4KCTx1c2UgeD0nMCcgeT0nLTI3JyB4bGluazpocmVmPScjY3VydmVzJyAvPiAgCgk8dXNlIHg9JzcwJyB5PSctMjcnIHhsaW5rOmhyZWY9JyNjdXJ2ZXMnIC8+Cjwvc3ZnPg==) !important;
+}
+.artist-random .widget-artists {
+  background: none !important;
 }
 .widget-artists,
 .artists {
@@ -7273,23 +7395,28 @@ main {
   text-rendering: optimizeLegibility;
   font-family: 'Montserrat', sans-serif;
 }
+.widget-artists .og-grid li .artist-name span,
+.artists .og-grid li .artist-name span {
+  color: #eec155;
+}
 .widget-artists .og-grid li .more,
 .artists .og-grid li .more,
 .widget-artists .og-grid li .date,
 .artists .og-grid li .date {
   transition: all 0.5s;
-  background: #77c58c;
+  background: #3189c9;
   position: absolute;
   bottom: -30px;
   left: 0px;
   color: white;
   text-align: center;
-  padding: 8px 10px;
+  padding: 6px 8px;
   opacity: 0;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   font-family: 'Montserrat', sans-serif;
-  font-size: 2em;
+  font-size: 1em;
+  text-transform: uppercase;
 }
 .widget-artists .og-grid li .info-box-box,
 .artists .og-grid li .info-box-box {
@@ -8586,17 +8713,21 @@ footer .sponsors ul li:after {
   .navbar .box-shadow {
     box-shadow: none;
   }
-  #tplContent {
+  #tplContent,
+  #tplContentArtistDetail {
     padding-top: 80px;
   }
-  #tplContent img {
+  #tplContent img,
+  #tplContentArtistDetail img {
     max-width: 100%;
     height: auto !important;
   }
-  #tplContent .col-md-6 {
+  #tplContent .col-md-6,
+  #tplContentArtistDetail .col-md-6 {
     margin-bottom: 60px;
   }
-  #tplContent .row {
+  #tplContent .row,
+  #tplContentArtistDetail .row {
     margin-bottom: 0px;
   }
   .sub-nav {
@@ -8667,6 +8798,9 @@ footer .sponsors ul li:after {
   .contact article,
   .practical article {
     margin-bottom: 40px;
+  }
+  .artist-random {
+    padding-top: 0px;
   }
   .copacobana {
     margin-top: 54px;
@@ -8772,7 +8906,6 @@ footer .sponsors ul li:after {
   .artists .og-grid li {
     width: 98%;
     height: auto !important;
-    margin-bottom: 30px;
   }
   .widget-artists .og-grid li .mobile-block,
   .artists .og-grid li .mobile-block {
@@ -8787,31 +8920,9 @@ footer .sponsors ul li:after {
   .artists .og-grid li .mobile-block .info-box-box p {
     margin-bottom: 0px;
   }
-  .widget-artists .og-grid li figure,
-  .artists .og-grid li figure {
-    display: none;
-  }
-  .widget-artists .og-grid li figure img,
-  .artists .og-grid li figure img {
-    transition: none;
-    transform: none;
-  }
-  .widget-artists .og-grid li .artist-name,
-  .artists .og-grid li .artist-name {
-    color: #0b3a4c;
-    position: relative;
-    transform: none;
-    transition: none;
-    left: 0px;
-    margin-bottom: 15px;
-  }
   .widget-artists .og-grid li a,
   .artists .og-grid li a {
     height: auto !important;
-  }
-  .widget-artists .og-grid li a:after,
-  .artists .og-grid li a:after {
-    background: transparent;
   }
   .widget-artists .og-grid li:hover,
   .artists .og-grid li:hover {

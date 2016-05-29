@@ -21,7 +21,8 @@
             <div class="news-content">
                 <h2>{$widgetNewsRecentArticlesList.publish_on|date:'d/m/Y':{$LANGUAGE}|ucfirst}</h2>
                 <h1>{$widgetNewsRecentArticlesList.title}</h1>
-                <p>{$widgetNewsRecentArticlesList.content|truncate:650:true:true}</p>
+                <p>{$widgetNewsRecentArticlesList.content|truncate:150:true:true}</p>
+                <p class="read-more"><a href="{$widgetNewsRecentArticlesList.full_url}">Lees meer <span>&#10095;</span></a></p>
             </div>
         </article>
     {/iteration:widgetNewsRecentArticlesList}

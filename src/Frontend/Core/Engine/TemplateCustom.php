@@ -32,11 +32,34 @@ class TemplateCustom
         $this->parse();
     }
 
+    private function parse() {
+        \SpoonTemplateModifiers::mapModifier('getartistmenu', array('Frontend\Core\Engine\TemplateCustom', 'getArtistMenu'));
+    }
+
     /**
-     * Parse the custom stuff
+     * Get the navigation html
+     *    syntax: {$var|getartistMenu[:label[:pageId]]}
+     *
+     * @param string $var        The variable.
+     * @param string $label      The label.
+     * @return string
      */
-    private function parse()
-    {
-        // insert your custom stuff here...
+    public static function getArtistMenu($var = null, $label = '') {
+        // only when we have the page artists
+        if ( $label == 'Artist' ) {
+            // get the template
+            $tpl = '/Themes/Copacobana/Core/Layout/Templates/Elements/ArtistMenu.tpl';
+
+            // create template
+            $navigationTpl = new Template(false);
+
+            // assign line to template
+            $navigationTpl->assign('menuItems', true);
+
+            // return the template
+            return $navigationTpl->getContent(FRONTEND_PATH . (string) $tpl);
+        }
     }
 }
+
+

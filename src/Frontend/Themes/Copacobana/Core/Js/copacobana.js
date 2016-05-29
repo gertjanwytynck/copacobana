@@ -23,9 +23,39 @@ jsFrontend.copacobana = {
 		// tooltip
 	 	$('[data-toggle="tooltip"]').tooltip()
 
-		// disable grid:
-		$('.og-grid a').click(function(e){
-			e.preventDefault()
+ 		// Artist sub menu fix
+ 	 	var lastIndexUrl = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
+
+		$('.sub-nav-artists li').each(function(){
+			$(this).find('a').removeClass('active-sub')
+    	if (lastIndexUrl === 'vrijdag' && $(this).hasClass('friday')) {
+    		$(this).find('a').addClass('active-sub')
+    	}
+
+    	if (lastIndexUrl === 'zaterdag' && $(this).hasClass('saturday')) {
+    		$(this).find('a').addClass('active-sub')
+    	}
+
+    	if (lastIndexUrl === 'zondag' && $(this).hasClass('sunday')) {
+    		$(this).find('a').addClass('active-sub')
+    	}
+
+    	if (lastIndexUrl === 'artiesten' && $(this).hasClass('all')) {
+    		$(this).find('a').addClass('active-sub')
+    	}
+    })
+
+		// height for newsitem
+		var height = 0;
+		$.each($('.news .item .news-content'), function(key, value) {
+			if ($(value).height() > height) {
+				height = $(value).height() + 10;
+			}
+		});
+
+		$.each($('.news .item .news-content'), function(key, value) {
+			console.log(height)
+			$(value).css('height', height);
 		});
 
 		$('.btn-submit').click(function() {

@@ -6,10 +6,18 @@
     <figure class="copacobana">
         <a href="https://docs.google.com/forms/d/1FzA-sEjGNXUUJ35k5qabYRFbvOobKpwjTJoc0LjYPHU/viewform" target="_blank"><button class="btn-volunteer-header">{$lblBecomeVolunteer|ucfirst}!</button></a>
     </figure>
+
+    <section class="widget-artists cover-overflow">
+        <div class="container">
+            {iteration:positionArtists}
+                {$positionArtists.blockContent}
+            {/iteration:positionArtists}
+        </div>
+    </section>
     <section class="pattern-dotty cover-overflow">
         <div class="intro container">
             <div class="row">
-                <div class="col-md-12  news">
+                <div class="col-md-10 col-md-offset-1 news">
                     {iteration:positionNews}
                         {$positionNews.blockContent}
                     {/iteration:positionNews}
@@ -18,13 +26,7 @@
             <div class="clear"></div>
         </div>
     </section>
-<!--     <section class="widget-artists">
-        <div class="container">
-            {iteration:positionArtists}
-                {$positionArtists.blockContent}
-            {/iteration:positionArtists}
-        </div>
-    </section> -->
+
     <section class="video">
         <div class="container">
             <div class="row scheetjesvlieger">

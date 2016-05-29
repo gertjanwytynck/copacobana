@@ -215,8 +215,8 @@ main {
 	-webkit-appearance: none;
 	a, input {
 		width: 300px;
-		background: rgba(255,255,255,0.3) url('../images/arrow-next.svg') no-repeat top 5px right 10px;
-		background-size: 30px 30px;
+		background: rgba(255,255,255,0.3) url('../images/arrow-next.svg') no-repeat top 7.5px right 10px;
+		background-size: 25px 25px;
 		padding: 10px 100px 10px 10px;
 		border: @border-blue-flashy-thick;
 		border-radius: @border-radius;
@@ -563,8 +563,6 @@ main {
 		padding: 0px 0px 20px 0px;
 		position: relative;
 
-
-
 		article {
 			h1 {
 				text-align: left;
@@ -587,6 +585,14 @@ main {
 				margin: 0px;
 				font-weight: 400;
 				text-align: left;
+			}
+
+			.read-more {
+				margin-top: 10px;
+				color: @blue-flashy;
+				span {
+					font-size: 0.8em;
+				}
 			}
 
 			a {
@@ -899,6 +905,19 @@ background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53M
 	}
 }
 
+.share {
+	margin-top: 30px;
+	.fb_iframe_widget {
+		display: block;
+		float: left;
+	}
+
+	.tweet {
+		margin: 4px 0px 0px 10px;
+		float: left;
+	}
+}
+
 #newsItemsIndex, #newsDetail {
 	.tags {
 		color: @green;
@@ -954,10 +973,6 @@ background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53M
 		&:hover {
 			color: @green;
 		}
-	}
-
-	.share {
-		margin-top: 30px;
 	}
 
 	.image-box {
@@ -1024,15 +1039,7 @@ background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53M
 		margin-top: 0px;
 	}
 
-	.fb_iframe_widget {
-		display: block;
-		float: left;
-	}
 
-	.tweet {
-		margin: 4px 0px 0px 10px;
-		float: left;
-	}
 
 	.youtube {
 		position: relative;
@@ -1102,7 +1109,150 @@ background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53M
 		margin: 40px auto;
 		text-align: center;
 	}
+}
 
+.artist-content {
+	padding-top: 30px;
+}
+
+.sub-nav-artists {
+	margin-top: 133px;
+	width: 100%;
+	background: @pink;
+	border-bottom: @border-yellow;
+	color: white;
+	text-transform: uppercase;
+
+	li {
+		padding: 20px 20px;
+		display: inline-block;
+		a {
+			color: @background;
+			font-weight: 700;
+		}
+
+		.active-sub {
+			background: @background;
+			border-radius: @border-radius;
+			padding: 5px 10px;
+			color: @pink;
+		}
+	}
+
+}
+
+.bg-pattern-dark {
+	background:url('@{base-url}/pattern-spikels-blue-dark.svg');
+	color: @font-light;
+}
+
+#artistDetail {
+	svg:hover path{
+		fill: @green-dark;
+	}
+
+	.artist {
+		position: relative;
+		.back-button {
+			z-index: 10000;
+			position: absolute;
+			left: -50px;
+			top: 0px;
+		}
+	}
+	.img-block {
+		div {
+		width: 100%;
+		min-height: 400px;
+	  text-align: center;
+    background-size: cover;
+    background-position: center top;
+		}
+	}
+
+	.share {
+		float: right;
+		margin-top: 15px !important;
+	}
+
+	.artist-bio {
+		margin-top: 15px;
+	}
+
+	.content-block {
+		h1 {
+			margin-top: 0px;
+			text-align: left;
+			font-size: 2.7em;
+			color: @green-dark;
+		}
+		h2 {
+			text-align: center;
+		}
+
+		svg {
+			fill: @gray;
+		}
+
+		.artist-social {
+			margin: 30px 0px;
+			a {
+				margin-right: 15px;
+
+				&:hover {
+					text-decoration: none;
+				}
+			}
+		}
+
+		.artist-genre {
+			font-size: 1.2em;
+			text-transform: uppercase;
+			color: @green-dark;
+			p {
+				margin-bottom: 0px;
+			}
+		}
+	}
+
+	.artist-genre {
+		font-size: 1.2em;
+		text-transform: uppercase;
+		color: @green-dark;
+		p {
+			margin-bottom: 0px;
+		}
+	}
+
+
+
+	.artist-dates {
+		font-size: 1.3em;
+		margin-top: 20px;
+		text-transform: uppercase;
+		p {
+			margin-bottom: 5px;
+		}
+		span {
+			font-weight: 700;
+		}
+	}
+
+	.sound-cloud-webplayer {
+		margin: 38px 0px;
+	}
+}
+
+
+.artist-random {
+	padding-top: 0px;
+	padding-bottom: 0px;
+	background-color: #fff !important;
+	background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHhtbG5zOnhsaW5rPSdodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rJyB3aWR0aD0nMTQwJyBoZWlnaHQ9JzI1Jz4KCTxkZWZzPgoJCTxnIGlkPSdjdXJ2ZXMnPgoJCQk8cGF0aCBmaWxsPScjZmVmNGUyJyBzdHJva2U9JyNmZmYnIGQ9J00wIDIwYzIwLDIwLCA1MCwyMCA3MCwwdi0xMDBoLTcweicvPgoJCQk8cGF0aCBmaWxsPScjZmVmNGUyJyBzdHJva2U9JyNmZmYnIGQ9J00wIDE1YzIwLDIwLCA1MCwyMCA3MCwwJy8+CgkJCTxwYXRoIGZpbGw9JyNmZWY0ZTInIHN0cm9rZT0nI2ZmZicgZD0nTTAgMTBjMjAsMjAsIDUwLDIwIDcwLDAnLz4KCQkJPHBhdGggZmlsbD0nI2ZlZjRlMicgc3Ryb2tlPScjZmZmJyBkPSdNMCA1YzIwLDIwLCA1MCwyMCA3MCwwJy8+CgkJCTxwYXRoIGZpbGw9JyNmZWY0ZTInIHN0cm9rZT0nI2ZmZicgZD0nTTAgMGMyMCwyMCwgNTAsMjAgNzAsMCcvPgoJCTwvZz4KCTwvZGVmcz4KCTxyZWN0IHdpZHRoPScxMDIlJyB4PSctMSUnIHk9Jy0xJScgaGVpZ2h0PScxMDIlJyBmaWxsPScjZmVmNGUyJz48L3JlY3Q+Cgk8dXNlIHg9JzAnIHk9Jy0yJyB4bGluazpocmVmPScjY3VydmVzJyAvPgoJPHVzZSB4PSc3MCcgeT0nLTInIHhsaW5rOmhyZWY9JyNjdXJ2ZXMnIC8+Cgk8dXNlIHg9Jy0zNScgeT0nLTEyJyB4bGluazpocmVmPScjY3VydmVzJyAvPgoJPHVzZSB4PSczNScgeT0nLTEyJyB4bGluazpocmVmPScjY3VydmVzJyAvPgoJPHVzZSB4PScxMDUnIHk9Jy0xMicgeGxpbms6aHJlZj0nI2N1cnZlcycgLz4KCTx1c2UgeD0nMCcgeT0nLTI3JyB4bGluazpocmVmPScjY3VydmVzJyAvPiAgCgk8dXNlIHg9JzcwJyB5PSctMjcnIHhsaW5rOmhyZWY9JyNjdXJ2ZXMnIC8+Cjwvc3ZnPg==) !important;
+
+	.widget-artists {
+		background: none !important;
+	}
 }
 
 .widget-artists, .artists {
@@ -1260,7 +1410,7 @@ background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53M
 				}
 			}
 
-			.artist-name {
+			.artist-name{
 				text-align: left;
 				transition: all 0.5s;
 				position: absolute;
@@ -1273,23 +1423,29 @@ background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53M
 				-webkit-font-smoothing: antialiased;
 				text-rendering: optimizeLegibility;
 				font-family: 'Montserrat', sans-serif;
+
+				span {
+					color: @gray;
+				}
 			}
+
 
 			.more, .date {
 				transition: all 0.5s;
-				background: @green;
+				background: @blue-flashy;
 				position: absolute;
 				bottom: -30px;
 				left: 0px;
 				color: white;
 				text-align: center;
-				padding: 8px 10px;
+				padding: 6px 8px;
 				opacity: 0;
 				-webkit-font-smoothing: antialiased;
 				-webkit-font-smoothing: antialiased;
 				text-rendering: optimizeLegibility;
 				font-family: 'Montserrat', sans-serif;
-				font-size: 2em;
+				font-size: 1em;
+				text-transform: uppercase;
 			}
 
 			.info-box-box {
@@ -2780,7 +2936,7 @@ background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53M
 		}
 	}
 
-	#tplContent {
+	#tplContent, #tplContentArtistDetail {
 		padding-top: 80px;
 		img {
 			max-width: 100%;
@@ -2876,6 +3032,10 @@ background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53M
 		article {
 			margin-bottom: 40px;
 		}
+	}
+
+	.artist-random {
+		padding-top: 0px;
 	}
 
 	.copacobana {
@@ -3026,7 +3186,7 @@ background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53M
 			li {
 				width: 98%;
 				height: auto !important;
-				margin-bottom: 30px;
+				//	margin-bottom: 30px;
 
 
 				.mobile-block {
@@ -3042,26 +3202,26 @@ background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53M
 				}
 
 				figure {
-					display: none;
+					//display: none;
 					img {
-						transition: none;
-						transform: none;
+						//transition: none;
+						//transform: none;
 					}
 				}
 
 				.artist-name {
-					color: @blue;
-					position: relative;
-					transform: none;
-					transition: none;
-					left: 0px;
-					margin-bottom: 15px;
+					// color: @blue;
+					// position: relative;
+					// transform: none;
+					// transition: none;
+					// left: 0px;
+					// margin-bottom: 15px;
 				}
 
 				a {
 					height: auto !important;
 					&:after {
-						background: transparent;
+						//background: transparent;
 					}
 				}
 

@@ -6,5 +6,4 @@
         </li>
     {/iteration:navigation}
     {/option:navigation}
-
 </ul>

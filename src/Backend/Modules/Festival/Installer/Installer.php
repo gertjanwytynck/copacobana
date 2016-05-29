@@ -102,6 +102,7 @@ class Installer extends ModuleInstaller
         $this->insertExtra('Festival', 'block', 'SingUp', 'SignUp', null, 'N', 1001);
         $this->insertExtra('Festival', 'block', 'LineUp', 'LineUp', null, 'N', 1002);
         $this->insertExtra('Festival', 'widget', 'Artists', 'Artists', null, 'N', 1003);
+        $this->insertExtra('Festival', 'widget', 'RandomArtists', 'RandomArtists', null, 'N', 1004);
     }
 
     private function createDirectories()
