@@ -14,6 +14,7 @@
 <hr/>
 <p class="info">{$msgPracticalInfoText|ucfirst}</p>
 <p class="info" style="margin-top: 30px;">{$msgTerrainText|ucfirst}</p>
+<p class="info" style="margin-top: 30px;">{$msgBilling|ucfirst}</p>
 
 <h3>{$lblContactPerson|ucfirst}</h3>
 <hr/>

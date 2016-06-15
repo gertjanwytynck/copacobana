@@ -8390,11 +8390,11 @@ footer .sponsors ul {
 }
 footer .sponsors ul li {
   display: inline-block;
-  margin: 10px 30px;
+  margin: 10px 25px;
   opacity: 0.7;
 }
 footer .sponsors ul li img {
-  max-height: 27px;
+  max-height: 32px;
 }
 footer .sponsors ul li:after {
   display: none;
@@ -8902,6 +8902,34 @@ footer .sponsors ul li:after {
   }
 }
 @media (max-width: 650px) {
+  .artist-random .widget-artists .container {
+    padding-top: 30px !important;
+  }
+  #artistDetail .content-block h1 {
+    margin-top: 50px;
+  }
+  #artistDetail .img-block div {
+    min-height: 300px;
+  }
+  #artistDetail .share {
+    float: none;
+  }
+  #artistDetail .artist .back-button {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    margin-bottom: 25px;
+  }
+  .sub-nav-artists {
+    padding: 10px 0px;
+    margin-top: 60px;
+  }
+  .sub-nav-artists li {
+    padding: 5px;
+  }
+  .artist-content {
+    padding-top: 30px;
+  }
   .widget-artists .og-grid li,
   .artists .og-grid li {
     width: 98%;
@@ -8919,6 +8947,11 @@ footer .sponsors ul li:after {
   .widget-artists .og-grid li .mobile-block .info-box-box p,
   .artists .og-grid li .mobile-block .info-box-box p {
     margin-bottom: 0px;
+  }
+  .widget-artists .og-grid li figure img,
+  .artists .og-grid li figure img {
+    transition: none;
+    transform: none;
   }
   .widget-artists .og-grid li a,
   .artists .og-grid li a {

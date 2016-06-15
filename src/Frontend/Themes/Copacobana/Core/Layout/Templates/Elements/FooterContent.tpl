@@ -23,6 +23,7 @@
             <ul>
                 <li class="mob"><a href="http://www.facebook.com/laroynv" target="_blank"><img src="{$THEME_URL}/Core/Layout/images/la-roy.png" title="La Roy" alt="La Roy" /></a></li>
                 <li class="mob"><a href="http://naessensp.be/" target="_blank"><img src="{$THEME_URL}/Core/Layout/images/naessens.png" title="NaessensP" alt="NaessensP" /></a></li>
+                <li class="mob"><a href="http://www.fashiongraphics.be/" target="_blank"><img src="{$THEME_URL}/Core/Layout/images/fashion-graphics.png" title="Fashion Graphics" alt="Fashion Graphics" /></a></li>
                 <li class="mob"><a href="https://stad.gent/" target="_blank"><img src="{$THEME_URL}/Core/Layout/images/stad-gent.png" title="Stad Gent" alt="Stad Gent" /></a></li>
                 <li class="mob"><a href="" target="_blank"><img src="{$THEME_URL}/Core/Layout/images/anamma.png" title="Anamma" alt="Anamma" /></a></li>
                 <li class="mob"><a href="http://www.lidl.be/" target="_blank"><img src="{$THEME_URL}/Core/Layout/images/lidl.png" title="Lidl" alt="Lidl" /></a></li>

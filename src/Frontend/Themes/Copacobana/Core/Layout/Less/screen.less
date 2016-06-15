@@ -2533,10 +2533,10 @@ background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53M
 			padding: 0px;
 			li {
 				display: inline-block;
-				margin: 10px 30px;
+				margin: 10px 25px;
 				opacity: 0.7;
 				img {
-					max-height: 27px;
+					max-height: 32px;
 				}
 				&:after {
 					display: none;
@@ -3181,6 +3181,48 @@ background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53M
 }
 
 @media (max-width: 650px) {
+	.artist-random {
+		.widget-artists {
+			.container {
+				padding-top: 30px !important;
+			}
+		}
+	}
+	#artistDetail {
+		.content-block {
+			h1 {
+				margin-top: 50px;
+			}
+		}
+
+		.img-block div {
+			min-height: 300px;
+		}
+
+		.share {
+			float: none;
+		}
+
+		.artist .back-button {
+			position: relative;
+			top: 0px;
+			left: 0px;
+			margin-bottom: 25px;
+		}
+	}
+
+	.sub-nav-artists  {
+		padding: 10px 0px;
+		margin-top: 60px;
+		li {
+			padding: 5px;
+		}
+	}
+
+	.artist-content {
+		padding-top: 30px;
+	}
+
 	.widget-artists, .artists {
 		.og-grid {
 			li {
@@ -3204,8 +3246,8 @@ background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53M
 				figure {
 					//display: none;
 					img {
-						//transition: none;
-						//transform: none;
+						transition: none;
+						transform: none;
 					}
 				}
 
