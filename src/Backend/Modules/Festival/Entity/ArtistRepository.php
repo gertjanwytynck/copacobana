@@ -42,6 +42,36 @@ class ArtistRepository extends EntityRepository
         return $qb->getQuery()->getOneOrNullResult();
     }
 
+
+    /**
+     * Get all volunteers
+     *
+     * @return Volunteers|array  All the volunteers
+     */
+    public function getAllVolunteers($em)
+    {
+        $sql = "SELECT * FROM volunteers WHERE sended = 0";
+
+        $stmt = $em->getConnection()->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
+     /**
+     * Update mailing
+     *
+     * @return Volunteers|bool  true
+     */
+    public function updateVolunteer($em, $id)
+    {
+        $sql = "UPDATE volunteers SET sended = 1 WHERE id = :id" ;
+        $params = array('id'=>$id);
+
+        $stmt = $em->getConnection()->prepare($sql);
+        $stmt->execute($params);
+        return true;
+    }
+
     /**
      * Get all info for an artist
      *

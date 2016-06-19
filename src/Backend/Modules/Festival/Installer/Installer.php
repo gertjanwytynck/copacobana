@@ -66,6 +66,7 @@ class Installer extends ModuleInstaller
         $this->setActionRights(1, 'Festival', 'Index');
         $this->setActionRights(1, 'Festival', 'Settings');
         $this->setActionRights(1, 'Festival', 'Stages');
+        $this->setActionRights(1, 'Festival', 'MailVolunteers');
     }
 
     private function setBackendNavigation()
@@ -74,7 +75,7 @@ class Installer extends ModuleInstaller
 
         $this->setNavigation(
             $navigationFestivalId, 'Artists', 'festival/artists',
-            array('festival/add_artist', 'festival/edit_artist', 'festival/print_artists')
+            array('festival/add_artist', 'festival/edit_artist', 'festival/mail_volunteers')
         );
 
         $this->setNavigation(
