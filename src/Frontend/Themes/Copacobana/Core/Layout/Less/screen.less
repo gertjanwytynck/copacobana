@@ -718,6 +718,13 @@ background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53M
 	color: @font-blue;
 }
 
+.line-up-page {
+	background-color: #fff;
+	background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHhtbG5zOnhsaW5rPSdodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rJyB3aWR0aD0nMTQwJyBoZWlnaHQ9JzI1Jz4KCTxkZWZzPgoJCTxnIGlkPSdjdXJ2ZXMnPgoJCQk8cGF0aCBmaWxsPScjZmVmNGUyJyBzdHJva2U9JyNmZmYnIGQ9J00wIDIwYzIwLDIwLCA1MCwyMCA3MCwwdi0xMDBoLTcweicvPgoJCQk8cGF0aCBmaWxsPScjZmVmNGUyJyBzdHJva2U9JyNmZmYnIGQ9J00wIDE1YzIwLDIwLCA1MCwyMCA3MCwwJy8+CgkJCTxwYXRoIGZpbGw9JyNmZWY0ZTInIHN0cm9rZT0nI2ZmZicgZD0nTTAgMTBjMjAsMjAsIDUwLDIwIDcwLDAnLz4KCQkJPHBhdGggZmlsbD0nI2ZlZjRlMicgc3Ryb2tlPScjZmZmJyBkPSdNMCA1YzIwLDIwLCA1MCwyMCA3MCwwJy8+CgkJCTxwYXRoIGZpbGw9JyNmZWY0ZTInIHN0cm9rZT0nI2ZmZicgZD0nTTAgMGMyMCwyMCwgNTAsMjAgNzAsMCcvPgoJCTwvZz4KCTwvZGVmcz4KCTxyZWN0IHdpZHRoPScxMDIlJyB4PSctMSUnIHk9Jy0xJScgaGVpZ2h0PScxMDIlJyBmaWxsPScjZmVmNGUyJz48L3JlY3Q+Cgk8dXNlIHg9JzAnIHk9Jy0yJyB4bGluazpocmVmPScjY3VydmVzJyAvPgoJPHVzZSB4PSc3MCcgeT0nLTInIHhsaW5rOmhyZWY9JyNjdXJ2ZXMnIC8+Cgk8dXNlIHg9Jy0zNScgeT0nLTEyJyB4bGluazpocmVmPScjY3VydmVzJyAvPgoJPHVzZSB4PSczNScgeT0nLTEyJyB4bGluazpocmVmPScjY3VydmVzJyAvPgoJPHVzZSB4PScxMDUnIHk9Jy0xMicgeGxpbms6aHJlZj0nI2N1cnZlcycgLz4KCTx1c2UgeD0nMCcgeT0nLTI3JyB4bGluazpocmVmPScjY3VydmVzJyAvPiAgCgk8dXNlIHg9JzcwJyB5PSctMjcnIHhsaW5rOmhyZWY9JyNjdXJ2ZXMnIC8+Cjwvc3ZnPg==);
+	padding: 40px 0px 30px 0px;
+	color: @font-blue;
+}
+
 .practical {
 	.img-box {
 		text-align: center;
@@ -1137,8 +1144,11 @@ background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53M
 			padding: 5px 10px;
 			color: @pink;
 		}
-	}
 
+		.download-prog {
+			text-align: right;
+		}
+	}
 }
 
 .bg-pattern-dark {
@@ -1613,7 +1623,6 @@ background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53M
 }
 
 .line-up-overview {
-	margin-top: 30px;
 	.all-artists {
 		top: -27px;
 		right: 0px;
@@ -1638,13 +1647,14 @@ background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53M
 		background: @background;
 		margin-bottom: 15px;
 		h2 {
-			margin-top: 25px !important;
-			margin-bottom: 30px;
+			margin-top: 0px !important;
+			margin-bottom: 15px;
 		}
 		h3 {
 			text-transform: uppercase;
-			padding: 5px;
-			background: @yellow-dark;
+			padding: 5px 15px;
+			border-radius: 5px;
+			background: @yellow-flashy;
 			display: inline-block;
 			color: white;
 			font-size: 1.2em;
@@ -1671,6 +1681,12 @@ background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53M
 		}
 		p  {
 			margin-bottom:  0px;
+		}
+
+		a {
+			&:hover {
+				color: @pink-dark;
+			}
 		}
 	}
 
@@ -2536,7 +2552,7 @@ background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53M
 				margin: 10px 25px;
 				opacity: 0.7;
 				img {
-					max-height: 32px;
+					max-height: 40px;
 				}
 				&:after {
 					display: none;

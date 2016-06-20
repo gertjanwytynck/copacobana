@@ -6765,6 +6765,12 @@ main {
   padding: 180px 0px 30px 0px;
   color: #174556;
 }
+.line-up-page {
+  background-color: #fff;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHhtbG5zOnhsaW5rPSdodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rJyB3aWR0aD0nMTQwJyBoZWlnaHQ9JzI1Jz4KCTxkZWZzPgoJCTxnIGlkPSdjdXJ2ZXMnPgoJCQk8cGF0aCBmaWxsPScjZmVmNGUyJyBzdHJva2U9JyNmZmYnIGQ9J00wIDIwYzIwLDIwLCA1MCwyMCA3MCwwdi0xMDBoLTcweicvPgoJCQk8cGF0aCBmaWxsPScjZmVmNGUyJyBzdHJva2U9JyNmZmYnIGQ9J00wIDE1YzIwLDIwLCA1MCwyMCA3MCwwJy8+CgkJCTxwYXRoIGZpbGw9JyNmZWY0ZTInIHN0cm9rZT0nI2ZmZicgZD0nTTAgMTBjMjAsMjAsIDUwLDIwIDcwLDAnLz4KCQkJPHBhdGggZmlsbD0nI2ZlZjRlMicgc3Ryb2tlPScjZmZmJyBkPSdNMCA1YzIwLDIwLCA1MCwyMCA3MCwwJy8+CgkJCTxwYXRoIGZpbGw9JyNmZWY0ZTInIHN0cm9rZT0nI2ZmZicgZD0nTTAgMGMyMCwyMCwgNTAsMjAgNzAsMCcvPgoJCTwvZz4KCTwvZGVmcz4KCTxyZWN0IHdpZHRoPScxMDIlJyB4PSctMSUnIHk9Jy0xJScgaGVpZ2h0PScxMDIlJyBmaWxsPScjZmVmNGUyJz48L3JlY3Q+Cgk8dXNlIHg9JzAnIHk9Jy0yJyB4bGluazpocmVmPScjY3VydmVzJyAvPgoJPHVzZSB4PSc3MCcgeT0nLTInIHhsaW5rOmhyZWY9JyNjdXJ2ZXMnIC8+Cgk8dXNlIHg9Jy0zNScgeT0nLTEyJyB4bGluazpocmVmPScjY3VydmVzJyAvPgoJPHVzZSB4PSczNScgeT0nLTEyJyB4bGluazpocmVmPScjY3VydmVzJyAvPgoJPHVzZSB4PScxMDUnIHk9Jy0xMicgeGxpbms6aHJlZj0nI2N1cnZlcycgLz4KCTx1c2UgeD0nMCcgeT0nLTI3JyB4bGluazpocmVmPScjY3VydmVzJyAvPiAgCgk8dXNlIHg9JzcwJyB5PSctMjcnIHhsaW5rOmhyZWY9JyNjdXJ2ZXMnIC8+Cjwvc3ZnPg==);
+  padding: 40px 0px 30px 0px;
+  color: #174556;
+}
 .practical .img-box {
   text-align: center;
 }
@@ -7117,6 +7123,9 @@ main {
   border-radius: 5px;
   padding: 5px 10px;
   color: #ef433f;
+}
+.sub-nav-artists li .download-prog {
+  text-align: right;
 }
 .bg-pattern-dark {
   background: url('../images/pattern-spikels-blue-dark.svg');
@@ -7562,9 +7571,6 @@ main {
 .bg-yellow {
   background: #fcdd04;
 }
-.line-up-overview {
-  margin-top: 30px;
-}
 .line-up-overview .all-artists {
   top: -27px;
   right: 0px;
@@ -7587,13 +7593,14 @@ main {
   margin-bottom: 15px;
 }
 .line-up-overview .stage h2 {
-  margin-top: 25px !important;
-  margin-bottom: 30px;
+  margin-top: 0px !important;
+  margin-bottom: 15px;
 }
 .line-up-overview .stage h3 {
   text-transform: uppercase;
-  padding: 5px;
-  background: #fcdd04;
+  padding: 5px 15px;
+  border-radius: 5px;
+  background: #ffbc3c;
   display: inline-block;
   color: white;
   font-size: 1.2em;
@@ -7618,6 +7625,9 @@ main {
 }
 .line-up-overview .stage p {
   margin-bottom: 0px;
+}
+.line-up-overview .stage a:hover {
+  color: #ef433f;
 }
 .line-up-overview .stage-friday,
 .line-up-overview .stage-saturday,
@@ -8394,7 +8404,7 @@ footer .sponsors ul li {
   opacity: 0.7;
 }
 footer .sponsors ul li img {
-  max-height: 32px;
+  max-height: 40px;
 }
 footer .sponsors ul li:after {
   display: none;

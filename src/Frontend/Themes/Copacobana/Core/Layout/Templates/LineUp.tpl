@@ -3,7 +3,9 @@
 <body class="{$LANGUAGE}" itemscope itemtype="http://schema.org/WebPage">
 {include:Core/Layout/Templates/Partials/Header.tpl}
 
-<main class="default bg-blue">
+{$var|getartistmenu:"Artist"}
+
+<main class="line-up-page bg-blue">
     <section class="container">
         <div class="row">
             <div class="col-md-12">

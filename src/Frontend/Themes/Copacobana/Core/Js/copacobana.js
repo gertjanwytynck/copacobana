@@ -40,6 +40,10 @@ jsFrontend.copacobana = {
     		$(this).find('a').addClass('active-sub')
     	}
 
+    	if (lastIndexUrl === 'line-up' && $(this).hasClass('line-up')) {
+    		$(this).find('a').addClass('active-sub')
+    	}
+
     	if (lastIndexUrl === 'artiesten' && $(this).hasClass('all')) {
     		$(this).find('a').addClass('active-sub')
     	}
