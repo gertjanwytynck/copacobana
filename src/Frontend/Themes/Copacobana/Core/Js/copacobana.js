@@ -58,7 +58,6 @@ jsFrontend.copacobana = {
 		});
 
 		$.each($('.news .item .news-content'), function(key, value) {
-			console.log(height)
 			$(value).css('height', height);
 		});
 

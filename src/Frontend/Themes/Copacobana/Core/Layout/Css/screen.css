@@ -6326,6 +6326,9 @@ main {
   outline: none;
   box-shadow: none;
 }
+.stage-title {
+  margin-top: 40px;
+}
 .btn-all-news {
   text-align: center;
   margin: 45px 0px;
@@ -9011,6 +9014,12 @@ footer .sponsors ul li:after {
   }
 }
 @media (max-width: 550px) {
+  footer .sponsors ul li img {
+    max-width: 100%;
+  }
+  .stage-title {
+    margin-top: 0px;
+  }
   .vers-pers {
     margin-top: -60px;
     background: transparent;
