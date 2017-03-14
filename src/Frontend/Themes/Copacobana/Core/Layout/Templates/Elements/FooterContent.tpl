@@ -1,5 +1,5 @@
     <section class="info">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <ul>
@@ -19,7 +19,7 @@
         </div>
     </section>
     <section class="sponsors">
-        <div class="container">
+        <div class="container-fluid">
             <ul>
                 <li class="mob"><a href="http://www.facebook.com/laroynv" target="_blank"><img src="{$THEME_URL}/Core/Layout/images/la-roy.png" title="La Roy" alt="La Roy" /></a></li>
                 <li class="mob"><a href="http://www.fashiongraphics.be/" target="_blank"><img src="{$THEME_URL}/Core/Layout/images/fashion-graphics.png" title="Fashion Graphics" alt="Fashion Graphics" /></a></li>
@@ -35,4 +35,3 @@
 </footer>
 <div id="struik-left"></div>
 <div id="struik-right"></div>
-

@@ -1,6 +1,6 @@
 <header class="header box-shadow">
     <!-- Navigation -->
-    <div class="container">
+    <div class="container-fluid">
         <nav class="navbar " role="navigation">
             <div class="navbar-header">
                 <a href="/" class="mob-img"><img src="{$THEME_URL}/Core/Layout/images/copa-small.svg" title="copacobana" alt="copacobana" class="mob-img"/></a>

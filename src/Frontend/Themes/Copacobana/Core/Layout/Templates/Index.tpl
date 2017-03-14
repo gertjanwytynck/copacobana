@@ -8,7 +8,7 @@
     </figure>
 
     <section class="widget-artists cover-overflow">
-        <div class="container">
+        <div class="container-fluid">
             {iteration:positionArtists}
                 {$positionArtists.blockContent}
             {/iteration:positionArtists}
