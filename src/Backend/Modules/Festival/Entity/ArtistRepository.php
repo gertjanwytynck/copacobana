@@ -172,7 +172,7 @@ class ArtistRepository extends EntityRepository
             ->orderBy('a.name', 'ASC')
             ->setParameters(array(
                 'hidden' => '0',
-                'year' => '2016'
+                'year' => '2017'
             ))
 
         ;
@@ -200,7 +200,7 @@ class ArtistRepository extends EntityRepository
             ->setParameters(array(
                 'hidden' => '0',
                 'spotlight' => '1',
-                'year' => '2016'
+                'year' => '2017'
             ))
 
         ;
@@ -225,7 +225,7 @@ class ArtistRepository extends EntityRepository
             ->andWhere('a.year = :year' )
             ->setParameters(array(
                 'hidden' => '0',
-                'year' => '2016'
+                'year' => '2017'
             ))
         ;
 

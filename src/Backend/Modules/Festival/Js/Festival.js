@@ -10,7 +10,7 @@ jsBackend.festival =
             $('.generatePicker').datepicker({
                 dateFormat: 'dd/mm/yy',
                 firstDate: 1,
-            }).datepicker("setDate", '24/06/2016');
+            }).datepicker("setDate", '24/06/2017');
         }
 
         if (jsBackend.current.action == 'EditArtist') {
