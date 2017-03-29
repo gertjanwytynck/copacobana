@@ -48,7 +48,7 @@ class LineUp extends Block
     {
         // check for parameter
         if ($this->URL->getParameter(0) !== null) {
-            $this->redirect(Navigation::getURL(404));
+            $this->redirect(FrontendNavigation::getURL(404));
         }
 
         // get doctrine manager + get all the artists
@@ -60,7 +60,7 @@ class LineUp extends Block
         $stages = $em->getRepository(FrontendFestivalModel::ARTIST_STAGE_ENTITY_CLASS)->findAll();
 
         // Redirect for empty parameter
-        if (empty($artists)) { $this->redirect(Navigation::getURL(404)); }
+        if (empty($artists)) { $this->redirect(FrontendNavigation::getURL(404)); }
 
         // Set locale
         setlocale(LC_TIME, FRONTEND_LANGUAGE . '_' . strtoupper(FRONTEND_LANGUAGE));

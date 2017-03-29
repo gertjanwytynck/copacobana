@@ -24,12 +24,12 @@
 	<meta name="msapplication-TileColor" content="#3380aa"/>
 	<meta name="msapplication-TileImage" content="{$THEME_URL}/tile.png"/>
 
-    <!-- Typekit -->
-    <script src="//use.typekit.net/swj0ucl.js"></script>
-    <script>try{Typekit.load();}catch(e){}</script>
+  <!-- Typekit -->
+  <script src="//use.typekit.net/swj0ucl.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
 
-    <!-- Google Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <!-- Google Fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
 	{* Stylesheets *}
 	{iteration:cssFiles}

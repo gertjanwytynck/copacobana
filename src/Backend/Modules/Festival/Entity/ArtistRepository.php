@@ -86,7 +86,8 @@ class ArtistRepository extends EntityRepository
             ->where('a.isHidden = :hidden' )
             ->orderBy('a.name', 'ASC')
             ->setParameters(array(
-                'hidden' => '0'
+                'hidden' => '0',
+                'year' => '2017'
             ))
 
         ;

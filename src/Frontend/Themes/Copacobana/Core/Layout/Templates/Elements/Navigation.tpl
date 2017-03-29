@@ -1,4 +1,4 @@
-<ul class="container-fluid">
+<ul>
     {option:navigation}
     {iteration:navigation}
         <li class="{option:navigation.selected}active{/option:navigation.selected}">

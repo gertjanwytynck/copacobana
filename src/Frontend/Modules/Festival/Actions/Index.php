@@ -71,7 +71,7 @@ class Index extends Block
         $artistRepo = $em->getRepository(FrontendFestivalModel::ARTIST_ENTITY_CLASS);
         $artists = $artistRepo->_getAll();
 
-        if (empty($artists)) $this->redirect(Navigation::getURL(404));
+        if (empty($artists)) $this->redirect(FrontendNavigation::getURL(404));
 
         $i = 0;
         foreach ($artists as $key=>$value) {

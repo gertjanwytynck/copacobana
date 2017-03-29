@@ -4,7 +4,7 @@
 {include:Core/Layout/Templates/Partials/Header.tpl}
 <main class="">
     <figure class="copacobana">
-        <a href="https://docs.google.com/forms/d/1FzA-sEjGNXUUJ35k5qabYRFbvOobKpwjTJoc0LjYPHU/viewform" target="_blank"><button class="btn-volunteer-header">{$lblBecomeVolunteer|ucfirst}!</button></a>
+        <!-- <a href="https://docs.google.com/forms/d/1FzA-sEjGNXUUJ35k5qabYRFbvOobKpwjTJoc0LjYPHU/viewform" target="_blank"><button class="btn-volunteer-header">{$lblBecomeVolunteer|ucfirst}!</button></a> -->
     </figure>
 
     <section class="widget-artists cover-overflow">
@@ -14,8 +14,9 @@
             {/iteration:positionArtists}
         </div>
     </section>
+
     <section class="pattern-dotty cover-overflow">
-        <div class="intro container">
+        <div class="intro container-fluid">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1 news">
                     {iteration:positionNews}
@@ -27,23 +28,19 @@
         </div>
     </section>
 
-    <section class="video">
-        <div class="container">
-            <div class="row scheetjesvlieger">
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="sterrenketting"></div>
-                    {iteration:positionVideo}
-                        {$positionVideo.blockContent}
-                    {/iteration:positionVideo}
-                </div>
-               <img src="{$THEME_URL}/Core/Layout/images/scheetjesvlieger.png" title="copacobana" alt="copacobana" class="img-s"/>
-            </div>
+    <section class="video container-fluid">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+              {iteration:positionVideo}
+                  {$positionVideo.blockContent}
+              {/iteration:positionVideo}
+          </div>
         </div>
     </section>
 </main>
 
 <footer class="footer-dark">
-    <a href="/"><img src="{$THEME_URL}/Core/Layout/images/copacobana-light.png" title="copacobana" alt="copacobana" class="copa-footer"/></a>
+    <a href="/"><img src="{$THEME_URL}/Core/Layout/images/copacobana-light.svg" title="copacobana" alt="copacobana" class="copa-footer"/></a>
 	{include:Core/Layout/Templates/Partials/Footer.tpl}
 </body>
 </html>

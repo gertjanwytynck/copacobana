@@ -21,7 +21,7 @@
 </main>
 <div id="mappie"></div>
 <footer class="footer-dark">
-    <a href="/"><img src="{$THEME_URL}/Core/Layout/images/copacobana-light.png" title="copacobana" alt="copacobana" class="copa-footer" /></a>
+    <a href="/"><img src="{$THEME_URL}/Core/Layout/images/copacobana-light.svg" title="copacobana" alt="copacobana" class="copa-footer" /></a>
     {include:Core/Layout/Templates/Partials/Footer.tpl}
 </body>
 </html>

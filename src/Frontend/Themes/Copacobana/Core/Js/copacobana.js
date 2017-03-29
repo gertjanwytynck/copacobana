@@ -11,14 +11,16 @@ jsFrontend.copacobana = {
 
 		// parallax effect
 		var moduleHero = $('.copacobana');
-		var height = $(window).height() * 0.70;
-		moduleHero.height(height);
+        if ($(window).height() <= 1100) {
+            var height = $(window).height() * 0.85;
+            moduleHero.height(height);
 
-		// fix cover height
-		$(window).resize(function() {
-			var height = $(window).height() * 0.70;
-			moduleHero.height(height);
-		});
+            // fix cover height
+            $(window).resize(function() {
+                var height = $(window).height() * 0.85;
+                moduleHero.height(height);
+            });
+        }
 
 		// tooltip
 	 	$('[data-toggle="tooltip"]').tooltip()
@@ -28,38 +30,26 @@ jsFrontend.copacobana = {
 
 		$('.sub-nav-artists li').each(function(){
 			$(this).find('a').removeClass('active-sub')
-    	if (lastIndexUrl === 'vrijdag' && $(this).hasClass('friday')) {
-    		$(this).find('a').addClass('active-sub')
-    	}
+        	if (lastIndexUrl === 'vrijdag' && $(this).hasClass('friday')) {
+        		$(this).find('a').addClass('active-sub')
+        	}
 
-    	if (lastIndexUrl === 'zaterdag' && $(this).hasClass('saturday')) {
-    		$(this).find('a').addClass('active-sub')
-    	}
+        	if (lastIndexUrl === 'zaterdag' && $(this).hasClass('saturday')) {
+        		$(this).find('a').addClass('active-sub')
+        	}
 
-    	if (lastIndexUrl === 'zondag' && $(this).hasClass('sunday')) {
-    		$(this).find('a').addClass('active-sub')
-    	}
+        	if (lastIndexUrl === 'zondag' && $(this).hasClass('sunday')) {
+        		$(this).find('a').addClass('active-sub')
+        	}
 
-    	if (lastIndexUrl === 'line-up' && $(this).hasClass('line-up')) {
-    		$(this).find('a').addClass('active-sub')
-    	}
+        	if (lastIndexUrl === 'line-up' && $(this).hasClass('line-up')) {
+        		$(this).find('a').addClass('active-sub')
+        	}
 
-    	if (lastIndexUrl === 'artiesten' && $(this).hasClass('all')) {
-    		$(this).find('a').addClass('active-sub')
-    	}
-    })
-
-		// height for newsitem
-		var height = 0;
-		$.each($('.news .item .news-content'), function(key, value) {
-			if ($(value).height() > height) {
-				height = $(value).height() + 10;
-			}
-		});
-
-		$.each($('.news .item .news-content'), function(key, value) {
-			$(value).css('height', height);
-		});
+        	if (lastIndexUrl === 'artiesten' && $(this).hasClass('all')) {
+        		$(this).find('a').addClass('active-sub')
+        	}
+        })
 
 		$('.btn-submit').click(function() {
 			if ($('#contactFirstName').val() != '' && $('#contactName').val() != '' && $('#contactEmail').val() != '' && $('#contactPhone').val() != '' ) {
@@ -67,11 +57,25 @@ jsFrontend.copacobana = {
 			} else {
 				$('.loader-outer').addClass('hidden');
 			}
-
 		});
 	},
 
 	listeners: function () {
+		// Menu
+		$('.hamburger').click(function(){
+            $('#nav-icon').toggleClass('open');
+
+            if ($('#nav-icon').hasClass('open')) {
+                $('.sub-nav').fadeTo(250, 1, function() {
+                    $.session.set("sub-nav", true);
+                });
+            } else {
+                $('.sub-nav').fadeTo(250, 0, function() {
+                  $.session.set("sub-nav", false);
+                });
+            }
+		});
+
 		// menu
 		var active = false;
 		$.each($('.sub-nav li'), function(key, value){
@@ -80,19 +84,13 @@ jsFrontend.copacobana = {
 				active = true;
 			};
 		});
+
 		if ( ! active ) {
 			$('.default').css('padding-top', '100px');
 			$('.content').css('padding-top', '100px');
 		}
 
-		// carousel
-		$('ol.carousel-widget-indicators  li').on("click",function(){
-			$('ol.carousel-widget-indicators li.active').removeClass("active");
-			$(this).addClass("active");
-		});
-		$('#carousel-widget').carousel();
-
-		//hovers
+		// hovers
 		var src = $('.twitter').find('img').attr('src');
 		$('.twitter').hover(
 			function () {
