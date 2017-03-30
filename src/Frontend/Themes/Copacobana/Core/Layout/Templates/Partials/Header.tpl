@@ -8,14 +8,15 @@
     <nav class="navbar" role="navigation">
         <div class="navbar-header">
             <a href="/" class="mob-img"><img src="{$THEME_URL}/Core/Layout/images/copa-small.svg" title="copacobana" alt="copacobana" class="mob-img"/></a>
-            <div class="mobile-hamburger">
+            <div class="mobile-menu">
+              <a class="target-burger">
+                <ul class="buns">
+                  <li class="bun"></li>
+                  <li class="bun"></li>
+                </ul>
                 <p class="menu-text-mobile">Menu</p>
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigationbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+              </a>
+              <!--target-burger-->
             </div>
         </div>
         <div class="row collapse navbar-collapse navigation" id="navigationbar">

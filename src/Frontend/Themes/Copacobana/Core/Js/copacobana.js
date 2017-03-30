@@ -20,6 +20,8 @@ jsFrontend.copacobana = {
                 var height = $(window).height() * 0.85;
                 moduleHero.height(height);
             });
+        } else {
+            moduleHero.height(1100);
         }
 
 		// tooltip
@@ -75,6 +77,12 @@ jsFrontend.copacobana = {
                 });
             }
 		});
+
+        $('a.target-burger').click(function(e){
+            console.log("ok")
+            $('.sub-nav, a.target-burger').toggleClass('toggled');
+            e.preventDefault();
+        });
 
 		// menu
 		var active = false;
