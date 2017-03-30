@@ -13,7 +13,7 @@
                         <div class=" box">
                             <div class="img-outer img-box">
                                 <div class="img-inner">
-                                    <img src="{$THEME_URL}/Core/Layout/images/rules/vuur.png" alt="vuur" />
+                                    <img src="{$THEME_URL}/Core/Layout/images/rules/vuur.png" alt="copacobana" title="copacobana"/>
                                 </div>
                             </div>
                             <div class="text-box">
@@ -25,7 +25,7 @@
                         <div class="">
                             <div class="img-outer img-box">
                                 <div class="img-inner">
-                                    <img src="{$THEME_URL}/Core/Layout/images/rules/drugs.png" alt="drugs" />
+                                    <img src="{$THEME_URL}/Core/Layout/images/rules/drugs.png" alt="copacobana" title="copacobana"/>
                                 </div>
                             </div>
                             <div class="text-box">
@@ -37,7 +37,7 @@
                         <div class=" box">
                             <div class="img-outer img-box">
                                 <div class="img-inner">
-                                    <img src="{$THEME_URL}/Core/Layout/images/rules/food.png" alt="food" />
+                                    <img src="{$THEME_URL}/Core/Layout/images/rules/food.png" alt="copacobana" title="copacobana" />
                                 </div>
                             </div>
                             <div class="text-box">
@@ -49,7 +49,7 @@
                         <div class="">
                             <div class="img-outer img-box">
                                 <div class="img-inner">
-                                    <img src="{$THEME_URL}/Core/Layout/images/rules/hond.png" alt="hond" />
+                                    <img src="{$THEME_URL}/Core/Layout/images/rules/hond.png" alt="copacobana" title="copacobana"/>
                                 </div>
                             </div>
                             <div class="text-box">
@@ -61,7 +61,7 @@
                         <div class="">
                             <div class="img-outer img-box ">
                                 <div class="img-inner">
-                                    <img src="{$THEME_URL}/Core/Layout/images/rules/wildplassen.png" alt="flessen" />
+                                    <img src="{$THEME_URL}/Core/Layout/images/rules/wildplassen.png" alt="copacobana" title="copacobana" />
                                 </div>
                             </div>
                             <div class="text-box">
@@ -73,7 +73,7 @@
                         <div class=" box">
                             <div class="img-outer img-box">
                                 <div class="img-inner">
-                                    <img src="{$THEME_URL}/Core/Layout/images/rules/pijl.png" alt="pijl" />
+                                    <img src="{$THEME_URL}/Core/Layout/images/rules/pijl.png" alt="copacobana" title="copacobana" />
                                 </div>
                             </div>
                             <div class="text-box">
@@ -85,7 +85,7 @@
                         <div class="">
                             <div class="img-outer img-box">
                                 <div class="img-inner">
-                                    <img src="{$THEME_URL}/Core/Layout/images/rules/knots.png" alt="knots" />
+                                    <img src="{$THEME_URL}/Core/Layout/images/rules/knots.png" alt="copacobana" title="copacobana" />
                                 </div>
                             </div>
                             <div class="text-box">
@@ -97,7 +97,7 @@
                         <div class=" box">
                             <div class="img-outer img-box">
                                 <div class="img-inner">
-                                    <img src="{$THEME_URL}/Core/Layout/images/rules/flessen.png" alt="scherpe voorwerpen" />
+                                    <img src="{$THEME_URL}/Core/Layout/images/rules/flessen.png" alt="copacobana" title="copacobana" />
                                 </div>
                             </div>
                             <div class="text-box">
@@ -111,7 +111,7 @@
             <div class="col-md-12 sidebar">
                 <div class="row default">
                     <div class="col-md-3">
-                        <img src="{$THEME_URL}/Core/Layout/images/monster-vliegend.png" alt="monster-vliegend" class="monster-vliegend"/>
+                        <img src="{$THEME_URL}/Core/Layout/images/monster-vliegend.png" alt="copacobana" title="copacobana" class="monster-vliegend"/>
                     </div>
                     <div class="col-md-9 ">
                         <ul class="">

@@ -3,6 +3,18 @@ jsFrontend.copacobana = {
 		jsFrontend.copacobana.listeners();
 		jsFrontend.copacobana.mappie();
 
+        if(window.location.pathname != "/nl") {
+            if ($.session.get("sub-nav")) {
+                $('.sub-nav').fadeTo(250, 1, function() {
+                    $.session.set("sub-nav", true);
+                });
+            }
+        } else {
+            $('.sub-nav').css('opacity', '0')
+            $.session.set("sub-nav", false);
+        }
+
+
 		// lazy loading
 		$.extend($.lazyLoadXT, {
 			edgeY:  0,
@@ -62,6 +74,34 @@ jsFrontend.copacobana = {
 		});
 	},
 
+    mappie: function() {
+        if ($('#map').length) {
+            var copaLocation = [3.7587856, 51.0596485];
+            mapboxgl.accessToken = 'pk.eyJ1IjoiZ2VydGphbnd5dHluY2siLCJhIjoiY2owd29oemdiMDAwMzJycGd0dnRrejNyOSJ9.4EuSbSdrpxUlVeaE0O1fMA';
+            var map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/streets-v9',
+                center: copaLocation,
+                zoom: 15
+            });
+
+            map.scrollZoom.disable();
+            map.addControl(new mapboxgl.NavigationControl());
+
+            var popup = new mapboxgl.Popup({offset: 25})
+                .setText('Copacobana Festival. Rozebroekenslag, 9040 Sint-Amandsberg');
+
+            var el = document.createElement('div');
+            el.id = 'marker';
+
+            new mapboxgl.Marker(el, {offset:[-25, -25]})
+                .setLngLat(copaLocation)
+                .setPopup(popup)
+                .addTo(map);
+        }
+
+    },
+
 	listeners: function () {
 		// Menu
 		$('.hamburger').click(function(){
@@ -73,7 +113,7 @@ jsFrontend.copacobana = {
                 });
             } else {
                 $('.sub-nav').fadeTo(250, 0, function() {
-                  $.session.set("sub-nav", false);
+                    $.session.set("sub-nav", false);
                 });
             }
 		});
@@ -84,7 +124,7 @@ jsFrontend.copacobana = {
             e.preventDefault();
         });
 
-		// menu
+		// Artist Menu
 		var active = false;
 		$.each($('.sub-nav li'), function(key, value){
 			if ($(value).hasClass('active')) {
@@ -130,153 +170,6 @@ jsFrontend.copacobana = {
 			}
 		);
 	},
-
-	mappie: function () {
-		if( $('#mappie').length ) {
-			// inits
-			var belgium = jsFrontend.data.get('Location.items_1[0]');
-			var zoom = jsFrontend.data.get('Location.settings_1.zoom_level');
-			var height = jsFrontend.data.get('Location.settings_1.height');
-
-			// map config
-			$('#mappie').css('max-height', height);
-			$('#mappie').css('height', height);
-
-			// options
-			var styles =
-				[
-					{
-						"featureType": "administrative",
-						"elementType": "all",
-						"stylers": [
-							{
-								"visibility": "on"
-							},
-							{
-								"lightness": 33
-							}
-						]
-					},
-					{
-						"featureType": "landscape",
-						"elementType": "all",
-						"stylers": [
-							{
-								"color": "#f9efd6"
-							}
-						]
-					},
-					{
-						"featureType": "poi.park",
-						"elementType": "geometry",
-						"stylers": [
-							{
-								"color": "#ece9d5"
-							}
-						]
-					},
-					{
-						"featureType": "poi.park",
-						"elementType": "labels",
-						"stylers": [
-							{
-								"visibility": "on"
-							},
-						]
-					},
-					{
-						"featureType": "road",
-						"elementType": "all",
-						"stylers": [
-							{
-								"lightness": 20
-							}
-						]
-					},
-					{
-						"featureType": "road.highway",
-						"elementType": "geometry",
-						"stylers": [
-							{
-								"color": "#f4bf3f"
-							}
-						]
-					},
-					{
-						"featureType": "road.arterial",
-						"elementType": "geometry",
-						"stylers": [
-							{
-								"color": "#efd084"
-							}
-						]
-					},
-					{
-						"featureType": "road.local",
-						"elementType": "geometry",
-						"stylers": [
-							{
-								"color": "#f0e2bf"
-							}
-						]
-					},
-					{
-						"featureType": "water",
-						"elementType": "all",
-						"stylers": [
-							{
-								"visibility": "on"
-							},
-							{
-								"color": "#acbcc9"
-							}
-						]
-					}
-				]
-			var options = {
-				mapTypeControlOptions: {
-					mapTypeIds: ['Styled']
-				},
-				center: new google.maps.LatLng(belgium.lat, belgium.lng),
-				zoom: parseInt(zoom),
-				disableDefaultUI: true,
-				//draggable: false,
-				scrollwheel: false,
-				mapTypeId: 'Styled'
-			};
-
-			// marker
-			var markerBe = new google.maps.Marker({
-				position: new google.maps.LatLng(belgium.lat, belgium.lng),
-				title: belgium.title,
-				locationId: belgium.id
-			});
-
-
-			var currentMark;
-			var infoWindowBe = new google.maps.InfoWindow({
-				content: '<h3>'+ belgium.title + '</h3>' + belgium.street + ' ' + belgium.number  + '<br />' + belgium.zip + ' ' + belgium.city
-			});
-
-			google.maps.event.addListener(markerBe, 'click', function () {
-				infoWindowBe.open(map, this);
-				currentMark = this;
-
-			});
-			google.maps.event.addListener(markerBe, 'closeclick', function () {
-				currentMark.setMap(null); //removes the marker
-				// then, remove the infowindows name from the array
-			});
-
-
-			var div = document.getElementById('mappie');
-			var map = new google.maps.Map(div, options);
-			var styledMapType = new google.maps.StyledMapType(styles, {name: 'Styled'});
-			map.mapTypes.set('Styled', styledMapType);
-			markerBe.setMap(map);
-		}
-
-	}
 };
 
 $(jsFrontend.copacobana.init());

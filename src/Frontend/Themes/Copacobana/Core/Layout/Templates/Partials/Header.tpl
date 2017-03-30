@@ -16,13 +16,12 @@
                 </ul>
                 <p class="menu-text-mobile">Menu</p>
               </a>
-              <!--target-burger-->
             </div>
         </div>
         <div class="row collapse navbar-collapse navigation" id="navigationbar">
           <div class="col-sm-7 location">
             <p>
-              <p>{$lblFestivalDate}<br /> {$lblFestivalLocation|ucfirst}</p>
+              <a href="https://www.google.be/maps/place/S%26R+Rozebroeken/@51.0596485,3.7587856,17z/data=!3m1!4b1!4m5!3m4!1s0x47c376c156ac8097:0xd16c48285d5edaca!8m2!3d51.0596451!4d3.7609796" target="_blank">{$lblFestivalDate}<br /> {$lblFestivalLocation|ucfirst}</a>
             </p>
           </div>
           <div class="col-sm-5">
