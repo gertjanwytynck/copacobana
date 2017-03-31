@@ -7005,7 +7005,7 @@ main {
   height: 30px;
   width: 100%;
   border: 1px solid #102a4f !important;
-  background: #b4dcc2;
+  background: rgba(245, 239, 123, 0.8);
 }
 .contact label {
   color: #174556;
@@ -7019,7 +7019,7 @@ main {
 }
 .contact .form-control {
   height: 30px;
-  background: #b4dcc2;
+  background: rgba(245, 239, 123, 0.8);
   border: 1px solid #102a4f !important;
 }
 .contact .contact-information h2 {
@@ -7061,9 +7061,9 @@ main {
   color: #174556;
 }
 #marker {
-  background-image: url('../images/copa-bol.png');
+  background-image: url('../images/green-fish.png');
   background-size: cover;
-  width: 50px;
+  width: 60px;
   height: 50px;
   border-radius: 50%;
   cursor: pointer;

@@ -3,13 +3,14 @@ jsFrontend.copacobana = {
 		jsFrontend.copacobana.listeners();
 		jsFrontend.copacobana.mappie();
 
-        if(window.location.pathname != "/nl") {
+
+        if(window.location.pathname != "/nl" && $(window).width() > 767) {
             if ($.session.get("sub-nav")) {
                 $('.sub-nav').fadeTo(250, 1, function() {
                     $.session.set("sub-nav", true);
                 });
             }
-        } else {
+        } else if ($(window).width() > 767){
             $('.sub-nav').css('opacity', '0')
             $.session.set("sub-nav", false);
         }
@@ -119,9 +120,7 @@ jsFrontend.copacobana = {
 		});
 
         $('a.target-burger').click(function(e){
-            console.log("ok")
             $('.sub-nav, a.target-burger').toggleClass('toggled');
-            e.preventDefault();
         });
 
 		// Artist Menu
