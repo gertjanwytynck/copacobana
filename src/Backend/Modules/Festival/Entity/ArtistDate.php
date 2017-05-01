@@ -61,6 +61,13 @@ class ArtistDate
    *
    * @ORM\Column(type="datetime")
    */
+  private $endOn;
+
+  /**
+   * @var \DateTime
+   *
+   * @ORM\Column(type="datetime")
+   */
   private $createdOn;
 
   /**
@@ -130,6 +137,30 @@ class ArtistDate
   {
       return $this->startOn;
   }
+  /**
+   * Set endOn
+   *
+   * @param \DateTime $endOn
+   *
+   * @return ArtistDate
+   */
+  public function setEndOn($endOn)
+  {
+      $this->endOn = $endOn;
+
+      return $this;
+  }
+
+  /**
+   * Get endOn
+   *
+   * @return \DateTime
+   */
+  public function getEndOn()
+  {
+      return $this->endOn;
+  }
+
 
   /**
    * Set createdOn

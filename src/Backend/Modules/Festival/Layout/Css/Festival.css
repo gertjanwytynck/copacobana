@@ -63,6 +63,10 @@ span.label.red {
     background: #d2ebe5 !important;
 }
 
+.inputTime {
+  width: 50px !important;
+}
+
 /* to float less important tabs to the right */
 .floatRight {
     float: right !important;

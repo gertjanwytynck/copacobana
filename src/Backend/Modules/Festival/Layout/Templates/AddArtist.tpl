@@ -49,20 +49,20 @@
 								<h3>{$lblPractical|ucfirst}</h3>
 							</div>
 							<div class="options pickDate">
-                                <div class="oneLiner">
-                                    <p>
-                                        <input type="text" value="" name="dates[]" name="" maxlength="10" data-mask="dd/mm/yy" class="inputText generatePicker" data-firstday="1">
-                                    </p>
-                                    <p>
-                                        <label for="publishOnTime">{$lblAt}</label>
-                                    </p>
-                                    <p>
-                                         <input name="times[]" type="text" value="17:00" maxlength="5" data-mask="dd/mm/yy" class="inputText inputTime" data-firstday="1">
-                                    </p>
-                                    <p>
-                                        <label for="publishOnTime">uu:mm</label>
-                                    </p>
-                                </div>
+                <div class="oneLiner">
+                    <p>
+                        <input type="text" value="" name="dates[]" name="" maxlength="10" data-mask="dd/mm/yy" class="inputText generatePicker" data-firstday="1">
+                    </p>
+                    <p>
+                        <label for="publishOnTime">{$lblAt}</label>
+                    </p>
+                    <p>
+                         <input name="startTimes[]" type="text" value="17:00" maxlength="5" data-mask="dd/mm/yy" class="inputText inputTime" data-firstday="1">
+                    </p>
+                    <p>
+                         <input name="endTimes[]" type="text" value="18:00" maxlength="5" data-mask="dd/mm/yy" class="inputText inputTime" data-firstday="1">
+                    </p>
+                </div>
                                 <div class="oneLiner">
                                     <p>
                                         <label>{$lblStage|ucfirst}: </label>

@@ -148,7 +148,8 @@ class EditArtist extends ActionEdit
             $this->arrDates[$key]['stage'] = $date->getStage()->getId();
             $this->arrDates[$key]['category'] = $date->getCategory()->getId();
             $this->arrDates[$key]['date'] = $date->getStartOn()->format('d/m/Y');
-            $this->arrDates[$key]['time'] = $date->getStartOn()->format('H:i');
+            $this->arrDates[$key]['startTime'] = $date->getStartOn()->format('H:i');
+            $this->arrDates[$key]['endTime'] = $date->getEndOn()->format('H:i');
         }
 
         // artist practical
@@ -278,12 +279,15 @@ class EditArtist extends ActionEdit
     {
         // get the dates
         $arrDates = array();
-        if (!empty($_POST['dates']) && !empty($_POST['times'])) {
+        if (!empty($_POST['dates']) && !empty($_POST['startTime']) && !empty($_POST['endTime'])) {
             foreach($_POST['dates'] as $key=>$date) {
                 if (!empty($date)) {
                     $startOn = new \DateTime();
-                    $timeStamp = \DateTime::createFromFormat('d/m/Y H:i', $date . ' ' . $_POST['times'][$key])->format('U');
-                    $arrDates[$key]['date'] = $startOn->setTimestamp($timeStamp);
+                    $endOn = new \DateTime();
+                    $startTime = \DateTime::createFromFormat('d/m/Y H:i', $date . ' ' . $_POST['startTime'][$key])->format('U');
+                    $endTime = \DateTime::createFromFormat('d/m/Y H:i', $date . ' ' . $_POST['endTime'][$key])->format('U');
+                    $arrDates[$key]['startTime'] = $startOn->setTimestamp($startTime);
+                    $arrDates[$key]['endTime'] = $endOn->setTimestamp($endTime);
                     $arrDates[$key]['stage'] = $_POST['stages'][$key];
                     $arrDates[$key]['category'] = $_POST['categories'][$key];
                 }
@@ -353,7 +357,8 @@ class EditArtist extends ActionEdit
                     $stageRepo = $stageRepo->find($arrDates[$key]['stage']);
                     $categoryRepo = $categoryRepo->find($arrDates[$key]['category']);
 
-                    $content->setStartOn($arrDates[$key]['date']);
+                    $content->setStartOn($arrDates[$key]['startTime']);
+                    $content->setEndOn($arrDates[$key]['endTime']);
                     $content->setStage($stageRepo);
                     $content->setCategory($categoryRepo);
 
