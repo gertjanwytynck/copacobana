@@ -98,9 +98,6 @@ class Model implements FrontendTagsInterface
                 'publish_on' => FrontendModel::getUTCDate('U', $result->getArticle()->getPublishOn()->format('U')),
                 'full_url' => $link . '/' . $result->getMeta()->getUrl(),
                 'url' => $result->getMeta()->getUrl(),
-                'category_title' => $result->getArticle()->getCategory()->getLocale(FRONTEND_LANGUAGE)->getTitle(),
-                'category_full_url' =>
-                    $categoryLink . '/' . $result->getArticle()->getCategory()->getLocale(FRONTEND_LANGUAGE)->getMeta()->getUrl()
             );
 
             if (FrontendModel::get('fork.settings')->getForModule('News', 'cover_image_enabled')) {

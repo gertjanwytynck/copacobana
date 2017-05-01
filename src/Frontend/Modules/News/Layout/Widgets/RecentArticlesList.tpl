@@ -11,11 +11,11 @@
                 <a href="{$widgetNewsRecentArticlesList.full_url}"><img src="{$FRONTEND_FILES_URL}/news/covers/400x400/{$widgetNewsRecentArticlesList.cover_image}" alt="{$widgetNewsRecentArticlesList.title}" /></a>
             </div>
             <div class="news-content col-sm-8">
-                <h2><a href="{$widgetNewsRecentArticlesList.full_url}">{$widgetNewsRecentArticlesList.publish_on|date:'d/m/Y':{$LANGUAGE}|ucfirst} | <span class="latest-news">Laatste nieuws</span></a></h2>
+                <h2><a href="{$widgetNewsRecentArticlesList.full_url}">{$widgetNewsRecentArticlesList.publish_on|date:'d/m/Y':{$LANGUAGE}|ucfirst} | <span class="latest-news">{$lblLatestNews|ucfirst}</span></a></h2>
                 <h1><a href="{$widgetNewsRecentArticlesList.full_url}">{$widgetNewsRecentArticlesList.title}</a></h1>
                 <p><a href="{$widgetNewsRecentArticlesList.full_url}">{$widgetNewsRecentArticlesList.content|truncate:550:true:true}</a></p>
                 <div class="btn-all-news">
-                  <a href="/nl/nieuws">Bekijk alle nieuwsitems</a>
+                  <a href="/nl/nieuws">{$lblAllNewsItems|ucfirst}</a>
                 </div>
             </div>
         </article>
