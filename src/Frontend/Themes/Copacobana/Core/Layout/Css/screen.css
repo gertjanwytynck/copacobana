@@ -6468,6 +6468,18 @@ main {
   margin-top: 8px !important;
   padding: 9px 0px;
 }
+.copacobana {
+  margin-top: 0;
+  position: relative;
+  background: #fdfbf0 url('../images/cover.jpg') no-repeat center center;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  width: 100%;
+  min-width: 100%;
+  z-index: 0;
+}
 .copa-intro {
   position: fixed;
   left: 30px;
@@ -6789,6 +6801,10 @@ main {
 }
 .intro article {
   min-height: 206px;
+  padding-bottom: 15px;
+}
+.intro article:last-of-type {
+  padding-bottom: 0px;
 }
 .intro .buttons {
   padding: 70px 0px;
@@ -7351,7 +7367,7 @@ main {
   text-align: center;
 }
 .artist-content {
-  padding-top: 30px;
+  padding-top: 150px;
 }
 .sub-nav-artists {
   margin-top: 133px;
@@ -7544,7 +7560,7 @@ main {
 .widget-artists .og-grid li,
 .artists .og-grid li {
   max-width: 100%;
-  height: 220px;
+  height: 280px;
   overflow: hidden;
   width: 32%;
   margin: 0.70% 0.5%;
@@ -7611,12 +7627,12 @@ main {
 }
 .widget-artists .og-grid li a,
 .artists .og-grid li a {
-  height: 220px;
+  height: 280px;
   position: relative;
 }
 .widget-artists .og-grid li a figure,
 .artists .og-grid li a figure {
-  height: 220px;
+  height: 280px;
   overflow: hidden;
 }
 .widget-artists .og-grid li a:after,
@@ -7653,7 +7669,7 @@ main {
 }
 .widget-artists .og-grid li .artist-name span,
 .artists .og-grid li .artist-name span {
-  color: #eec155;
+  color: #ed3587;
 }
 .widget-artists .og-grid li .more,
 .artists .og-grid li .more,
@@ -7757,6 +7773,7 @@ main {
   -webkit-box-shadow: inset 0 4px 4px -4px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: inset 0 4px 4px -4px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 4px 4px -4px rgba(0, 0, 0, 0.2);
+  background-image: url('../images/amoebe-blue.png');
 }
 .artists {
   background: none;

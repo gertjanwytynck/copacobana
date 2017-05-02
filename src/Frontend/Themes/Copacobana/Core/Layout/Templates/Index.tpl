@@ -4,7 +4,6 @@
 {include:Core/Layout/Templates/Partials/Header.tpl}
 <main class="">
     <figure class="copacobana">
-      {include:Core/Layout/Templates/Partials/Banner.tpl}
         <!-- <a href="https://docs.google.com/forms/d/1FzA-sEjGNXUUJ35k5qabYRFbvOobKpwjTJoc0LjYPHU/viewform" target="_blank"><button class="btn-volunteer-header">{$lblBecomeVolunteer|ucfirst}!</button></a> -->
     </figure>
 

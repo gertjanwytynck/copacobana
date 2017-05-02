@@ -52,7 +52,7 @@ class Artists extends ActionIndex
         $this->dataGrid->setColumnsHidden(array('id'));
 
         // disable paging
-        $this->dataGrid->setPaging(true);
+        $this->dataGrid->setPaging(false);
 
         // column functions
         $this->dataGrid->setColumnFunction(

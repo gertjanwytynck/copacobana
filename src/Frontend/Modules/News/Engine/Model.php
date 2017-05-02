@@ -241,7 +241,6 @@ class Model implements FrontendTagsInterface
 
         if (empty($result)) return null;
 
-
         $id = $result->getArticle()->getId();
 
         $rsm = new Query\ResultSetMapping();
@@ -273,7 +272,12 @@ class Model implements FrontendTagsInterface
             ;
             /** @var \Backend\Modules\News\Entity\ArticleLocale $result */
             $next = $query->getOneOrNullResult();
-            $next = $link . '/' . $next->getMeta()->getUrl();
+
+            if ( ! empty($next) ) {
+                $next = $link . '/' . $next->getMeta()->getUrl();
+            } else {
+                $next = false;
+            }
         } else {
             $next = false;
         }
@@ -296,12 +300,14 @@ class Model implements FrontendTagsInterface
             /** @var \Backend\Modules\News\Entity\ArticleLocale $result */
             $prev = $query->getOneOrNullResult();
 
-
-            $prev = $link . '/' . $prev->getMeta()->getUrl();
+            if ( ! empty($next) ) {
+                $prev = $link . '/' . $prev->getMeta()->getUrl();
+            } else {
+                $prev = false;
+            }
         } else {
             $prev = false;
         }
-
 
         $article = array(
             'id' => $result->getArticle()->getId(),
