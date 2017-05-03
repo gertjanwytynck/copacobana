@@ -14,19 +14,6 @@ jsFrontend.festival =
 		//var backstage = jsFrontend.data.get('Festival.backstage');
 	    var selectTypes = document.querySelectorAll("select[name='typesBackstage[]']");
 
-		// set stages
-        var backstage = jsFrontend.data.get('Festival.backstage')
-		for (i = 0; i < selectTypes.length; i++) {
-	      	for(j = 0; j < selectTypes[i].options.length; j++){
-
-	      		if (backstage.length > 1) {
-	    		 	if(selectTypes[i].options[j].value == backstage[i+1]['type'] ){
-		          		selectTypes[i].options[j].selected = true;
-		        	}
-	      		}
-	    	}
-	    }
-
 	    $('.grid').masonry({
 	      itemSelector: '.grid-item'
 	    });
@@ -69,15 +56,30 @@ jsFrontend.festival =
 			}
 		}
 
-        tinymce.init({
-            selector: 'textarea',
-            height: 300,
-            menubar: false,
-            plugins: [
-                'link'
-            ],
-            toolbar: 'undo redo  | bold italic | link',
-        });
+        // set stages
+        var backstage = jsFrontend.data.get('Festival.backstage')
+        if (backstage != "undefined") {
+            for (i = 0; i < selectTypes.length; i++) {
+    	      	for(j = 0; j < selectTypes[i].options.length; j++){
+
+    	      		if (backstage.length > 1) {
+    	    		 	if(selectTypes[i].options[j].value == backstage[i+1]['type'] ){
+    		          		selectTypes[i].options[j].selected = true;
+    		        	}
+    	      		}
+    	    	}
+    	    }
+
+            tinymce.init({
+                selector: 'textarea',
+                height: 300,
+                menubar: false,
+                plugins: [
+                    'link'
+                ],
+                toolbar: 'undo redo  | bold italic | link',
+            });
+        }
 	},
 
 	filtering: function () {

@@ -42,7 +42,7 @@
                         {iteration:startDates}
                         <div class="dates">
                             <p>{$lblStage|ucfirst}: <span>{$startDates.stage}</span><br />
-                             {$lblTime|ucfirst}: <span>{$startDates.date}</span> {$lblAt|ucfirst} <span>{$startDates.time}</span></p>
+                             {$lblTime|ucfirst}: <span>{$startDates.date}</span> {$lblAt} <span>{$startDates.time}</span></p>
                         </div>
                         {/iteration:startDates}
                     </div>
@@ -144,7 +144,7 @@
                             </div>
                             <div class="downloadFile row">
                                 <div class="col-md-12 bottom20">
-                                    <img src="{$FRONTEND_FILES_URL}/festival/artists/covers/x250/{$item.cover}" />
+                                    <img src="{$FRONTEND_FILES_URL}/festival/artists/covers/x330/{$item.cover}" />
                                 </div>
                                 <div class="btn-group col-md-12" data-toggle="buttons">
                                     {option:chkDeleteCover}

@@ -238,7 +238,6 @@ class SignUp extends Block
 
         $this->header->addJsData($this->module, 'backstage', $this->record['practical'][0]['backstage']);
 
-
         $this->header->addCSS('/src/Frontend/Modules/Festival/Layout/Css/content.min.css', false, false);
         $this->header->addCSS('/src/Frontend/Modules/Festival/Layout/Css/skin.min.css', false, false);
 
@@ -456,20 +455,8 @@ class SignUp extends Block
 
                     $emailFields[] = array(
                         'label' =>  \SpoonFilter::ucfirst(Language::lbl('remark')),
-                        'value' => $this->frm->getField('remark')->getValue()
+                        'value' => htmlspecialchars_decode($this->frm->getField('remark')->getValue())
                     );
-
-                    if ($this->frm->getField('soundEngineer')->isChecked()) {
-                        $emailFields[] = array(
-                            'label' =>  \SpoonFilter::ucfirst(Language::lbl('soundEngineer')),
-                            'value' => \SpoonFilter::ucfirst(Language::lbl('yes'))
-                        );
-                    } else {
-                         $emailFields[] = array(
-                            'label' =>  \SpoonFilter::ucfirst(Language::lbl('soundEngineer')),
-                            'value' => \SpoonFilter::ucfirst(Language::lbl('no'))
-                        );
-                    }
 
                     // add person for backstage
                     if (!empty($arrBackstage)) {
@@ -657,11 +644,6 @@ class SignUp extends Block
                     // insert the practical
                     $em->persist($content);
                 }
-
-                echo '<pre>';
-                print_r($this->frm->getField('bio')->getValue());
-                print_r(htmlspecialchars($this->frm->getField('bio')->getValue()));
-                echo '</pre>';
 
                 // insert artist website
                 foreach ($artistWebsite as $content) {

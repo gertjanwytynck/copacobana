@@ -200,6 +200,7 @@ class LineUp extends Block
 
         // parse the extra header files
         $this->header->addJS('/src/Frontend/Modules/Festival/Js/masonry.min.js', false, false);
+        $this->header->addJsData($this->module, 'backstage', 'undefined');
 
 
         // assign the items

@@ -78,6 +78,7 @@ class Detail extends Block
         // add to breadcrumb
         $this->breadcrumb->addElement($this->record['meta']['title']);
         $this->header->addJS('/src/Frontend/Modules/Festival/Js/masonry.min.js', false, false);
+        $this->header->addJsData($this->module, 'backstage', 'undefined');
 
         // hide the page title
         $this->header->setPageTitle($this->record['meta']['title'], $this->record['meta']['overwriteTitle']);
