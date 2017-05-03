@@ -9,7 +9,7 @@
                         <li>{$lblAnamma|ucfirst} - {$lblBtwNumber}</li>
                         <li><a href="mailto:info@anamma.be">{$lblMailAnamma}</a></li>
                         <li>{$lblStreetAnamma|ucfirst} {$lblAt} {$lblZipAnamma}</li>
-                        <!-- <li><a href="https://docs.google.com/forms/d/1FzA-sEjGNXUUJ35k5qabYRFbvOobKpwjTJoc0LjYPHU/viewform" target="_blank">{$lblBecomeVolunteer|ucfirst}</a></li> -->
+                        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScGwmE7Jpu_LlRcb0BFEZOICKpKX9cD9faw-ukDtCa7Gl3qiA/viewform" target="_blank">{$lblBecomeVolunteer|ucfirst}</a></li>
                         <li><a href="{$FRONTEND_FILES_URL}/copacobana/poster.jpg" target="_blank">{$lblDownloadPoster|ucfirst}</a></li>
                         <li>{$lblArtworkBy|ucfirst}</li>
                         <li>{$lblDevelopmentBy|ucfirst}</li>

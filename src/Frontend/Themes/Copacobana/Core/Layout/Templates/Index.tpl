@@ -4,7 +4,7 @@
 {include:Core/Layout/Templates/Partials/Header.tpl}
 <main class="">
     <figure class="copacobana">
-        <!-- <a href="https://docs.google.com/forms/d/1FzA-sEjGNXUUJ35k5qabYRFbvOobKpwjTJoc0LjYPHU/viewform" target="_blank"><button class="btn-volunteer-header">{$lblBecomeVolunteer|ucfirst}!</button></a> -->
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScGwmE7Jpu_LlRcb0BFEZOICKpKX9cD9faw-ukDtCa7Gl3qiA/viewform" target="_blank"><button class="btn-volunteer-header">{$lblBecomeVolunteer|ucfirst}!</button></a>
     </figure>
 
     <section class="widget-artists cover-overflow">
