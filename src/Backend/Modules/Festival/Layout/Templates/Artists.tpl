@@ -6,9 +6,9 @@
 
     {option:showFestivalAddArtist}
         <div class="buttonHolderRight">
-            <a href="{$var|geturl:'mail_volunteers'}" class="button icon iconPrint" title="Mail volunteers">
+            <!-- <a href="{$var|geturl:'mail_volunteers'}" class="button icon iconPrint" title="Mail volunteers">
                 <span>Mail volunteers</span>
-            </a>
+            </a> -->
             <a href="{$var|geturl:'add_artist'}" class="button icon iconAdd" title="{$lblAdd|ucfirst}">
                 <span>{$lblAdd|ucfirst}</span>
             </a>

@@ -127,7 +127,7 @@ class SignUp extends Block
         // Hardcoded types for our crew
         $this->arrTypes = array();
         $this->arrTypes[0]['id'] = 0;
-        $this->arrTypes[0]['name'] = 'bandlid';
+        $this->arrTypes[0]['name'] = 'artiest';
         $this->arrTypes[1]['id'] = 1;
         $this->arrTypes[1]['name'] = 'geluidstechnieker';
         $this->arrTypes[2]['id'] = 2;
@@ -150,7 +150,7 @@ class SignUp extends Block
         $this->frm = new Form('edit');
 
         $arrTypes = array();
-        $arrTypes[0] = 'bandlid';
+        $arrTypes[0] = 'artiest';
         $arrTypes[1] = 'geluidstechnieker';
         $arrTypes[2] = 'technieker';
         $arrTypes[3] = 'manager';
@@ -185,7 +185,6 @@ class SignUp extends Block
             } else {
                 $this->frm->addText('nameBackstage')->setAttributes(array('class' => 'form-control', 'placeholder' => \SpoonFilter::ucfirst(Language::lbl('FirstName')) . ' & ' . ucfirst(Language::lbl('Name'))));
                 $this->frm->addDropdown('typeBackstage', $arrTypes);
-
             }
 
             $this->frm->addCheckbox('signUpOpen', '0');
@@ -197,7 +196,7 @@ class SignUp extends Block
             $this->frm->addText('instagram', $this->record['website'][0]['instagramUrl'])->setAttributes(array('class' => 'form-control', 'placeholder' => \SpoonFilter::ucfirst(Language::lbl('Instagram'))));
             $this->frm->addText('soundcloud', $this->record['website'][0]['soundcloudUrl'])->setAttributes(array('class' => 'form-control', 'placeholder' => \SpoonFilter::ucfirst(Language::lbl('Soundcloud'))));
             $this->frm->addText('website', $this->record['website'][0]['websiteUrl'])->setAttributes(array('class' => 'form-control', 'placeholder' => \SpoonFilter::ucfirst(Language::lbl('Website'))));
-            $this->frm->addTextarea('bio', $this->record['website'][0]['bio'])->setAttributes(array('class' => 'form-control', 'placeholder' => \SpoonFilter::ucfirst(Language::msg('Bio'))));
+            $this->frm->addTextarea('bio', htmlspecialchars_decode($this->record['website'][0]['bio']))->setAttributes(array('class' => 'form-control', 'placeholder' => \SpoonFilter::ucfirst(Language::msg('Bio'))));
         } else {
             $this->frm->addText('contactName', $this->record['practical'][0]['contactName'])->setAttributes(array('required' => true, 'class' => 'form-control', 'max-length' => '255', 'disabled' => true, 'placeholder' => \SpoonFilter::ucfirst(Language::lbl('Name')) . '*' ));
             $this->frm->addText('contactFirstName',  $this->record['practical'][0]['contactFirstName'])->setAttributes(array('required' => true, 'class' => 'form-control', 'max-length' => '255','disabled' => true,  'placeholder' => \SpoonFilter::ucfirst(Language::lbl('FirstName')) . '*' ));
@@ -209,11 +208,8 @@ class SignUp extends Block
             $this->frm->addText('veganMeal',  $this->record['practical'][0]['veganMeal'])->setAttributes(array('required' => true, 'disabled' => true, 'class' => 'form-control'));
             $this->frm->addTextarea('remark', $this->record['practical'][0]['remark'])->setAttributes(array('class' => 'form-control', 'disabled' => true, 'placeholder' => \SpoonFilter::ucfirst(Language::msg('Remark'))));
 
-
-
             if (isset($this->record['practical'][0]['backstage'][0])) {
                 $this->frm->addText('nameBackstage', $this->record['practical'][0]['backstage'][0]['name'])->setAttributes(array('class' => 'form-control', 'disabled' => true, 'placeholder' => \SpoonFilter::ucfirst(Language::lbl('FirstName')) . ' & ' . ucfirst(Language::lbl('Name'))));
-
                 $this->frm->addDropdown('typeBackstage', $arrTypes, $this->record['practical'][0]['backstage'][0]['type'])->setAttributes(array('disabled' => true));
             } else {
                 $this->frm->addText('nameBackstage')->setAttributes(array('class' => 'form-control', 'disabled' => true, 'placeholder' => \SpoonFilter::ucfirst(Language::lbl('FirstName')) . ' & ' . ucfirst(Language::lbl('Name'))));
@@ -241,7 +237,16 @@ class SignUp extends Block
         }
 
         $this->header->addJsData($this->module, 'backstage', $this->record['practical'][0]['backstage']);
+
+
+        $this->header->addCSS('/src/Frontend/Modules/Festival/Layout/Css/content.min.css', false, false);
+        $this->header->addCSS('/src/Frontend/Modules/Festival/Layout/Css/skin.min.css', false, false);
+
         $this->header->addJS('/src/Frontend/Modules/Festival/Js/masonry.min.js', false, false);
+        $this->header->addJS('/src/Frontend/Modules/Festival/Js/jquery.tinymce.min.js', false, false);
+        $this->header->addJS('/src/Frontend/Modules/Festival/Js/tinymce.min.js', false, false);
+        $this->header->addJS('/src/Frontend/Modules/Festival/Js/theme.min.js', false, false);
+
 
         // assign the items
         $this->tpl->assign('item', (array) $this->record);
@@ -304,6 +309,10 @@ class SignUp extends Block
                 }
             }
         }
+
+        // echo '<pre>';
+        // print_r($_POST['car']);
+        // echo '</pre>';
 
         // is the form submitted?
         if ($this->frm->isSubmitted()) {
@@ -381,7 +390,6 @@ class SignUp extends Block
                     vsprintf(Language::msg('HelpMaxFileSizeMB'), array($this->settings['file_size_limit']))
                 );
             }
-
 
             // validate the contact fields
             $this->frm->getField('contactName')->isFilled(Language::err('FieldIsRequired'));
@@ -510,7 +518,7 @@ class SignUp extends Block
                         }
                     }
 
-                     if ($content->getTechnicalFilename()) {
+                    if ($content->getTechnicalFilename()) {
                         $technicalDeleted = true;
                     } else {
                         $technicalDeleted = false;
@@ -611,7 +619,6 @@ class SignUp extends Block
                         );
                     }
 
-
                     if ($content->getExtraFilename()) {
                         $extraDeleted = true;
                     } else {
@@ -627,7 +634,7 @@ class SignUp extends Block
                     // upload the file
                     if ($this->frm->getField('extra')->isFilled()) {
                         $content->removeExtra();
-                        $imagePath = FRONTEND_FILES_PATH . '/festival/artists/files/extrs';
+                        $imagePath = FRONTEND_FILES_PATH . '/festival/artists/files/extra';
                         $content->setExtraFilename(CommonUri::getUrl((string)$this->frm->getField('extra')->getFileName(false) . '_' . uniqid())
                             . '.' . $this->frm->getField('extra')->getExtension()
                         );
@@ -651,6 +658,11 @@ class SignUp extends Block
                     $em->persist($content);
                 }
 
+                echo '<pre>';
+                print_r($this->frm->getField('bio')->getValue());
+                print_r(htmlspecialchars($this->frm->getField('bio')->getValue()));
+                echo '</pre>';
+
                 // insert artist website
                 foreach ($artistWebsite as $content) {
                     $content->setFacebookUrl($this->frm->getField('facebook')->getValue());
@@ -659,7 +671,7 @@ class SignUp extends Block
                     $content->setInstagramUrl($this->frm->getField('instagram')->getValue());
                     $content->setSoundcloudUrl($this->frm->getField('soundcloud')->getValue());
                     $content->setWebsiteUrl($this->frm->getField('website')->getValue());
-                    $content->setBio($this->frm->getField('bio')->getValue());
+                    $content->setBio(htmlspecialchars($this->frm->getField('bio')->getValue()));
 
                     // insert the artist
                     $em->persist($content);
@@ -686,7 +698,6 @@ class SignUp extends Block
                     'value' => $this->frm->getField('contactPhone')->getValue()
                 );
 
-
                 $variables['sentOn'] = time();
                 $variables['name'] = Language::lbl('SignUpForm');
                 $variables['fields'] = $emailFields;
@@ -698,8 +709,16 @@ class SignUp extends Block
                 $from = Model::get('fork.settings')->get('Core', 'mailer_from');
                 $fieldData = $emailFields;
                 $fieldDataPractical = $emailFieldsPractical;
-                $fieldDataCrew = $emailFieldsCrew;
-                $fieldDataCars = $emailFieldsCars;
+
+                $fieldDataCrew = [];
+                if (!empty($emailFieldsCrew)) {
+                    $fieldDataCrew = $emailFieldsCrew;
+                }
+
+                $fieldDataCars = [];
+                if (!empty($emailFieldsCars)) {
+                    $fieldDataCars = $emailFieldsCars;
+                }
 
                 $fieldDataStage = $this->emailFieldsDates;
                 $message = \Common\Mailer\Message::newInstance(sprintf(
@@ -743,12 +762,11 @@ class SignUp extends Block
                         ),
                         true
                     )
-                    ->setTo('artiest@copacobana.be')
+                    ->setTo('jochen@anamma.be')
                     ->setFrom(array($from['email'] => $from['name']))
                 ;
-                $message->setReplyTo(array('artiest@copacobana.be' => 'Copacobana Festival'));
+                $message->setReplyTo(array('jochen@anamma.be' => 'Copacobana Festival'));
                 $this->get('mailer')->send($message);
-
 
                 $message = \Common\Mailer\Message::newInstance(sprintf(
                          \SpoonFilter::ucfirst(Language::lbl('SignUpForm')) . ": " . $artist->getName()
@@ -769,7 +787,7 @@ class SignUp extends Block
                     ->setTo('gertjan.wytynck@gmail.com')
                     ->setFrom(array($from['email'] => $from['name']))
                 ;
-                $message->setReplyTo(array('artiest@copacobana.be' => 'Copacobana Festival'));
+                $message->setReplyTo(array('jochen@anamma.be' => 'Copacobana Festival'));
                 $this->get('mailer')->send($message);
 
                 $this->tpl->assign('closed', true);

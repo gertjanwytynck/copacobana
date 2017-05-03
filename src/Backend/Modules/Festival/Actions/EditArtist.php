@@ -209,7 +209,7 @@ class EditArtist extends ActionEdit
             $this->frm->addText('soundcloud', $content->getSoundcloudUrl(), 255, 'inputText title',
                 'inputTextError title');
             $this->frm->addText('website', $content->getWebsiteUrl(), 255, 'inputText title', 'inputTextError title');
-            $this->frm->addTextarea('bio', $content->getBio());
+            $this->frm->addEditor('bio', htmlspecialchars_decode(htmlspecialchars_decode($content->getBio())));
 
             // create form elements for each language
             foreach ($this->languages as $abbreviation => $language) {

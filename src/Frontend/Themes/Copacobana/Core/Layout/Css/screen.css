@@ -6445,7 +6445,7 @@ main {
   width: 100%;
   text-align: center;
   border: none;
-  background: #eec155;
+  background: #f4f468;
   color: #174556;
   border-radius: 5px;
   border: 1px solid #174556;
@@ -8270,6 +8270,12 @@ main {
   background: #fdfbf0;
   color: #174556;
 }
+#signUpForm .info-box a {
+  color: #ed3587;
+}
+#signUpForm .info-box a:hover {
+  color: #2d87b0;
+}
 #signUpForm .dates {
   border-radius: 5px;
 }
@@ -8290,7 +8296,7 @@ main {
   margin: 15px 0px 50px 0px;
   padding: 5px 15px;
   border-radius: 5px;
-  background: #eec155;
+  background: #ed3587;
   color: white;
   border: none;
 }
@@ -8306,15 +8312,15 @@ main {
 }
 #signUpForm h1 .sub {
   font-size: 0.6em;
-  color: #38bb9d;
+  color: #ed3587;
   margin-top: -20px;
   display: block;
 }
 #signUpForm h2 {
-  font-size: 1.2em;
+  font-size: 1.4em;
   margin-top: 35px;
   margin-bottom: 15px;
-  color: #38bb9d;
+  color: #2d87b0;
 }
 #signUpForm h3 {
   font-size: 0.9em;
@@ -8429,25 +8435,26 @@ main {
 }
 .add,
 .remove {
-  background: #38bb9d;
+  background: #f4f468;
   border-radius: 5px;
   width: 34px;
   height: 34px;
-  color: white;
+  color: #ed3587;
   font-size: 2em;
   text-align: center;
+  float: right;
 }
 .add p,
 .remove p {
   margin: 0px;
-  padding-top: 6px;
+  padding-top: 5px;
 }
 .add:hover,
 .remove:hover {
   cursor: pointer;
 }
 .success {
-  color: #38bb9d;
+  color: #ed3587;
   font-size: 2em;
 }
 .successBox {
@@ -8458,9 +8465,10 @@ main {
 }
 .remove {
   background: #ed3587;
+  color: white;
 }
 .remove p {
-  padding-top: 4px;
+  padding-top: 2px;
 }
 .uploadFile {
   opacity: 0;

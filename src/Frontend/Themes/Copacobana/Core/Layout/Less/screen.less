@@ -287,7 +287,7 @@ main {
 	width: 100%;
 	text-align: center;
 	border: none;
-	background: @gray;
+	background: @yellow;
 	color: @font-blue;
 	border-radius: @border-radius;
 	border: @border-blue;
@@ -2347,6 +2347,13 @@ main {
 			color:@font-blue;
 			//display: inline-block;
 		}
+		
+		a {
+			color: @pink;
+			&:hover {
+				color: @blue-flashy;
+			}
+		}
 	}
 
 	.dates {
@@ -2372,7 +2379,7 @@ main {
 		margin: 15px 0px 50px 0px;
 		padding: 5px 15px;
 		border-radius: @border-radius;
-		background: @gray;
+		background: @pink;
 		color: white;
 		border: none;
 	}
@@ -2390,18 +2397,17 @@ main {
 		margin-bottom: 30px;
 		.sub {
 			font-size: 0.6em;
-			color: @green-dark;
+			color: @pink;
 			margin-top: -20px;
 			display: block;
 		}
 	}
 
 	h2 {
-		font-size: 1.2em;
+		font-size: 1.4em;
 		margin-top: 35px;
 		margin-bottom: 15px;
-		color: @green-dark;
-
+		color: @blue-flashy;
 	}
 
 	h3 {
@@ -2536,16 +2542,17 @@ main {
 }
 
 .add, .remove {
-	background: @green-dark;
+	background: @yellow;
 	border-radius: @border-radius;
 	width: 34px;
 	height: 34px;
-	color: white;
+	color: @pink;
 	font-size: 2em;
 	text-align: center;
+	float: right;
 	p {
 		margin: 0px;
-		padding-top: 6px;
+		padding-top: 5px;
 	}
 
 	&:hover {
@@ -2554,7 +2561,7 @@ main {
 }
 
 .success {
-	color: @green-dark;
+	color: @pink;
 	font-size: 2em;
 }
 
@@ -2567,8 +2574,9 @@ main {
 
 .remove {
 	background: @pink;
+	color: white;
 	p {
-		padding-top: 4px;
+		padding-top: 2px;
 	}
 }
 

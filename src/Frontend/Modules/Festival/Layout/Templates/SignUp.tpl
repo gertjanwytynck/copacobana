@@ -78,7 +78,6 @@
                     </div>
                 </div>
 
-
                 {option:error}
                 <div class="row box-error">
                     <div class="col-md-12">
@@ -323,6 +322,8 @@
                         {/option:fileTechnical}
                     </div>
                 </div>
+
+                <h3 class="top20">Stageplan & Extra</h3>
                 <div class="row">
                     <div class="col-md-6">
                         {option:!fileStage}
@@ -492,7 +493,7 @@
                     </div>
                 </div>
 
-                <h3 class="top30">{$lblSoundEngineerTitle|ucfirst}</h3>
+                <!-- <h3 class="top30">{$lblSoundEngineerTitle|ucfirst}</h3>
                 <div class="row top10 bottom10">
                     <div class="col-md-6">
                         <div class="btn-group " data-toggle="buttons">
@@ -505,7 +506,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <h3 class="top30">Maaltijd<span class="pull-right" data-toggle="tooltip" data-placement="left" title="{$msgMeal|ucfirst}"><img src="{$THEME_URL}/Core/Layout/images/icon_information.svg" /></h3>
                 <div class="row">
@@ -595,4 +596,3 @@
     {/form:edit}
     {/option:!success}
 </section>
-
