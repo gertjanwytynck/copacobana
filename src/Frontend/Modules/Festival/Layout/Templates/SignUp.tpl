@@ -42,7 +42,7 @@
                         {iteration:startDates}
                         <div class="dates">
                             <p>{$lblStage|ucfirst}: <span>{$startDates.stage}</span><br />
-                             {$lblTime|ucfirst}: <span>{$startDates.date}</span> {$lblAt} <span>{$startDates.time}</span></p>
+                            {$lblTime|ucfirst}: <span>{$startDates.date}</span> {$lblAt} <span>{$startDates.time}</span></p>
                         </div>
                         {/iteration:startDates}
                     </div>
@@ -127,7 +127,15 @@
                     </div>
                 </div>
 
-                <h2>{$lblWebsiteInfo|ucfirst}<span class="pull-right" data-toggle="tooltip" data-placement="left" title="{$msgWebsiteInfo}"><img src="{$THEME_URL}/Core/Layout/images/icon_information.svg" /></span></h2>
+                <h2>{$lblWebsiteInfo|ucfirst}</h2>
+								<div class="row">
+									<div class="col-md-12 info-box">
+										<p>
+											{$msgWebsiteInfo}
+										</p>
+									</div>
+								</div>
+
                 <h3>{$lblCover|ucfirst}<span class="pull-right" data-toggle="tooltip" data-placement="left" title="{$msgCover}"><img src="{$THEME_URL}/Core/Layout/images/icon_information.svg" /></span></h3>
                 <div class="row">
                     <div class="col-md-6">
@@ -240,7 +248,15 @@
                         </div>
                     </div>
                 </div>
+
                 <h2>{$lblPracticalInfo|ucfirst}</h2>
+								<div class="row">
+									<div class="col-md-12 info-box">
+										<p>
+											{$msgPracticalInfo}
+										</p>
+									</div>
+								</div>
                 <h3 class="top20">{$lblFiles|ucfirst}</h3>
                 <div class="row">
                     <div class="col-md-6">
