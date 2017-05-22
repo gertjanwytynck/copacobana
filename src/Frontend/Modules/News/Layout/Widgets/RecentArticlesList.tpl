@@ -15,7 +15,7 @@
                 <h1><a href="{$widgetNewsRecentArticlesList.full_url}">{$widgetNewsRecentArticlesList.title}</a></h1>
                 <p><a href="{$widgetNewsRecentArticlesList.full_url}">{$widgetNewsRecentArticlesList.content|truncate:550:true:true}</a></p>
                 <div class="btn-all-news">
-                  <a href="/nl/nieuws">{$lblAllNewsItems|ucfirst}</a>
+                  <a href="{$var|geturlforblock:'News'}">{$lblAllNewsItems|ucfirst}</a>
                 </div>
             </div>
         </article>

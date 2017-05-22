@@ -3,8 +3,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <ul>
-                        <li><a href="/nl/sitemap">Sitemap</a></li>
-                        <li><a href="/nl/disclaimer">Disclaimer</a></li>
+                        <li><a href="/{$LANGUAGE}/sitemap">Sitemap</a></li>
+                        <li><a href="/{$LANGUAGE}/disclaimer">Disclaimer</a></li>
                         <li>{$lblCopyright|ucfirst}</li>
                         <li>{$lblAnamma|ucfirst} - {$lblBtwNumber}</li>
                         <li><a href="mailto:info@anamma.be">{$lblMailAnamma}</a></li>
