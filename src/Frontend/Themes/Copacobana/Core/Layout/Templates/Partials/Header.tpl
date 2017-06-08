@@ -27,9 +27,9 @@
           <div class="col-sm-5">
               <div class="pull-right">
                   <ul class="social">
-                      <li><a href="/nl/">NL</a> |</li>
-                      <li>&nbsp;<a href="/fr/">FR</a> |</li>
-                      <li>&nbsp;<a href="/en/">EN</a></li>
+                      <li><a href="/nl/" class="lang-nl-active">NL</a> |</li>
+                      <li>&nbsp;<a href="/fr/" class="lang-fr-active">FR</a> |</li>
+                      <li>&nbsp;<a href="/en/" class="lang-en-active">EN</a></li>
                       <li class="facebook"><a href="{$lblFestivalFb}" target="_blank"><img src="{$THEME_URL}/Core/Layout/images/facebook.svg" title="facebook" alt="facebook"/></a></li>
                       <li class="twitter"><a href="{$lblFestivalTwitter}" target="_blank"><img src="{$THEME_URL}/Core/Layout/images/twitter.svg" title="twitter" alt="twitter"/></a></li>
                       <li class="instagram"><a href="{$lblFestivalInstagram}" target="_blank"><img src="{$THEME_URL}/Core/Layout/images/instagram.svg" title="instagram" alt="instagram"/></a></li>

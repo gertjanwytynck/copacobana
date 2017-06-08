@@ -9,6 +9,9 @@
             <!-- <a href="{$var|geturl:'mail_volunteers'}" class="button icon iconPrint" title="Mail volunteers">
                 <span>Mail volunteers</span>
             </a> -->
+            <a href="{$var|geturl:'print_artists'}" class="button icon iconExport" title="Export artists">
+                <span>{$lblExport|ucfirst}</span>
+            </a>
             <a href="{$var|geturl:'add_artist'}" class="button icon iconAdd" title="{$lblAdd|ucfirst}">
                 <span>{$lblAdd|ucfirst}</span>
             </a>

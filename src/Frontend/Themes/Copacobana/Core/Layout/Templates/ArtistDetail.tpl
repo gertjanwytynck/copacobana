@@ -3,7 +3,9 @@
 <body class="{$LANGUAGE}" itemscope itemtype="http://schema.org/WebPage">
 {include:Core/Layout/Templates/Partials/Header.tpl}
 
-<main class="default bg-pattern-dark">
+{$var|getartistmenu:"Artist"}
+
+<main class="default wid">
     <section class="container">
         <div class="row">
             <div class="col-md-12">
@@ -16,7 +18,7 @@
 </main>
 <section class="default artist-random">
    <section class="widget-artists">
-        <div class="container">
+        <div class="container-fluid">
             {iteration:positionArtists}
                 {$positionArtists.blockContent}
             {/iteration:positionArtists}

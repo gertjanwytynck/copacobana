@@ -7,33 +7,27 @@
 <div id="artistDetail">
     <article class="artist">
         <div class="row">
-            <div class="col-md-6">
-                <div class="back-button">
-                    <a href="{$var|geturlforblock:'Festival'}">
-                        <img src="{$THEME_URL}/Core/Layout/images/artist-back-button.svg" class="svg" title="back" alt="back"/>
-                    </a>
-                </div>
+            <div class="col-md-8">
                 <div class="img-block">
-                    <div style="background-image: url('{$FRONTEND_FILES_URL}/festival/artists/covers/source/{$artist.cover}');">
-                    </div>
+                  <img src="{$FRONTEND_FILES_URL}/festival/artists/covers/source/{$artist.cover}" />
                 </div>
-                <div class="share">
-                    <div class="fb-share-button" data-href="{$artist.full_url}" data-layout="button_count"></div>
-                    <div class="tweet">
-                        <a href="https://twitter.com/share" class="twitter-share-button" data-via="CopacobanaFest">Tweet</a>
-                        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-                    </div>
+                <div class="artist-bio">
+                    {option:artist.website.0.bio}
+                      <h2>{$lblBio|ucfirst} {$artist.name}</h2>
+                      {$artist.website.0.bio}
+                    {/option:artist.website.0.bio}
                 </div>
             </div>
-            <div class="col-md-6 content-block">
+            <div class="col-md-4 content-block">
                 <h1>{$artist.name}</h1>
-                <div class="artist-dates">
-                {iteration:dates}
-                    <p>{$dates.stage} / {$dates.date|ucfirst} {$dates.time}</p>
-                {/iteration:dates}
-                </div>
                 <p class="artist-genre">{$artist.date.0.category.category}</p>
+                <div class="artist-dates">
+                  {iteration:dates}
+                      <p>{$lblStage|ucfirst}: <strong>{$dates.stage}</strong></p>
+                      <p>{$lblDate|ucfirst}: <strong>{$dates.date|ucfirst} {$dates.time}</strong></p>
+                  {/iteration:dates}
+                </div>
                 <div class="artist-social">
                     {option:artist.website.0.facebookUrl}
                     <a href="{$artist.website.0.facebookUrl}" target="_blank">
@@ -66,16 +60,20 @@
                     </a>
                     {/option:artist.website.0.websiteUrl}
                 </div>
+
                 {option:artist.website.0.soundcloudUrl}
                     <div class="sound-cloud-webplayer">
                     <iframe width="100%" height="130" scrolling="yes" frameborder="no" src="https://w.soundcloud.com/player/?url={$artist.website.0.soundcloudUrl}&amp;color=eec155&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false"></iframe>
                     </div>
                 {/option:artist.website.0.soundcloudUrl}
-                <div class="artist-bio">
-                    {option:artist.website.0.bio}
-                        <p class="artist-genre">Bio</p >
-                        <p>{$artist.website.0.bio}</p>
-                    {/option:artist.website.0.bio}
+
+                <div class="share">
+                  <div class="fb-share-button" data-href="{$artist.full_url}" data-layout="button_count"></div>
+                  <div class="tweet">
+                    <a href="https://twitter.com/share" class="twitter-share-button" data-via="CopacobanaFest">Tweet</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                  </div>
                 </div>
             </div>
         </div>

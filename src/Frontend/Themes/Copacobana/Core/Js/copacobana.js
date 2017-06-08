@@ -4,15 +4,27 @@ jsFrontend.copacobana = {
 		jsFrontend.copacobana.mappie();
 
 
-        if(window.location.pathname != "/nl" && $(window).width() > 767) {
-            if ($.session.get("sub-nav")) {
-                $('.sub-nav').fadeTo(250, 1, function() {
-                    $.session.set("sub-nav", true);
-                });
-            }
+        if(window.location.pathname != "/nl" && window.location.pathname != "/en" && window.location.pathname != "/fr" && $(window).width() > 767) {
+
+            $('.sub-nav').fadeTo(250, 1, function() {
+                $.session.set("sub-nav", true);
+            });
+
         } else if ($(window).width() > 767){
             $('.sub-nav').css('opacity', '0')
             $.session.set("sub-nav", false);
+        }
+
+        if ($(location).prop('pathname').split('/')[1] == "nl") {
+            $('.lang-nl-active').css('text-decoration', 'underline');
+        }
+
+        if ($(location).prop('pathname').split('/')[1] == "en") {
+            $('.lang-en-active').css('text-decoration', 'underline');
+        }
+
+        if ($(location).prop('pathname').split('/')[1] == "fr") {
+            $('.lang-fr-active').css('text-decoration', 'underline');
         }
 
 
@@ -24,7 +36,7 @@ jsFrontend.copacobana = {
 
 		// parallax effect
 		var moduleHero = $('.copacobana');
-        if ($(window).height() <= 1100) {
+        if ($(window).height() <= 800) {
             var height = $(window).height() * 0.85;
             moduleHero.height(height);
 
@@ -34,7 +46,7 @@ jsFrontend.copacobana = {
                 moduleHero.height(height);
             });
         } else {
-            moduleHero.height(1100);
+            moduleHero.height(800);
         }
 
 		// tooltip
@@ -42,18 +54,18 @@ jsFrontend.copacobana = {
 
  		// Artist sub menu fix
  	 	var lastIndexUrl = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
-
 		$('.sub-nav-artists li').each(function(){
 			$(this).find('a').removeClass('active-sub')
-        	if (lastIndexUrl === 'vrijdag' && $(this).hasClass('friday')) {
+
+        	if ((lastIndexUrl === 'vrijdag' || lastIndexUrl === 'friday' || lastIndexUrl === 'vendredi') && $(this).hasClass('friday')) {
         		$(this).find('a').addClass('active-sub')
         	}
 
-        	if (lastIndexUrl === 'zaterdag' && $(this).hasClass('saturday')) {
+        	if ((lastIndexUrl === 'zaterdag' || lastIndexUrl === 'saturday' || lastIndexUrl === 'samedi') && $(this).hasClass('saturday')) {
         		$(this).find('a').addClass('active-sub')
         	}
 
-        	if (lastIndexUrl === 'zondag' && $(this).hasClass('sunday')) {
+        	if ((lastIndexUrl === 'zondag' || lastIndexUrl === 'sunday' || lastIndexUrl === 'dimanche') && $(this).hasClass('sunday')) {
         		$(this).find('a').addClass('active-sub')
         	}
 
@@ -61,7 +73,8 @@ jsFrontend.copacobana = {
         		$(this).find('a').addClass('active-sub')
         	}
 
-        	if (lastIndexUrl === 'artiesten' && $(this).hasClass('all')) {
+
+        	if ((lastIndexUrl === 'artiesten' || lastIndexUrl === 'artists' || lastIndexUrl === 'artistes') && $(this).hasClass('all')) {
         		$(this).find('a').addClass('active-sub')
         	}
         })

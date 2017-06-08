@@ -52,13 +52,14 @@ class Detail extends Block
         $link = FrontendNavigation::getURLForBlock('Festival', 'Detail');
 
         $this->record['full_url'] = $link . '/' . $this->record['meta']['url'];
+        $this->record['website'][0]['bio'] = htmlspecialchars_decode(htmlspecialchars_decode($this->record['website'][0]['bio']));
         setlocale(LC_TIME, FRONTEND_LANGUAGE .'_' . strtoupper(FRONTEND_LANGUAGE));
 
           // create practical info
         $startDates = array();
         foreach ($this->record["date"] as $key => $startDate) {
             $startDates[$key]['date'] = strftime("%A", $startDate['startOn']->getTimestamp());
-            $startDates[$key]['time'] = date('H:i', $startDate['startOn']->getTimestamp());
+            $startDates[$key]['time'] = strftime('%H:%M', $startDate['startOn']->getTimestamp()) . " - " . strftime("%H:%M", $startDate['endOn']->getTimestamp());
             $startDates[$key]['stage'] = $startDate['stage']['stageName'];
         }
         $this->tpl->assign('dates', $startDates);

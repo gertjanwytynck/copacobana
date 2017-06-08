@@ -72,28 +72,7 @@ class ArtistRepository extends EntityRepository
         return true;
     }
 
-    /**
-     * Get all info for an artist
-     *
-     * @return Artists|array  All the artists
-     */
-    public function getAll()
-    {
-        $qb = $this->createQueryBuilder('a')
-            ->select('a', 'aw', 'awl')
-            ->leftJoin('a.website', 'aw')
-            ->leftJoin('aw.locales', 'awl')
-            ->where('a.isHidden = :hidden' )
-            ->orderBy('a.name', 'ASC')
-            ->setParameters(array(
-                'hidden' => '0',
-                'year' => '2017'
-            ))
 
-        ;
-
-        return (array) $qb->getQuery()->getResult();
-    }
 
     /**
      * Fetch a artist based on it's url
@@ -131,6 +110,54 @@ class ArtistRepository extends EntityRepository
 
         return $qb->getQuery()->getOneOrNullResult(Query::HYDRATE_ARRAY);
     }
+
+    /**
+     * Get all info for an artist
+     *
+     * @return Artists|array  All the artists
+     */
+    public function getAll()
+    {
+        $qb = $this->createQueryBuilder('a')
+            ->select('a', 'aw', 'awl')
+            ->leftJoin('a.website', 'aw')
+            ->leftJoin('aw.locales', 'awl')
+            ->where('a.isHidden = :hidden' )
+            ->andWhere('a.year = :year' )
+            ->orderBy('a.name', 'ASC')
+            ->setParameters(array(
+                'hidden' => '0',
+                'year' => '2017'
+            ))
+
+        ;
+
+        return (array) $qb->getQuery()->getResult();
+    }
+
+
+    /**
+     * Get all info for an artist
+     *
+     * @return Artists|array  All the artists
+     */
+    public function getExport()
+    {
+        $qb = $this->createQueryBuilder('a')
+            ->select('a', 'aw', 'awl')
+            ->leftJoin('a.website', 'aw')
+            ->leftJoin('aw.locales', 'awl')
+            ->where('a.year = :year' )
+            ->orderBy('a.name', 'ASC')
+            ->setParameters(array(
+                'year' => '2017'
+            ))
+
+        ;
+
+        return (array) $qb->getQuery()->getResult();
+    }
+
 
     /**
      * Check if token is correct

@@ -199,7 +199,7 @@ main {
 	margin-top: 40px;
 }
 
-.btn-all-news {
+.btn-all-news, .btn-all-artists {
 	text-align: left;
 	margin: 45px 0px;
 	position: relative;
@@ -234,6 +234,19 @@ main {
 			color: @pink;
 		}
 	}
+}
+
+.btn-all-artists {
+	text-align: center;
+	
+	a {
+		background-color: rgba(244,244,104,0.8);
+		
+		&:hover {
+			color: @pink;
+		}
+	}
+
 }
 
 .btn-news {
@@ -911,8 +924,8 @@ main {
 
 .line-up-page {
 	background-color: #fff;
-	background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHhtbG5zOnhsaW5rPSdodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rJyB3aWR0aD0nMTQwJyBoZWlnaHQ9JzI1Jz4KCTxkZWZzPgoJCTxnIGlkPSdjdXJ2ZXMnPgoJCQk8cGF0aCBmaWxsPScjZmVmNGUyJyBzdHJva2U9JyNmZmYnIGQ9J00wIDIwYzIwLDIwLCA1MCwyMCA3MCwwdi0xMDBoLTcweicvPgoJCQk8cGF0aCBmaWxsPScjZmVmNGUyJyBzdHJva2U9JyNmZmYnIGQ9J00wIDE1YzIwLDIwLCA1MCwyMCA3MCwwJy8+CgkJCTxwYXRoIGZpbGw9JyNmZWY0ZTInIHN0cm9rZT0nI2ZmZicgZD0nTTAgMTBjMjAsMjAsIDUwLDIwIDcwLDAnLz4KCQkJPHBhdGggZmlsbD0nI2ZlZjRlMicgc3Ryb2tlPScjZmZmJyBkPSdNMCA1YzIwLDIwLCA1MCwyMCA3MCwwJy8+CgkJCTxwYXRoIGZpbGw9JyNmZWY0ZTInIHN0cm9rZT0nI2ZmZicgZD0nTTAgMGMyMCwyMCwgNTAsMjAgNzAsMCcvPgoJCTwvZz4KCTwvZGVmcz4KCTxyZWN0IHdpZHRoPScxMDIlJyB4PSctMSUnIHk9Jy0xJScgaGVpZ2h0PScxMDIlJyBmaWxsPScjZmVmNGUyJz48L3JlY3Q+Cgk8dXNlIHg9JzAnIHk9Jy0yJyB4bGluazpocmVmPScjY3VydmVzJyAvPgoJPHVzZSB4PSc3MCcgeT0nLTInIHhsaW5rOmhyZWY9JyNjdXJ2ZXMnIC8+Cgk8dXNlIHg9Jy0zNScgeT0nLTEyJyB4bGluazpocmVmPScjY3VydmVzJyAvPgoJPHVzZSB4PSczNScgeT0nLTEyJyB4bGluazpocmVmPScjY3VydmVzJyAvPgoJPHVzZSB4PScxMDUnIHk9Jy0xMicgeGxpbms6aHJlZj0nI2N1cnZlcycgLz4KCTx1c2UgeD0nMCcgeT0nLTI3JyB4bGluazpocmVmPScjY3VydmVzJyAvPiAgCgk8dXNlIHg9JzcwJyB5PSctMjcnIHhsaW5rOmhyZWY9JyNjdXJ2ZXMnIC8+Cjwvc3ZnPg==);
-	padding: 40px 0px 30px 0px;
+	background-image:url('@{base-url}/amoebe-minty.png');
+	padding: 200px 0px 30px 0px;
 	color: @font-blue;
 }
 
@@ -1332,7 +1345,7 @@ main {
 }
 
 .sitemap {
-	padding: 90px 0px 45px 0px;
+	padding: 120px 0px 45px 0px;
 
 
 	.content {
@@ -1369,19 +1382,22 @@ main {
 }
 
 .artist-content {
-	padding-top: 150px;
+	padding-top: 165px;
 }
 
 .sub-nav-artists {
-	margin-top: 133px;
 	width: 100%;
-	background: @pink;
+	background: @purple;
 	border-bottom: @border-yellow;
 	color: white;
 	text-transform: uppercase;
+	position: fixed;
+	top: 119px;
+	padding-left: 85px;
+	z-index: 10000;
 
 	li {
-		padding: 20px 20px;
+		padding: 10px;
 		display: inline-block;
 		a {
 			color: @background;
@@ -1391,7 +1407,7 @@ main {
 		.active-sub {
 			background: @background;
 			border-radius: @border-radius;
-			padding: 5px 10px;
+			padding: 2.5px 7.5px;
 			color: @pink;
 		}
 
@@ -1407,8 +1423,9 @@ main {
 }
 
 #artistDetail {
+	padding-top: 35px;
 	svg:hover path{
-		fill: @green-dark;
+		fill: @yellow;
 	}
 
 	.artist {
@@ -1421,22 +1438,47 @@ main {
 		}
 	}
 	.img-block {
-		div {
-		width: 100%;
-		min-height: 400px;
-	  text-align: center;
-    background-size: cover;
-    background-position: center top;
+		max-width: 100%;
+		img {
+			max-width: 100%;
 		}
 	}
 
 	.share {
-		float: right;
 		margin-top: 15px !important;
 	}
 
 	.artist-bio {
-		margin-top: 15px;
+		margin-top: 25px;
+		padding-left: 5px;
+		
+		h2 {
+			font-size: 1.2em;
+			color: @pink;
+			margin-bottom: 25px;
+		}
+		
+		p {
+			margin-bottom: 15px !important;
+		}
+
+		p, span {
+			font-family: "proxima-nova", sans-serif !important;
+			font-size: 1.05em !important;
+			line-height: 1.3em !important;
+			font-weight: 200 !important;
+			color: @black !important;
+			background-color: transparent !important;
+			
+			a {
+				color: @pink;
+				font-weight: 200 !important;
+			}
+			
+			strong {
+				font-weight: bolder;
+			}
+		}
 	}
 
 	.content-block {
@@ -1444,20 +1486,26 @@ main {
 			margin-top: 0px;
 			text-align: left;
 			font-size: 2.7em;
-			color: @green-dark;
+			color: @yellow;
+			
+			span {
+				font-size: 0.6em;
+				color: @pink;
+			}
 		}
+		
 		h2 {
 			text-align: center;
 		}
 
 		svg {
-			fill: @gray;
+			fill: @yellow;
 		}
 
 		.artist-social {
-			margin: 30px 0px;
+			margin: 15px 0px;
 			a {
-				margin-right: 15px;
+				margin-right: 10px;
 
 				&:hover {
 					text-decoration: none;
@@ -1466,9 +1514,9 @@ main {
 		}
 
 		.artist-genre {
-			font-size: 1.2em;
+			font-size: 1.1em;
 			text-transform: uppercase;
-			color: @green-dark;
+			color: @pink;
 			p {
 				margin-bottom: 0px;
 			}
@@ -1487,30 +1535,33 @@ main {
 
 
 	.artist-dates {
-		font-size: 1.3em;
+		font-size: 1.1em;
 		margin-top: 20px;
-		text-transform: uppercase;
 		p {
 			margin-bottom: 5px;
 		}
+		strong {
+			text-transform: uppercase;
+
+		}
+		
 		span {
 			font-weight: 700;
 		}
 	}
 
 	.sound-cloud-webplayer {
-		margin: 38px 0px;
+		margin: 20px 0px;
 	}
 }
 
 .artist-random {
 	padding-top: 0px;
 	padding-bottom: 0px;
-	background-color: #fff !important;
-	background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHhtbG5zOnhsaW5rPSdodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rJyB3aWR0aD0nMTQwJyBoZWlnaHQ9JzI1Jz4KCTxkZWZzPgoJCTxnIGlkPSdjdXJ2ZXMnPgoJCQk8cGF0aCBmaWxsPScjZmVmNGUyJyBzdHJva2U9JyNmZmYnIGQ9J00wIDIwYzIwLDIwLCA1MCwyMCA3MCwwdi0xMDBoLTcweicvPgoJCQk8cGF0aCBmaWxsPScjZmVmNGUyJyBzdHJva2U9JyNmZmYnIGQ9J00wIDE1YzIwLDIwLCA1MCwyMCA3MCwwJy8+CgkJCTxwYXRoIGZpbGw9JyNmZWY0ZTInIHN0cm9rZT0nI2ZmZicgZD0nTTAgMTBjMjAsMjAsIDUwLDIwIDcwLDAnLz4KCQkJPHBhdGggZmlsbD0nI2ZlZjRlMicgc3Ryb2tlPScjZmZmJyBkPSdNMCA1YzIwLDIwLCA1MCwyMCA3MCwwJy8+CgkJCTxwYXRoIGZpbGw9JyNmZWY0ZTInIHN0cm9rZT0nI2ZmZicgZD0nTTAgMGMyMCwyMCwgNTAsMjAgNzAsMCcvPgoJCTwvZz4KCTwvZGVmcz4KCTxyZWN0IHdpZHRoPScxMDIlJyB4PSctMSUnIHk9Jy0xJScgaGVpZ2h0PScxMDIlJyBmaWxsPScjZmVmNGUyJz48L3JlY3Q+Cgk8dXNlIHg9JzAnIHk9Jy0yJyB4bGluazpocmVmPScjY3VydmVzJyAvPgoJPHVzZSB4PSc3MCcgeT0nLTInIHhsaW5rOmhyZWY9JyNjdXJ2ZXMnIC8+Cgk8dXNlIHg9Jy0zNScgeT0nLTEyJyB4bGluazpocmVmPScjY3VydmVzJyAvPgoJPHVzZSB4PSczNScgeT0nLTEyJyB4bGluazpocmVmPScjY3VydmVzJyAvPgoJPHVzZSB4PScxMDUnIHk9Jy0xMicgeGxpbms6aHJlZj0nI2N1cnZlcycgLz4KCTx1c2UgeD0nMCcgeT0nLTI3JyB4bGluazpocmVmPScjY3VydmVzJyAvPiAgCgk8dXNlIHg9JzcwJyB5PSctMjcnIHhsaW5rOmhyZWY9JyNjdXJ2ZXMnIC8+Cjwvc3ZnPg==) !important;
-
-	.widget-artists {
-		background: none !important;
+	
+	.og-grid {
+		margin-top: 0px !important;
+		padding-top: 0px !important;
 	}
 }
 
@@ -1873,6 +1924,7 @@ main {
 }
 
 .line-up-overview {
+	margin: 0px 20px;
 	.all-artists {
 		top: -27px;
 		right: 0px;
@@ -1894,17 +1946,19 @@ main {
 
 	.stage {
 		padding: 30px 30px;
-		background: @background;
+		background: @purple-transparent;
 		margin-bottom: 15px;
 		h2 {
 			margin-top: 0px !important;
 			margin-bottom: 15px;
+			color: white;
 		}
+		
 		h3 {
 			text-transform: uppercase;
 			padding: 5px 15px;
 			border-radius: 5px;
-			background: @yellow-flashy;
+			background: @pink;
 			display: inline-block;
 			color: white;
 			font-size: 1.2em;
@@ -1919,12 +1973,12 @@ main {
 		}
 
 		.hour {
-			color: @green;
-			width: 15%;
+			color: @yellow;
+			width: 25%;
 		}
 
 		.artist-name {
-			width: 85%;
+			width: 75%;
 			font-weight: 700;
 			text-transform: uppercase;
 			font-size: 0.9em;
@@ -1934,8 +1988,9 @@ main {
 		}
 
 		a {
+			color: white;
 			&:hover {
-				color: @pink-dark;
+				color: @yellow;
 			}
 		}
 	}

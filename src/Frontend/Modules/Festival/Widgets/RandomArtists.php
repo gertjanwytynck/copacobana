@@ -35,7 +35,7 @@ class RandomArtists extends Widget
         $artistRepo = $em->getRepository(FrontendFestivalModel::ARTIST_ENTITY_CLASS);
         $allArtists = $artistRepo->_getRandomArtists();
         shuffle($allArtists);
-        $artists = array_slice($allArtists, 0, 6, true);
+        $artists = array_slice($allArtists, 0, 8, true);
 
         $link = FrontendNavigation::getURLForBlock('Festival', 'Detail');
 

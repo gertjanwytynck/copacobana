@@ -7,7 +7,7 @@
      <div class="">
         <div class="row stage">
             <div class="col-md-12">
-               <h2>Vrijdag</h2>
+               <h2>{$lblFriday|ucfirst}</h2>
             </div>
             <div class="grid stage-title">
                 {iteration:friday}
@@ -24,9 +24,10 @@
                 {/iteration:friday}
             </div>
          </div>
+
          <div class="row stage">
             <div class="col-md-12">
-                 <h2>Zaterdag</h2>
+                 <h2>{$lblSaturday|ucfirst}</h2>
              </div>
              <div class="grid stage-title">
                 {iteration:saturday}
@@ -45,7 +46,7 @@
         </div>
         <div class="row stage">
             <div class="col-md-12">
-                <h2>Zondag</h2>
+                <h2>{$lblSunday|ucfirst}</h2>
             </div>
             <div class="grid stage-title">
                 {iteration:sunday}

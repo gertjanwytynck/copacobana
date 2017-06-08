@@ -5,8 +5,8 @@
 
 {$var|getartistmenu:"Artist"}
 
-<main class="line-up-page bg-blue">
-    <section class="container">
+<main class="line-up-page">
+    <section class="container-fluid">
         <div class="row">
             <div class="col-md-12">
                 {iteration:positionContent}

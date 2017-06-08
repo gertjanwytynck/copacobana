@@ -4,34 +4,26 @@
 *}
 
 {option:widgetArtists}
-    <!-- <div class="row">
-      <div class="col-sm-12">
-        <div class="btn-all-news btn-line-up">
-          <a href="{$var|geturlforblock:'Festival'}/line-up">Bekijk de volledige line up</a>
-        </div>
-      </div>
-    </div> -->
     <ul id="" class="row og-grid">
       {iteration:widgetArtists}
           <li>
-            <a href="">
-            <!-- <a href="{$widgetArtists.full_url}"> -->
+            <a href="{$widgetArtists.full_url}">
               <figure>
                   <img data-src="{$FRONTEND_FILES_URL}/festival/artists/covers/x330/{$widgetArtists.cover}"
                     alt="{$widgetArtists.name}"
                     title="{$widgetArtists.name}" />
               </figure>
               <p class="artist-name">{$widgetArtists.name}<br /><span>{$widgetArtists.day}<span></p>
-              <!-- <p class="more">More info &#10095;</p> -->
+              <p class="more">{$lblMoreInfo|ucfirst} &#10095;</p>
             </a>
           </li>
       {/iteration:widgetArtists}
     </ul>
-    <!-- <div class="row">
+    <div class="row">
       <div class="col-sm-12">
-        <div class="btn-all-news">
-          <a href="{$var|geturlforblock:'Festival'}">Bekijk alle artiesten</a>
+        <div class="btn-all-artists">
+          <a href="{$var|geturlforblock:'Festival'}">{$lblViewAllArtists|ucfirst}</a>
         </div>
       </div>
-    </div> -->
+    </div>
 {/option:widgetArtists}

@@ -3,7 +3,7 @@
 <body class="{$LANGUAGE}" itemscope itemtype="http://schema.org/WebPage">
 {include:Core/Layout/Templates/Partials/Header.tpl}
 
-<!-- {$var|getartistmenu:"Artist"} -->
+{$var|getartistmenu:"Artist"}
 
 <main class="default artist-content">
     <section class="container-fluid">
