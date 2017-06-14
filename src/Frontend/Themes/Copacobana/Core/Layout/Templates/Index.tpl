@@ -5,6 +5,13 @@
 <main class="">
     <figure class="copacobana">
         <a href="https://docs.google.com/forms/d/e/1FAIpQLScGwmE7Jpu_LlRcb0BFEZOICKpKX9cD9faw-ukDtCa7Gl3qiA/viewform" target="_blank"><button class="btn-volunteer-header">{$lblBecomeVolunteer|ucfirst}!</button></a>
+
+        <div class="scroll-down">
+          <a class="arrow-wrap" href="#content">
+             <span class="arrow"></span>
+           </a>
+        </div>
+
     </figure>
 
     <section class="widget-artists cover-overflow">

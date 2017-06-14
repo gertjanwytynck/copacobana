@@ -6492,6 +6492,53 @@ main {
   width: 100%;
   min-width: 100%;
   z-index: 0;
+  /* the wrapper element that will become the outer circle */
+  /* a triangle to make the main part of the arrow. Adjust the border-color to fit your needs */
+  /* a pseudo element arrow placed on top of the other one with the same color as the wrapper */
+}
+.copacobana .scroll-down {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+}
+.copacobana .arrow-wrap {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: -5em;
+  margin-left: -5em;
+  background: #f4f468;
+  width: 10em;
+  height: 10em;
+  padding: 4em 2em;
+  border-radius: 50%;
+  font-size: 0.5em;
+  display: block;
+  box-shadow: 0px 0px 5px 0px #333;
+}
+.copacobana .arrow {
+  float: left;
+  position: relative;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 3em 3em 0 3em;
+  border-color: #3f2e85 transparent transparent transparent;
+  -webkit-transform: rotate(360deg);
+  /* added for better anti-aliasing on webkit browsers */
+}
+.copacobana .arrow:after {
+  content: '';
+  position: absolute;
+  top: -3.2em;
+  left: -3em;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 3em 3em 0 3em;
+  border-color: #f4f468 transparent transparent transparent;
+  -webkit-transform: rotate(360deg);
+  /* added for better anti-aliasing on webkit browsers */
 }
 .copa-intro {
   position: fixed;
@@ -8879,12 +8926,25 @@ footer .sponsors ul li:after {
     display: block;
   }
 }
+@media (max-width: 1300px) {
+  .line-up-overview .stage .hour,
+  .line-up-overview .stage .artist-name {
+    float: none;
+    width: 100%;
+  }
+  .line-up-overview .artist-name {
+    margin-bottom: 15px;
+  }
+}
 @media (max-width: 1000px) {
   .sub-nav ul li a {
     padding: 10px 10px;
   }
 }
 @media (max-width: 767px) {
+  .sub-nav-artists {
+    display: none;
+  }
   .mobile-location {
     display: block;
   }
@@ -9148,6 +9208,9 @@ footer .sponsors ul li:after {
   .copacobana {
     height: 350px !important;
   }
+  .copacobana .scroll-down {
+    display: none;
+  }
   .intro article {
     min-height: 30px;
   }
@@ -9266,13 +9329,6 @@ footer .sponsors ul li:after {
     left: 0px;
     margin-bottom: 25px;
   }
-  .sub-nav-artists {
-    padding: 10px 0px;
-    margin-top: 60px;
-  }
-  .sub-nav-artists li {
-    padding: 5px;
-  }
   .artist-content {
     padding-top: 30px;
   }
@@ -9375,6 +9431,9 @@ footer .sponsors ul li:after {
     margin: 5px;
     height: 40px;
   }
+  .line-up-page {
+    padding-top: 50px;
+  }
   .line-up-overview {
     margin-top: 40px;
   }
@@ -9383,12 +9442,6 @@ footer .sponsors ul li:after {
   }
   .line-up-overview .stage {
     padding: 15px;
-  }
-  .line-up-overview .stage .artist-name {
-    width: 80%;
-  }
-  .line-up-overview .stage .hour {
-    width: 20%;
   }
   .line-up-overview .print-artists,
   .line-up-overview .all-artists {

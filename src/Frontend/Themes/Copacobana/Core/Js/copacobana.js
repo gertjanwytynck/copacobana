@@ -3,7 +3,11 @@ jsFrontend.copacobana = {
 		jsFrontend.copacobana.listeners();
 		jsFrontend.copacobana.mappie();
 
-
+        $(".scroll-down").click(function (){
+           $('html, body').animate({
+               scrollTop: 450
+           }, 650);
+       });
         if(window.location.pathname != "/nl" && window.location.pathname != "/en" && window.location.pathname != "/fr" && $(window).width() > 767) {
 
             $('.sub-nav').fadeTo(250, 1, function() {
@@ -36,17 +40,17 @@ jsFrontend.copacobana = {
 
 		// parallax effect
 		var moduleHero = $('.copacobana');
-        if ($(window).height() <= 800) {
-            var height = $(window).height() * 0.85;
+        if ($(window).height() <= 900) {
+            var height = $(window).height();
             moduleHero.height(height);
 
             // fix cover height
             $(window).resize(function() {
-                var height = $(window).height() * 0.85;
+                var height = $(window).height();
                 moduleHero.height(height);
             });
         } else {
-            moduleHero.height(800);
+            moduleHero.height(900);
         }
 
 		// tooltip
