@@ -142,6 +142,7 @@ class EditArtist extends ActionEdit
         $this->frm->addCheckbox('signUpOpen', $this->record->getSignUpOpen());
         $this->frm->addCheckbox('spotlight', $this->record->getSpotlight());
 
+
         // artist dates
         $dates = $this->record->getDate();
         foreach ($dates as $key => $date) {
@@ -357,6 +358,7 @@ class EditArtist extends ActionEdit
                     $stageRepo = $stageRepo->find($arrDates[$key]['stage']);
                     $categoryRepo = $categoryRepo->find($arrDates[$key]['category']);
 
+                    $content->setArtist($artist);
                     $content->setStartOn($arrDates[$key]['startTime']);
                     $content->setEndOn($arrDates[$key]['endTime']);
                     $content->setStage($stageRepo);
@@ -364,6 +366,31 @@ class EditArtist extends ActionEdit
 
                     $em->persist($content);
                     $em->flush();
+                }
+
+                // Fix for extra dates
+                if (count($arrDates) > count($artistDate)) {
+                    // add dates
+                    foreach ($arrDates as $key => $date) {
+                        if (($key +1) > count($artistDate)) {
+                            $stageRepo = $em->getRepository(BackendFestivalModel::ARTIST_STAGE_ENTITY_CLASS);
+                            $categoryRepo = $em->getRepository(BackendFestivalModel::ARTIST_CATEGORIES_ENTITY_CLASS);
+                            $stageRepo = $stageRepo->find($date['stage']);
+                            $categoryRepo = $categoryRepo->find($date['category']);
+
+                            if ($stageRepo != null && $categoryRepo != null) {
+                                $artistDate = new ArtistDate();
+                                $artistDate->setArtist($artist);
+                                $artistDate->setStartOn($date['startTime']);
+                                $artistDate->setEndOn($date['endTime']);
+                                $artistDate->setStage($stageRepo);
+                                $artistDate->setCategory($categoryRepo);
+                                $em->persist($artistDate);
+                                $em->flush();
+                            }
+                        }
+
+                    }
                 }
 
                 // set artist pratical

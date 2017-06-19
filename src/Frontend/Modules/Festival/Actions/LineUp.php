@@ -65,35 +65,36 @@ class LineUp extends Block
         // Set locale
         setlocale(LC_TIME, FRONTEND_LANGUAGE . '_' . strtoupper(FRONTEND_LANGUAGE));
 
-
-
         foreach ($stages as $keyStage => $stage) {
+            $i = 0;
             foreach ($artists as $key => $artist) {
                 // Loop through stages
                 foreach($artist['date'] as $artistKeyStage => $artistDate) {
+                    $i++;
+
                     if ($artistDate["stage"]["id"] == $stage->getId()) {
                         $day = strftime("%A", $artistDate['startOn']->getTimestamp());
                         $link = FrontendNavigation::getURLForBlock('Festival', 'Detail');
 
                         if ($day == 'vrijdag' || $day == 'Friday' || $day == 'vendredi') {
                             $this->friday[$keyStage]['stage'] = $stage->getStageName();
-                            $this->friday[$keyStage]['artist'][$key]['name'] = $artist['name'];
-                            $this->friday[$keyStage]['artist'][$key]['date'] = strftime("%H:%M", $artistDate['startOn']->getTimestamp()) . " - " . strftime("%H:%M", $artistDate['endOn']->getTimestamp());
-                            $this->friday[$keyStage]['artist'][$key]['url'] =  $link . '/' . $artist['meta']['url'];
+                            $this->friday[$keyStage]['artist'][$i]['name'] = $artist['name'];
+                            $this->friday[$keyStage]['artist'][$i]['date'] = strftime("%H:%M", $artistDate['startOn']->getTimestamp()) . " - " . strftime("%H:%M", $artistDate['endOn']->getTimestamp());
+                            $this->friday[$keyStage]['artist'][$i]['url'] =  $link . '/' . $artist['meta']['url'];
                         }
 
                         if ($day == 'zaterdag' || $day == 'Saturday' || $day == 'samedi') {
                             $this->saturday[$keyStage]['stage'] = $stage->getStageName();
-                            $this->saturday[$keyStage]['artist'][$key]['name'] = $artist['name'];
-                            $this->saturday[$keyStage]['artist'][$key]['date'] = strftime("%H:%M", $artistDate['startOn']->getTimestamp()) . " - " . strftime("%H:%M", $artistDate['endOn']->getTimestamp());
-                            $this->saturday[$keyStage]['artist'][$key]['url'] =  $link . '/' . $artist['meta']['url'];
+                            $this->saturday[$keyStage]['artist'][$i]['name'] = $artist['name'];
+                            $this->saturday[$keyStage]['artist'][$i]['date'] = strftime("%H:%M", $artistDate['startOn']->getTimestamp()) . " - " . strftime("%H:%M", $artistDate['endOn']->getTimestamp());
+                            $this->saturday[$keyStage]['artist'][$i]['url'] =  $link . '/' . $artist['meta']['url'];
                         }
 
                         if ($day == 'zondag' || $day == 'Sunday' || $day == 'dimanche') {
                             $this->sunday[$keyStage]['stage'] = $stage->getStageName();
-                            $this->sunday[$keyStage]['artist'][$key]['name'] = $artist['name'];
-                            $this->sunday[$keyStage]['artist'][$key]['date'] = strftime("%H:%M", $artistDate['startOn']->getTimestamp()) . " - " . strftime("%H:%M", $artistDate['endOn']->getTimestamp());
-                            $this->sunday[$keyStage]['artist'][$key]['url'] =  $link . '/' . $artist['meta']['url'];
+                            $this->sunday[$keyStage]['artist'][$i]['name'] = $artist['name'];
+                            $this->sunday[$keyStage]['artist'][$i]['date'] = strftime("%H:%M", $artistDate['startOn']->getTimestamp()) . " - " . strftime("%H:%M", $artistDate['endOn']->getTimestamp());
+                            $this->sunday[$keyStage]['artist'][$i]['url'] =  $link . '/' . $artist['meta']['url'];
                         }
                     }
                 }
