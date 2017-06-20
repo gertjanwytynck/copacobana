@@ -53,8 +53,18 @@ class PrintArtists extends ActionIndex
         // get active sheet
         $sheet = $phpExcelObject->setActiveSheetIndex(0);
 
+        // Create a new worksheet, after the default sheet
+        $phpExcelObject->createSheet();
+        $sheet2 = $phpExcelObject->setActiveSheetIndex(1);
+
+        // Create a new worksheet, after the default sheet
+        $phpExcelObject->createSheet();
+        $sheet3 = $phpExcelObject->setActiveSheetIndex(2);
+
         // rename sheet
         $sheet->setTitle('Artiesten');
+        $sheet2->setTitle('Crew');
+        $sheet3->setTitle('Nummerplaten');
 
         // generate header
         $sheet
@@ -77,8 +87,54 @@ class PrintArtists extends ActionIndex
             ->setCellValue('Q1', 'Nummerplaat 2')
             ->setCellValue('R1', 'Nummerplaat 3');
 
+        $sheet2
+            ->setCellValue('A1', 'Artiest')
+            ->setCellValue('B1', 'Naam')
+            ->setCellValue('C1', 'Functie');
+
+        $sheet3
+            ->setCellValue('A1', 'Artiest')
+            ->setCellValue('B1', 'Nummerplaat');
+
+
         // format header
         $sheet->getStyle('A1:R1')->applyFromArray(
+            array(
+                'fill' => array(
+                    'type' => \PHPExcel_Style_Fill::FILL_SOLID,
+                    'color' => array('rgb' => '94c11a')
+                ),
+                'font'  => array(
+                    'color' => array('rgb' => 'FFFFFF')
+                ),
+                'borders' => array(
+                    'bottom' => array(
+                        'style' => \PHPExcel_Style_Border::BORDER_THIN,
+                    )
+                )
+            )
+        );
+
+        // format header
+        $sheet2->getStyle('A1:C1')->applyFromArray(
+            array(
+                'fill' => array(
+                    'type' => \PHPExcel_Style_Fill::FILL_SOLID,
+                    'color' => array('rgb' => '94c11a')
+                ),
+                'font'  => array(
+                    'color' => array('rgb' => 'FFFFFF')
+                ),
+                'borders' => array(
+                    'bottom' => array(
+                        'style' => \PHPExcel_Style_Border::BORDER_THIN,
+                    )
+                )
+            )
+        );
+
+        // format header
+        $sheet3->getStyle('A1:B1')->applyFromArray(
             array(
                 'fill' => array(
                     'type' => \PHPExcel_Style_Fill::FILL_SOLID,
@@ -105,6 +161,52 @@ class PrintArtists extends ActionIndex
         setlocale(LC_TIME, 'nl' .'_' . strtoupper('nl'));
 
         if ($artists != null) {
+
+            // CREW SHEEt
+            $sheet2i = 1;
+            foreach ($artists as $i2 => $artist2) {
+                $practical2 = $artist2->getPractical();
+                foreach ( $practical2 as $practic2) {
+                    if ( $practic2->getBackstage() ) {
+                        foreach ($practic2->getBackstage() as $key=>$backstage) {
+                            $sheet2i++;
+                            $type = '';
+
+                            if ($backstage->getType() == 0 ) {
+                                $type = "artiest";
+                            } else if ($backstage->getType() == 1 ) {
+                                $type = "geluidstechnieker";
+                            } else if ($backstage->getType() == 2 ) {
+                                $type = "technieker";
+                            } else if ($backstage->getType() == 3 ) {
+                                $type = "manager";
+                            }
+
+                            $sheet2->setCellValue('A' . $sheet2i, html_entity_decode($artist2->getName()));
+                            $sheet2->setCellValue('B' . $sheet2i, html_entity_decode($backstage->getName()));
+                            $sheet2->setCellValue('C' . $sheet2i, html_entity_decode($type));
+                        }
+                    }
+                }
+            }
+
+            // CAR SHEET
+            $sheet3i = 1;
+            foreach ($artists as $i3 => $artist3) {
+                $practical3 = $artist3->getPractical();
+                foreach ( $practical3 as $practic3) {
+                    if ( $practic3->getCar() ) {
+                        foreach ($practic3->getCar() as $key=>$plate) {
+                            $sheet3i++;
+
+                            $sheet3->setCellValue('A' . $sheet3i, html_entity_decode($artist3->getName()));
+                            $sheet3->setCellValue('B' . $sheet3i, html_entity_decode($plate->getLicencePlate()));
+                        }
+                    }
+                }
+            }
+
+            // ARTIST SHEET
             foreach ($artists as $i => $artist) {
                 $practical = $artist->getPractical();
 
