@@ -2,24 +2,39 @@
 
 <body class="{$LANGUAGE}" itemscope itemtype="http://schema.org/WebPage">
 {include:Core/Layout/Templates/Partials/Header.tpl}
+
 <main class="">
     <figure class="copacobana">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScGwmE7Jpu_LlRcb0BFEZOICKpKX9cD9faw-ukDtCa7Gl3qiA/viewform" target="_blank"><button class="btn-volunteer-header">{$lblBecomeVolunteer|ucfirst}!</button></a>
+        <a href="{$FRONTEND_FILES_URL}/copacobana/copaboekje.pdf" target="_blank"><button class="btn-volunteer-header">{$lblProgamFolder|ucfirst}!</button></a>
 
         <div class="scroll-down">
           <a class="arrow-wrap" href="#content">
              <span class="arrow"></span>
            </a>
         </div>
-
     </figure>
 
     <section class="widget-artists cover-overflow">
-        <div class="container-fluid">
-            {iteration:positionArtists}
-                {$positionArtists.blockContent}
-            {/iteration:positionArtists}
+      <div class="mobile-triggers">
+        <div>
+          <a class="practical-info-href-fix" href=""><button class="btn-mobile-trigger">{$lblPractical|ucfirst}</button></a>
         </div>
+        <div>
+          <a href="{$var|geturlforblock:'Festival'}/line-up"><button class="btn-mobile-trigger">{$lblTimeTable|ucfirst}</button></a>
+        </div>
+        <!-- <div>
+          <a href=""><button class="btn-mobile-trigger">{$lblFestivalMap|ucfirst}</button></a>
+        </div> -->
+        <div>
+          <a href="{$FRONTEND_FILES_URL}/copacobana/copaboekje.pdf" target="_blank"><button class="btn-mobile-trigger">{$lblProgamFolder|ucfirst}</button></a>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+          {iteration:positionArtists}
+              {$positionArtists.blockContent}
+          {/iteration:positionArtists}
+      </div>
     </section>
 
     <section class="pattern-dotty cover-overflow">

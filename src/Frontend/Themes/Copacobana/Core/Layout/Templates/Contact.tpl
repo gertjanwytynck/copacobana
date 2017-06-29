@@ -8,13 +8,21 @@
         <div class="row">
             <div class="col-md-6">
               {iteration:positionMain}
-              {$positionMain.blockContent}
+                {$positionMain.blockContent}
               {/iteration:positionMain}
             </div>
             <div class="col-md-6 contact-information">
               <h2>
+                Copacobana:<br />
+                Rozebroekenslag<br/>
+                9040, Sint-Amandsberg</br />
+                België
+              </h2>
+
+              <h2>
+                Anamma:<br />
                 Ledestraat 38<br/>
-                9040 Sint-Amandsberg</br />
+                9040, Sint-Amandsberg</br />
                 België
               </h2>
 

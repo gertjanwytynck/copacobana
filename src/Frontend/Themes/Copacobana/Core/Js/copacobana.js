@@ -21,14 +21,17 @@ jsFrontend.copacobana = {
 
         if ($(location).prop('pathname').split('/')[1] == "nl") {
             $('.lang-nl-active').css('text-decoration', 'underline');
+            $('.practical-info-href-fix').attr('href', "/nl/praktisch")
         }
 
         if ($(location).prop('pathname').split('/')[1] == "en") {
             $('.lang-en-active').css('text-decoration', 'underline');
+            $('.practical-info-href-fix').attr('href', "/en/practical-info")
         }
 
         if ($(location).prop('pathname').split('/')[1] == "fr") {
             $('.lang-fr-active').css('text-decoration', 'underline');
+            $('.practical-info-href-fix').attr('href', "/fr/pratique")
         }
 
 

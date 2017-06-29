@@ -83,6 +83,10 @@ main {
 	margin: 0 auto;
 }
 
+.widget-artists .mobile-triggers {
+	display: none;
+}
+
 .clear {
 	clear: both;
 }
@@ -278,8 +282,8 @@ main {
 
 .btn-volunteer-header {
 	position: absolute;
-	bottom: 20px;
-	right: 20px;
+	bottom: 30px;
+	right: 30px;
 	background: @pink;
 	border: @border-yellow-thick;
 	padding: 10px 15px;
@@ -329,7 +333,7 @@ main {
 .copacobana {
     margin-top: 0;
     position: relative;
-    background: #fdfbf0 url('../images/cover.jpg') no-repeat center center;
+    background: #fdfbf0 url('../images/cover.jpg') no-repeat center 30px;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -827,7 +831,7 @@ main {
 			}
 
 			p {
-				color: @font-gray;
+				color: @blue;
 				margin: 0px;
 				font-weight: 400;
 				text-align: left;
@@ -1199,6 +1203,7 @@ main {
 
 		p {
 			text-align: justify;
+			color: @font-blue;
 		}
 
 		a {
@@ -2992,7 +2997,6 @@ footer {
 	}
 
   .line-up-overview {
-    margin-top: 100px;
     .all-artists, .print-artists {
 	    top: -65px;
     }
@@ -3042,6 +3046,7 @@ footer {
 }
 
 @media (min-width: 767px) {
+
 	.navbar .social {
 		padding-left: 0px;
 	}
@@ -3142,22 +3147,156 @@ footer {
 
 @media (max-width: 767px) {
 	
+	.widget-artists, .artists {
+		.og-grid {
+			li {
+				img {
+					-webkit-transition: none; /* Safari and Chrome */
+					-moz-transition: none; /* Firefox */
+					-ms-transition: none; /* IE 9 */
+					-o-transition: none; /* Opera */
+					transition: none;
+					// 
+					// -webkit-transform:scale(1.05); /* Safari and Chrome */
+					// -moz-transform:scale(1.05); /* Firefox */
+					// -ms-transform:scale(1.05); /* IE 9 */
+					// -o-transform:scale(1.05); /* Opera */
+					// transform:scale(1.05);
+					
+					
+				}
+			
+				a {
+					&:after {
+						background: transparent !important;
+						border-bottom: 75px solid rgba(0, 0, 0, 0.3);
+					}
+				}
+				
+				.artist-name {
+					transition: none;
+				}
+				
+				.more {
+					transition: none;
+				}
+				
+				&:hover {
+					.artist-name {
+						bottom: 0px !important;
+						opacity: 1 !important;
+					}
+				}
+			}
+		}
+
+	}
 	.sub-nav-artists  {
-		display: none;
+		top: 40px;
+		padding-left: 0px;
+		z-index: 3;
+		padding-top: 10px;
+	}
+	
+	.rules .text-box p {
+		padding: 0px 5px 0px 10px;
+	}
+	
+	.rules .sidebar ul li {
+		padding-left: 0px;
+	}
+	
+	#tplContent .row {
+		margin-bottom: 0px;
+	}
+	
+	.artist-content {
+		padding-top: 130px !important;
+	}
+	
+	#artistDetail {
+		padding-top: 80px !important;
+	}
+	
+	.line-up-page {
+		padding-top: 130px;
+	}
+	
+	.line-up-overview {
+		padding-top: 25px !important;
+		margin: 0px;
 		
-		// padding: 10px 0px;
-		// margin-top: 60px;
-		// li {
-		// 	padding: 5px;
-		// }
+		.stage h2 {
+			text-transform: uppercase;
+			margin-bottom: 0px !important;
+			padding-bottom: 0px;
+			color: @yellow;
+		}
+	}
+	
+	.artist-random {
+		display: none;
 	}
 	
 	.mobile-location {
 		display: block;
+		padding: 1em 0;
+		a {
+			padding: 0px !important;
+		}
+		
+		p {
+			margin: 0px;
+		}
 	}
 	
 	.copa-intro, .hamburger {
 		display: none !important;
+	}
+	
+	.widget-artists .container-fluid {
+		display: none;
+	}
+	
+	.copacobana a {
+		display: none;
+	}
+	
+	.widget-artists {
+		padding: 15px 0px;
+		min-height: 250px;
+		
+		.mobile-triggers {
+			display: block;
+			text-align: center;
+			
+			div {
+				text-align: center;
+			}
+		}
+		
+		.btn-mobile-trigger {
+			text-align: center;
+			width: 200px;
+			margin: 15px 0px;
+			
+			background: @blue;
+			border: @border-yellow;
+			padding: 10px 15px;
+			border-radius: @border-radius;
+			color: white;
+			
+			a {
+				color: white;
+			}
+			
+			&:hover {
+				background: @pink;
+				border: @border-blue;
+				color: white !important;
+			}
+		}
+
 	}
 	
 	.rules .box-height {
@@ -3201,6 +3340,10 @@ footer {
 	
 	.video {
 		padding-top: 15px;
+		
+		.row {
+			margin: 0px !important;
+		}
 		.col-md-4 {
 			text-align: center;
 		}
@@ -3212,6 +3355,11 @@ footer {
 	}
 
 	.navbar {
+		background-image: url('../images/zig-zag.png');
+		background-repeat: repeat-x;
+		top: -20px;
+		height: 70px;
+		
 		.box-shadow {
 			box-shadow: none;
 		}
@@ -3228,17 +3376,16 @@ footer {
 			margin-bottom: 60px;
 		}
 
-		.row {
-			margin-bottom: 0px;
-		}
+	}
+	
+	.artists .artist-name {
+		margin-bottom: 15px !important;
 	}
 
 	.mobile-menu {
 		display: block;
-		border: @border-yellow;
-		background: @pink;
 		width: 100%;
-		height: 50px;
+		height: 70px;
 		padding-top: 5px;
 
 		.menu-text-mobile {
@@ -3304,6 +3451,8 @@ footer {
 	 	position: absolute;
 	 	top: 0;
 	 	z-index: 15;
+		padding-top: 19px;
+				
 	 	a.target-burger {
 		 	margin: 5px 10px;
 		 	width: 30px;
@@ -3371,7 +3520,7 @@ footer {
 
 	.mob-img {
 		display: block;
-		top: 5px;
+		top: 12px;
 		right: 5px;
 		position: absolute;
 		height: 30px;
@@ -3429,7 +3578,8 @@ footer {
 	}
 
 	.copacobana {
-		height: 350px !important;
+		height: 260px !important;
+		
 		.scroll-down {
 			display: none;
 		}
@@ -3526,6 +3676,11 @@ footer {
 	.widget-artists .og-grid li, .artists .og-grid li {
 		width: 48%;
 	}
+	
+	.video .embed-container {
+		max-width: 90%;
+		margin-left: 5%;
+	}
 
 	footer {
 		h1 {
@@ -3538,17 +3693,15 @@ footer {
 
 		.sponsors {
 			.mob {
-				width: 40%;
-				float: left;
+				width: 100%;
+				float: none;
 			}
 			ul {
 				li {
 					display: block;
-					margin: 15px 0px;
+					margin: 30px 0px;
 					text-align: center;
-					img {
-
-					}
+					
 				}
 			}
 		}
@@ -3606,12 +3759,6 @@ footer {
 			left: 0px;
 			margin-bottom: 25px;
 		}
-	}
-
-	
-
-	.artist-content {
-		padding-top: 30px;
 	}
 
 	.widget-artists, .artists {
@@ -3752,12 +3899,8 @@ footer {
 		}
 	}
 	
-	.line-up-page {
-		padding-top: 50px;
-	}
 
 	.line-up-overview {
-		margin-top: 40px;
 		.sidebar {
 			margin: 15px;
 		}

@@ -13,7 +13,7 @@
             <div class="news-content col-sm-8">
                 <h2><a href="{$widgetNewsRecentArticlesList.full_url}">{$widgetNewsRecentArticlesList.publish_on|date:'d/m/Y':{$LANGUAGE}|ucfirst} | <span class="latest-news">{$lblLatestNews|ucfirst}</span></a></h2>
                 <h1><a href="{$widgetNewsRecentArticlesList.full_url}">{$widgetNewsRecentArticlesList.title}</a></h1>
-                <p><a href="{$widgetNewsRecentArticlesList.full_url}">{$widgetNewsRecentArticlesList.content|truncate:550:true:true}</a></p>
+                <p>{$widgetNewsRecentArticlesList.content|truncate:550:true:true}</p>
                 <div class="btn-all-news">
                   <a href="{$var|geturlforblock:'News'}">{$lblAllNewsItems|ucfirst}</a>
                 </div>

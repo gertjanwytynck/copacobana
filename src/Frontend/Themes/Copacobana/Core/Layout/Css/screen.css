@@ -6272,6 +6272,9 @@ main {
   max-width: 1170px;
   margin: 0 auto;
 }
+.widget-artists .mobile-triggers {
+  display: none;
+}
 .clear {
   clear: both;
 }
@@ -6437,8 +6440,8 @@ main {
 }
 .btn-volunteer-header {
   position: absolute;
-  bottom: 20px;
-  right: 20px;
+  bottom: 30px;
+  right: 30px;
   background: #ed3587;
   border: 2px solid #fff43e;
   padding: 10px 15px;
@@ -6484,7 +6487,7 @@ main {
 .copacobana {
   margin-top: 0;
   position: relative;
-  background: #fdfbf0 url('../images/cover.jpg') no-repeat center center;
+  background: #fdfbf0 url('../images/cover.jpg') no-repeat center 30px;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -6925,7 +6928,7 @@ main {
   color: #174556;
 }
 .intro .news article p {
-  color: #888888;
+  color: #102a4f;
   margin: 0px;
   font-weight: 400;
   text-align: left;
@@ -7230,6 +7233,7 @@ main {
 }
 #newsItemsIndex article p {
   text-align: justify;
+  color: #174556;
 }
 #newsItemsIndex article a {
   color: #174556;
@@ -8828,9 +8832,6 @@ footer .sponsors ul li:after {
   .rules .sidebar ul {
     padding: 15px;
   }
-  .line-up-overview {
-    margin-top: 100px;
-  }
   .line-up-overview .all-artists,
   .line-up-overview .print-artists {
     top: -65px;
@@ -8942,15 +8943,121 @@ footer .sponsors ul li:after {
   }
 }
 @media (max-width: 767px) {
+  .widget-artists .og-grid li img,
+  .artists .og-grid li img {
+    -webkit-transition: none;
+    /* Safari and Chrome */
+    -moz-transition: none;
+    /* Firefox */
+    -ms-transition: none;
+    /* IE 9 */
+    -o-transition: none;
+    /* Opera */
+    transition: none;
+  }
+  .widget-artists .og-grid li a:after,
+  .artists .og-grid li a:after {
+    background: transparent !important;
+    border-bottom: 75px solid rgba(0, 0, 0, 0.3);
+  }
+  .widget-artists .og-grid li .artist-name,
+  .artists .og-grid li .artist-name {
+    transition: none;
+  }
+  .widget-artists .og-grid li .more,
+  .artists .og-grid li .more {
+    transition: none;
+  }
+  .widget-artists .og-grid li:hover .artist-name,
+  .artists .og-grid li:hover .artist-name {
+    bottom: 0px !important;
+    opacity: 1 !important;
+  }
   .sub-nav-artists {
+    top: 40px;
+    padding-left: 0px;
+    z-index: 3;
+    padding-top: 10px;
+  }
+  .rules .text-box p {
+    padding: 0px 5px 0px 10px;
+  }
+  .rules .sidebar ul li {
+    padding-left: 0px;
+  }
+  #tplContent .row {
+    margin-bottom: 0px;
+  }
+  .artist-content {
+    padding-top: 130px !important;
+  }
+  #artistDetail {
+    padding-top: 80px !important;
+  }
+  .line-up-page {
+    padding-top: 130px;
+  }
+  .line-up-overview {
+    padding-top: 25px !important;
+    margin: 0px;
+  }
+  .line-up-overview .stage h2 {
+    text-transform: uppercase;
+    margin-bottom: 0px !important;
+    padding-bottom: 0px;
+    color: #f4f468;
+  }
+  .artist-random {
     display: none;
   }
   .mobile-location {
     display: block;
+    padding: 1em 0;
+  }
+  .mobile-location a {
+    padding: 0px !important;
+  }
+  .mobile-location p {
+    margin: 0px;
   }
   .copa-intro,
   .hamburger {
     display: none !important;
+  }
+  .widget-artists .container-fluid {
+    display: none;
+  }
+  .copacobana a {
+    display: none;
+  }
+  .widget-artists {
+    padding: 15px 0px;
+    min-height: 250px;
+  }
+  .widget-artists .mobile-triggers {
+    display: block;
+    text-align: center;
+  }
+  .widget-artists .mobile-triggers div {
+    text-align: center;
+  }
+  .widget-artists .btn-mobile-trigger {
+    text-align: center;
+    width: 200px;
+    margin: 15px 0px;
+    background: #102a4f;
+    border: 1px solid #fcdd04;
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: white;
+  }
+  .widget-artists .btn-mobile-trigger a {
+    color: white;
+  }
+  .widget-artists .btn-mobile-trigger:hover {
+    background: #ed3587;
+    border: 1px solid #174556;
+    color: white !important;
   }
   .rules .box-height {
     min-height: 100px;
@@ -8986,6 +9093,9 @@ footer .sponsors ul li:after {
   .video {
     padding-top: 15px;
   }
+  .video .row {
+    margin: 0px !important;
+  }
   .video .col-md-4 {
     text-align: center;
   }
@@ -8993,6 +9103,12 @@ footer .sponsors ul li:after {
   .navbar .social {
     float: none;
     margin: 0px;
+  }
+  .navbar {
+    background-image: url('../images/zig-zag.png');
+    background-repeat: repeat-x;
+    top: -20px;
+    height: 70px;
   }
   .navbar .box-shadow {
     box-shadow: none;
@@ -9010,16 +9126,13 @@ footer .sponsors ul li:after {
   #tplContentArtistDetail .col-md-6 {
     margin-bottom: 60px;
   }
-  #tplContent .row,
-  #tplContentArtistDetail .row {
-    margin-bottom: 0px;
+  .artists .artist-name {
+    margin-bottom: 15px !important;
   }
   .mobile-menu {
     display: block;
-    border: 1px solid #fcdd04;
-    background: #ed3587;
     width: 100%;
-    height: 50px;
+    height: 70px;
     padding-top: 5px;
   }
   .mobile-menu .menu-text-mobile {
@@ -9093,6 +9206,7 @@ footer .sponsors ul li:after {
     position: absolute;
     top: 0;
     z-index: 15;
+    padding-top: 19px;
   }
   .mobile-menu a.target-burger {
     margin: 5px 10px;
@@ -9156,7 +9270,7 @@ footer .sponsors ul li:after {
   }
   .mob-img {
     display: block;
-    top: 5px;
+    top: 12px;
     right: 5px;
     position: absolute;
     height: 30px;
@@ -9206,7 +9320,7 @@ footer .sponsors ul li:after {
     padding-top: 0px;
   }
   .copacobana {
-    height: 350px !important;
+    height: 260px !important;
   }
   .copacobana .scroll-down {
     display: none;
@@ -9279,6 +9393,10 @@ footer .sponsors ul li:after {
   .artists .og-grid li {
     width: 48%;
   }
+  .video .embed-container {
+    max-width: 90%;
+    margin-left: 5%;
+  }
   footer h1 {
     margin-top: 30px;
     margin-bottom: 10px;
@@ -9287,12 +9405,12 @@ footer .sponsors ul li:after {
     margin-top: 20px;
   }
   footer .sponsors .mob {
-    width: 40%;
-    float: left;
+    width: 100%;
+    float: none;
   }
   footer .sponsors ul li {
     display: block;
-    margin: 15px 0px;
+    margin: 30px 0px;
     text-align: center;
   }
   .line-up-overview .balloon,
@@ -9328,9 +9446,6 @@ footer .sponsors ul li:after {
     top: 0px;
     left: 0px;
     margin-bottom: 25px;
-  }
-  .artist-content {
-    padding-top: 30px;
   }
   .widget-artists .og-grid li,
   .artists .og-grid li {
@@ -9430,12 +9545,6 @@ footer .sponsors ul li:after {
   #filters li {
     margin: 5px;
     height: 40px;
-  }
-  .line-up-page {
-    padding-top: 50px;
-  }
-  .line-up-overview {
-    margin-top: 40px;
   }
   .line-up-overview .sidebar {
     margin: 15px;
