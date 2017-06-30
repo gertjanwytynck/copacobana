@@ -6438,7 +6438,8 @@ main {
   border: 1px solid #1cb935;
   background: #38bb9d url('../images/icon_people-blue.png') no-repeat top 12px left 15px;
 }
-.btn-volunteer-header {
+.btn-volunteer-header,
+.btn-plattegrond-header {
   position: absolute;
   bottom: 30px;
   right: 30px;
@@ -6448,13 +6449,18 @@ main {
   border-radius: 5px;
   color: white;
 }
-.btn-volunteer-header a {
+.btn-volunteer-header a,
+.btn-plattegrond-header a {
   color: white;
 }
-.btn-volunteer-header:hover {
+.btn-volunteer-header:hover,
+.btn-plattegrond-header:hover {
   background: #2d87b0;
   border: 2px solid #174556;
   color: white !important;
+}
+.btn-plattegrond-header {
+  left: 30px;
 }
 .btn-download-file {
   display: block;
@@ -6487,7 +6493,7 @@ main {
 .copacobana {
   margin-top: 0;
   position: relative;
-  background: #fdfbf0 url('../images/cover.jpg') no-repeat center 30px;
+  background: #fdfbf0 url('../images/plattegrond.jpg') no-repeat center 30px;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -9145,14 +9151,14 @@ footer .sponsors ul li:after {
     color: white;
   }
   .sub-nav {
-    background: rgba(11, 58, 76, 0.8);
+    background: rgba(11, 58, 76, 0.9);
     position: fixed;
     left: 0;
-    top: 50px;
+    top: 40px;
     z-index: 0;
     height: 100%;
     width: 100%;
-    padding: 0px 30px !important;
+    padding: 0px 20px !important;
     opacity: 0;
     filter: alpha(opacity=0);
     -webkit-transform: scale(0.85);
@@ -9164,7 +9170,7 @@ footer .sponsors ul li:after {
   }
   .sub-nav.toggled {
     display: block;
-    z-index: 10;
+    z-index: 9;
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
     transform: scale(1);
@@ -9175,32 +9181,24 @@ footer .sponsors ul li:after {
     transition: 0.5s;
   }
   .sub-nav ul {
-    padding: 0px;
+    padding: 10px 0px 0px 0px;
   }
   .sub-nav ul li {
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   }
   .sub-nav ul li a {
-    font-size: 1.250em;
+    font-size: 1em;
     color: #fff;
-    padding: 1em 0;
+    padding: 10px 0;
     font-weight: 300;
     display: block;
-    -webkit-transition: 0.5s;
-    -o-transition: 0.5s;
-    transition: 0.5s;
-  }
-  .sub-nav ul li a:last-child {
-    border: none;
   }
   .sub-nav ul li a:hover {
-    opacity: 0.45;
-    filter: alpha(opacity=45);
-    -webkit-transition: 0.5s;
-    -o-transition: 0.5s;
-    transition: 0.5s;
-    padding: 1em;
+    padding: 10px 0px;
     color: #ed3587;
+  }
+  .sub-nav ul li:last-child {
+    border: none;
   }
   .mobile-menu {
     position: absolute;

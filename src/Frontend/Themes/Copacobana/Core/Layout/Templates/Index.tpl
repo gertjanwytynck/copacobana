@@ -6,6 +6,7 @@
 <main class="">
     <figure class="copacobana">
         <a href="{$FRONTEND_FILES_URL}/copacobana/copaboekje.pdf" target="_blank"><button class="btn-volunteer-header">{$lblProgamFolder|ucfirst}!</button></a>
+        <a href="{$FRONTEND_FILES_URL}/copacobana/plattegrond.jpg" target="_blank"><button class="btn-plattegrond-header">{$lblFestivalMap|ucfirst}!</button></a>
 
         <div class="scroll-down">
           <a class="arrow-wrap" href="#content">
@@ -22,9 +23,9 @@
         <div>
           <a href="{$var|geturlforblock:'Festival'}/line-up"><button class="btn-mobile-trigger">{$lblTimeTable|ucfirst}</button></a>
         </div>
-        <!-- <div>
-          <a href=""><button class="btn-mobile-trigger">{$lblFestivalMap|ucfirst}</button></a>
-        </div> -->
+        <div>
+          <a href="{$FRONTEND_FILES_URL}/copacobana/plattegrond.jpg" target="_blank"><button class="btn-mobile-trigger">{$lblFestivalMap|ucfirst}</button></a>
+        </div>
         <div>
           <a href="{$FRONTEND_FILES_URL}/copacobana/copaboekje.pdf" target="_blank"><button class="btn-mobile-trigger">{$lblProgamFolder|ucfirst}</button></a>
         </div>
