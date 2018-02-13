@@ -98,9 +98,6 @@ class Model implements FrontendTagsInterface
                 'publish_on' => FrontendModel::getUTCDate('U', $result->getArticle()->getPublishOn()->format('U')),
                 'full_url' => $link . '/' . $result->getMeta()->getUrl(),
                 'url' => $result->getMeta()->getUrl(),
-                'category_title' => $result->getArticle()->getCategory()->getLocale(FRONTEND_LANGUAGE)->getTitle(),
-                'category_full_url' =>
-                    $categoryLink . '/' . $result->getArticle()->getCategory()->getLocale(FRONTEND_LANGUAGE)->getMeta()->getUrl()
             );
 
             if (FrontendModel::get('fork.settings')->getForModule('News', 'cover_image_enabled')) {
@@ -244,19 +241,20 @@ class Model implements FrontendTagsInterface
 
         if (empty($result)) return null;
 
-
         $id = $result->getArticle()->getId();
 
         $rsm = new Query\ResultSetMapping();
 
         $rsm->addScalarResult('id', 'id');
-        $query = $em->createNativeQuery('SELECT id FROM NewsArticle WHERE
-        id = (SELECT id FROM NewsArticle WHERE id > ' . $id  . ' AND isHidden != ' . 1 . ' LIMIT 1)', $rsm);
+        $query = $em->createNativeQuery('SELECT id FROM NewsArticle WHERE id > ? AND isHidden != ? LIMIT 1', $rsm);
+        $query->setParameter(1, $id);
+        $query->setParameter(2, 1);
         $next = $query->execute();
 
 
-        $query = $em->createNativeQuery('SELECT id FROM NewsArticle WHERE
-        id = (SELECT id FROM NewsArticle WHERE id < ' . $id  . ' AND isHidden != ' . 1 . ' ORDER BY id DESC LIMIT 1)', $rsm);
+        $query = $em->createNativeQuery('SELECT id FROM NewsArticle WHERE id < ? AND isHidden != ? ORDER BY id DESC LIMIT 1', $rsm);
+        $query->setParameter(1, $id);
+        $query->setParameter(2, 1);
         $prev = $query->execute();
 
         if ( ! empty($next) ) {
@@ -264,7 +262,7 @@ class Model implements FrontendTagsInterface
             $query = $qb->select('al, a')
                 ->from(self::ARTICLE_LOCALE_ENTITY_CLASS, 'al')
                 ->innerJoin('al.article', 'a', 'WITH', 'a.publishOn <= :now AND a.isHidden = :hidden')
-                ->innerJoin('al.meta', 'm', 'WITH', 'al.id = :id')
+                ->innerJoin('al.meta', 'm', 'WITH', 'al.article = :id')
                 ->where('al.language = :language')
                 ->setParameters(array(
                     'language' => FRONTEND_LANGUAGE,
@@ -272,11 +270,16 @@ class Model implements FrontendTagsInterface
                     'hidden' => false,
                     'id' => $next[0]['id']
                 ))
-                ->getQuery()
-            ;
+                ->getQuery();
+
             /** @var \Backend\Modules\News\Entity\ArticleLocale $result */
             $next = $query->getOneOrNullResult();
-            $next = $link . '/' . $next->getMeta()->getUrl();
+
+            if (!empty($next)) {
+                $next = $link . '/' . $next->getMeta()->getUrl();
+            } else {
+                $next = false;
+            }
         } else {
             $next = false;
         }
@@ -286,7 +289,7 @@ class Model implements FrontendTagsInterface
             $query = $qb->select('al, a')
                 ->from(self::ARTICLE_LOCALE_ENTITY_CLASS, 'al')
                 ->innerJoin('al.article', 'a', 'WITH', 'a.publishOn <= :now AND a.isHidden = :hidden')
-                ->innerJoin('al.meta', 'm', 'WITH', 'al.id = :id')
+                ->innerJoin('al.meta', 'm', 'WITH', 'al.article = :id')
                 ->where('al.language = :language')
                 ->setParameters(array(
                     'language' => FRONTEND_LANGUAGE,
@@ -299,12 +302,14 @@ class Model implements FrontendTagsInterface
             /** @var \Backend\Modules\News\Entity\ArticleLocale $result */
             $prev = $query->getOneOrNullResult();
 
-
-            $prev = $link . '/' . $prev->getMeta()->getUrl();
+            if (!empty($prev)) {
+                $prev = $link . '/' . $prev->getMeta()->getUrl();
+            } else {
+                $prev = false;
+            }
         } else {
             $prev = false;
         }
-
 
         $article = array(
             'id' => $result->getArticle()->getId(),
@@ -312,14 +317,14 @@ class Model implements FrontendTagsInterface
             'title' => $result->getTitle(),
             'content' => $result->getContent(),
             'publish_on' => FrontendModel::getUTCDate('U', $result->getArticle()->getPublishOn()->format('U')),
-            'category_title' => $result->getArticle()->getCategory()->getLocale(FRONTEND_LANGUAGE)->getTitle(),
-            'category_url' => $result->getArticle()->getCategory()->getLocale(FRONTEND_LANGUAGE)->getMeta()->getUrl(),
-            'category_full_url' =>
-                $categoryLink . '/' . $result->getArticle()->getCategory()->getLocale(FRONTEND_LANGUAGE)->getMeta()->getUrl(),
+            // 'category_title' => $result->getArticle()->getCategory()->getLocale(FRONTEND_LANGUAGE)->getTitle(),
+            // 'category_url' => $result->getArticle()->getCategory()->getLocale(FRONTEND_LANGUAGE)->getMeta()->getUrl(),
+            // 'category_full_url' =>
+            //     $categoryLink . '/' . $result->getArticle()->getCategory()->getLocale(FRONTEND_LANGUAGE)->getMeta()->getUrl(),
             'meta' => $result->getMeta(),
             'full_url' => $link . '/' . $result->getMeta()->getUrl(),
-            'next_url' => $next,
-            'prev_url' => $prev,
+            'next_url' => $prev,
+            'prev_url' => $next,
             'youtube_url' =>  $result->getArticle()->getYoutubeUrl()
         );
 

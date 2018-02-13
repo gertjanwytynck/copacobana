@@ -4,7 +4,7 @@
 {include:Core/Layout/Templates/Partials/Header.tpl}
 
 <main class="default">
-    <section class="container">
+    <section class="container-fluid">
         <div class="row">
             <div class="col-md-12">
                 {iteration:positionContent}
@@ -15,7 +15,7 @@
     </section>
 </main>
 <footer>
-    <a href="/"><img src="{$THEME_URL}/Core/Layout/images/copacobana.png" title="copacobana" alt="copacobana" class="copa-footer" /></a>
+    <a href="/"><img src="{$THEME_URL}/Core/Layout/images/copacobana.svg" title="copacobana" alt="copacobana" class="copa-footer" /></a>
     {include:Core/Layout/Templates/Partials/Footer.tpl}
 </body>
 </html>

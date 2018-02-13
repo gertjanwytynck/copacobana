@@ -1,0 +1,44 @@
+.copacobana {
+	margin-top: 0px;
+	position: relative;
+	background: @background url('@{base-url}/cover.png') no-repeat center center;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	width: 100%;
+	min-width: 100%;
+	z-index: 0;
+}
+
+.object-wrap {
+  -webkit-transition: all 0.75s;
+  transition: all 0.75s;
+}
+
+.cover-svg-title {
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  width: 40%;
+	padding: 10px;
+	
+  svg {
+  	fill: #fff200;
+		stroke-width: 4;
+		stroke: #2e9fb2;
+  }
+}
+
+.cover-pink-flower {
+	position: absolute;
+	bottom: 15%;
+	right: 15%;
+	min-width: 50px;
+	width: 6.5%;
+
+	img {
+		width: 100%;
+		transform: translate(1.2345, 1.3535345);
+	}
+}

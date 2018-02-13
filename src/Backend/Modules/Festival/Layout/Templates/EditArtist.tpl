@@ -83,11 +83,12 @@
                                         <label for="publishOnTime">{$lblAt}</label>
                                     </p>
                                     <p>
-                                         <input name="times[]" type="text" value="17:00" maxlength="5" data-mask="dd/mm/yy" class="inputText inputTime" data-firstday="1">
+                                         <input name="startTime[]" type="text" value="17:00" maxlength="5" data-mask="dd/mm/yy" class="inputText inputTime" data-firstday="1">
                                     </p>
-                                    <p>
-                                        <label for="publishOnTime">uu:mm</label>
-                                    </p>
+																		<p>
+																				 <input name="endTime[]" type="text" value="17:00" maxlength="5" data-mask="dd/mm/yy" class="inputText inputTime" data-firstday="1">
+																		</p>
+
                                 </div>
                                 <div class="oneLiner">
                                     <p>

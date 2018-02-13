@@ -142,13 +142,15 @@ class EditArtist extends ActionEdit
         $this->frm->addCheckbox('signUpOpen', $this->record->getSignUpOpen());
         $this->frm->addCheckbox('spotlight', $this->record->getSpotlight());
 
+
         // artist dates
         $dates = $this->record->getDate();
         foreach ($dates as $key => $date) {
             $this->arrDates[$key]['stage'] = $date->getStage()->getId();
             $this->arrDates[$key]['category'] = $date->getCategory()->getId();
             $this->arrDates[$key]['date'] = $date->getStartOn()->format('d/m/Y');
-            $this->arrDates[$key]['time'] = $date->getStartOn()->format('H:i');
+            $this->arrDates[$key]['startTime'] = $date->getStartOn()->format('H:i');
+            $this->arrDates[$key]['endTime'] = $date->getEndOn()->format('H:i');
         }
 
         // artist practical
@@ -208,7 +210,7 @@ class EditArtist extends ActionEdit
             $this->frm->addText('soundcloud', $content->getSoundcloudUrl(), 255, 'inputText title',
                 'inputTextError title');
             $this->frm->addText('website', $content->getWebsiteUrl(), 255, 'inputText title', 'inputTextError title');
-            $this->frm->addTextarea('bio', $content->getBio());
+            $this->frm->addEditor('bio', htmlspecialchars_decode(htmlspecialchars_decode($content->getBio())));
 
             // create form elements for each language
             foreach ($this->languages as $abbreviation => $language) {
@@ -278,12 +280,15 @@ class EditArtist extends ActionEdit
     {
         // get the dates
         $arrDates = array();
-        if (!empty($_POST['dates']) && !empty($_POST['times'])) {
+        if (!empty($_POST['dates']) && !empty($_POST['startTime']) && !empty($_POST['endTime'])) {
             foreach($_POST['dates'] as $key=>$date) {
                 if (!empty($date)) {
                     $startOn = new \DateTime();
-                    $timeStamp = \DateTime::createFromFormat('d/m/Y H:i', $date . ' ' . $_POST['times'][$key])->format('U');
-                    $arrDates[$key]['date'] = $startOn->setTimestamp($timeStamp);
+                    $endOn = new \DateTime();
+                    $startTime = \DateTime::createFromFormat('d/m/Y H:i', $date . ' ' . $_POST['startTime'][$key])->format('U');
+                    $endTime = \DateTime::createFromFormat('d/m/Y H:i', $date . ' ' . $_POST['endTime'][$key])->format('U');
+                    $arrDates[$key]['startTime'] = $startOn->setTimestamp($startTime);
+                    $arrDates[$key]['endTime'] = $endOn->setTimestamp($endTime);
                     $arrDates[$key]['stage'] = $_POST['stages'][$key];
                     $arrDates[$key]['category'] = $_POST['categories'][$key];
                 }
@@ -353,12 +358,39 @@ class EditArtist extends ActionEdit
                     $stageRepo = $stageRepo->find($arrDates[$key]['stage']);
                     $categoryRepo = $categoryRepo->find($arrDates[$key]['category']);
 
-                    $content->setStartOn($arrDates[$key]['date']);
+                    $content->setArtist($artist);
+                    $content->setStartOn($arrDates[$key]['startTime']);
+                    $content->setEndOn($arrDates[$key]['endTime']);
                     $content->setStage($stageRepo);
                     $content->setCategory($categoryRepo);
 
                     $em->persist($content);
                     $em->flush();
+                }
+
+                // Fix for extra dates
+                if (count($arrDates) > count($artistDate)) {
+                    // add dates
+                    foreach ($arrDates as $key => $date) {
+                        if (($key +1) > count($artistDate)) {
+                            $stageRepo = $em->getRepository(BackendFestivalModel::ARTIST_STAGE_ENTITY_CLASS);
+                            $categoryRepo = $em->getRepository(BackendFestivalModel::ARTIST_CATEGORIES_ENTITY_CLASS);
+                            $stageRepo = $stageRepo->find($date['stage']);
+                            $categoryRepo = $categoryRepo->find($date['category']);
+
+                            if ($stageRepo != null && $categoryRepo != null) {
+                                $artistDate = new ArtistDate();
+                                $artistDate->setArtist($artist);
+                                $artistDate->setStartOn($date['startTime']);
+                                $artistDate->setEndOn($date['endTime']);
+                                $artistDate->setStage($stageRepo);
+                                $artistDate->setCategory($categoryRepo);
+                                $em->persist($artistDate);
+                                $em->flush();
+                            }
+                        }
+
+                    }
                 }
 
                 // set artist pratical

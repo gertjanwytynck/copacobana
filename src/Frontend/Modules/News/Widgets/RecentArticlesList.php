@@ -48,9 +48,10 @@ class RecentArticlesList extends Widget
         // set facebook image
         $this->header->addOpenGraphData('url',  SITE_URL);
         $this->header->addOpenGraphData('title', 'Copacobana');
-        $this->header->addOpenGraphData('image',  SITE_URL . '/src/Frontend/Themes/Copacobana/Core/Layout/images/copacobana_fb.png');
+        $this->header->addOpenGraphData('image',  SITE_URL . '/src/Frontend/Themes/Copacobana/Core/Layout/images/copacobana_share.png');
         $this->header->addOpenGraphData('site_name', 'Copacobana');
-        $this->header->addOpenGraphData('author', 'Copacobana', true);
-        $this->header->addOpenGraphData('publisher', 'Copacobana', true);
+        $this->header->addOpenGraphData('description', 'Copacobana Festival Copacobana Festival is een gratis festival dat doorgaat op vrijdag 30 juni, zaterdag 1 en zondag 2 juli. Rozebroekenpark, Sint-Amandsberg.');
+        $this->header->addOpenGraphData('author', 'Copacobana');
+        $this->header->addOpenGraphData('publisher', 'Copacobana');
     }
 }

@@ -3,6 +3,38 @@ jsFrontend.copacobana = {
 		jsFrontend.copacobana.listeners();
 		jsFrontend.copacobana.mappie();
 
+        $(".scroll-down").click(function (){
+           $('html, body').animate({
+               scrollTop: 450
+           }, 650);
+       });
+        if(window.location.pathname != "/nl" && window.location.pathname != "/en" && window.location.pathname != "/fr" && $(window).width() > 767) {
+
+            $('.sub-nav').fadeTo(250, 1, function() {
+                $.session.set("sub-nav", true);
+            });
+
+        } else if ($(window).width() > 767){
+            $('.sub-nav').css('opacity', '0')
+            $.session.set("sub-nav", false);
+        }
+
+        if ($(location).prop('pathname').split('/')[1] == "nl") {
+            $('.lang-nl-active').css('text-decoration', 'underline');
+            $('.practical-info-href-fix').attr('href', "/nl/praktisch")
+        }
+
+        if ($(location).prop('pathname').split('/')[1] == "en") {
+            $('.lang-en-active').css('text-decoration', 'underline');
+            $('.practical-info-href-fix').attr('href', "/en/practical-info")
+        }
+
+        if ($(location).prop('pathname').split('/')[1] == "fr") {
+            $('.lang-fr-active').css('text-decoration', 'underline');
+            $('.practical-info-href-fix').attr('href', "/fr/pratique")
+        }
+
+
 		// lazy loading
 		$.extend($.lazyLoadXT, {
 			edgeY:  0,
@@ -11,55 +43,48 @@ jsFrontend.copacobana = {
 
 		// parallax effect
 		var moduleHero = $('.copacobana');
-		var height = $(window).height() * 0.70;
-		moduleHero.height(height);
+        if ($(window).height() <= 900) {
+            var height = $(window).height();
+            moduleHero.height(height);
 
-		// fix cover height
-		$(window).resize(function() {
-			var height = $(window).height() * 0.70;
-			moduleHero.height(height);
-		});
+            // fix cover height
+            $(window).resize(function() {
+                var height = $(window).height();
+                moduleHero.height(height);
+            });
+        } else {
+            moduleHero.height(900);
+        }
 
 		// tooltip
 	 	$('[data-toggle="tooltip"]').tooltip()
 
  		// Artist sub menu fix
  	 	var lastIndexUrl = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
-
 		$('.sub-nav-artists li').each(function(){
 			$(this).find('a').removeClass('active-sub')
-    	if (lastIndexUrl === 'vrijdag' && $(this).hasClass('friday')) {
-    		$(this).find('a').addClass('active-sub')
-    	}
 
-    	if (lastIndexUrl === 'zaterdag' && $(this).hasClass('saturday')) {
-    		$(this).find('a').addClass('active-sub')
-    	}
+        	if ((lastIndexUrl === 'vrijdag' || lastIndexUrl === 'friday' || lastIndexUrl === 'vendredi') && $(this).hasClass('friday')) {
+        		$(this).find('a').addClass('active-sub')
+        	}
 
-    	if (lastIndexUrl === 'zondag' && $(this).hasClass('sunday')) {
-    		$(this).find('a').addClass('active-sub')
-    	}
+        	if ((lastIndexUrl === 'zaterdag' || lastIndexUrl === 'saturday' || lastIndexUrl === 'samedi') && $(this).hasClass('saturday')) {
+        		$(this).find('a').addClass('active-sub')
+        	}
 
-    	if (lastIndexUrl === 'line-up' && $(this).hasClass('line-up')) {
-    		$(this).find('a').addClass('active-sub')
-    	}
+        	if ((lastIndexUrl === 'zondag' || lastIndexUrl === 'sunday' || lastIndexUrl === 'dimanche') && $(this).hasClass('sunday')) {
+        		$(this).find('a').addClass('active-sub')
+        	}
 
-    	if (lastIndexUrl === 'artiesten' && $(this).hasClass('all')) {
-    		$(this).find('a').addClass('active-sub')
-    	}
-    })
+        	if (lastIndexUrl === 'line-up' && $(this).hasClass('line-up')) {
+        		$(this).find('a').addClass('active-sub')
+        	}
 
-		// height for newsitem
-		var height = 0;
-		$.each($('.news .item .news-content'), function(key, value) {
-			if ($(value).height() > height) {
-				height = $(value).height() + 10;
-			}
-		});
 
-		$.each($('.news .item .news-content'), function(key, value) {
-			$(value).css('height', height);
-		});
+        	if ((lastIndexUrl === 'artiesten' || lastIndexUrl === 'artists' || lastIndexUrl === 'artistes') && $(this).hasClass('all')) {
+        		$(this).find('a').addClass('active-sub')
+        	}
+        })
 
 		$('.btn-submit').click(function() {
 			if ($('#contactFirstName').val() != '' && $('#contactName').val() != '' && $('#contactEmail').val() != '' && $('#contactPhone').val() != '' ) {
@@ -67,12 +92,58 @@ jsFrontend.copacobana = {
 			} else {
 				$('.loader-outer').addClass('hidden');
 			}
-
 		});
 	},
 
+    mappie: function() {
+        if ($('#map').length) {
+            var copaLocation = [3.7587856, 51.0596485];
+            mapboxgl.accessToken = 'pk.eyJ1IjoiZ2VydGphbnd5dHluY2siLCJhIjoiY2owd29oemdiMDAwMzJycGd0dnRrejNyOSJ9.4EuSbSdrpxUlVeaE0O1fMA';
+            var map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/streets-v9',
+                center: copaLocation,
+                zoom: 15
+            });
+
+            map.scrollZoom.disable();
+            map.addControl(new mapboxgl.NavigationControl());
+
+            var popup = new mapboxgl.Popup({offset: 25})
+                .setText('Copacobana Festival. Rozebroekenslag, 9040 Sint-Amandsberg');
+
+            var el = document.createElement('div');
+            el.id = 'marker';
+
+            new mapboxgl.Marker(el, {offset:[-25, -25]})
+                .setLngLat(copaLocation)
+                .setPopup(popup)
+                .addTo(map);
+        }
+
+    },
+
 	listeners: function () {
-		// menu
+		// Menu
+		$('.hamburger').click(function(){
+            $('#nav-icon').toggleClass('open');
+
+            if ($('#nav-icon').hasClass('open')) {
+                $('.sub-nav').fadeTo(250, 1, function() {
+                    $.session.set("sub-nav", true);
+                });
+            } else {
+                $('.sub-nav').fadeTo(250, 0, function() {
+                    $.session.set("sub-nav", false);
+                });
+            }
+		});
+
+        $('a.target-burger').click(function(e){
+            $('.sub-nav, a.target-burger').toggleClass('toggled');
+        });
+
+		// Artist Menu
 		var active = false;
 		$.each($('.sub-nav li'), function(key, value){
 			if ($(value).hasClass('active')) {
@@ -80,19 +151,13 @@ jsFrontend.copacobana = {
 				active = true;
 			};
 		});
+
 		if ( ! active ) {
 			$('.default').css('padding-top', '100px');
 			$('.content').css('padding-top', '100px');
 		}
 
-		// carousel
-		$('ol.carousel-widget-indicators  li').on("click",function(){
-			$('ol.carousel-widget-indicators li.active').removeClass("active");
-			$(this).addClass("active");
-		});
-		$('#carousel-widget').carousel();
-
-		//hovers
+		// hovers
 		var src = $('.twitter').find('img').attr('src');
 		$('.twitter').hover(
 			function () {
@@ -124,153 +189,6 @@ jsFrontend.copacobana = {
 			}
 		);
 	},
-
-	mappie: function () {
-		if( $('#mappie').length ) {
-			// inits
-			var belgium = jsFrontend.data.get('Location.items_1[0]');
-			var zoom = jsFrontend.data.get('Location.settings_1.zoom_level');
-			var height = jsFrontend.data.get('Location.settings_1.height');
-
-			// map config
-			$('#mappie').css('max-height', height);
-			$('#mappie').css('height', height);
-
-			// options
-			var styles =
-				[
-					{
-						"featureType": "administrative",
-						"elementType": "all",
-						"stylers": [
-							{
-								"visibility": "on"
-							},
-							{
-								"lightness": 33
-							}
-						]
-					},
-					{
-						"featureType": "landscape",
-						"elementType": "all",
-						"stylers": [
-							{
-								"color": "#f9efd6"
-							}
-						]
-					},
-					{
-						"featureType": "poi.park",
-						"elementType": "geometry",
-						"stylers": [
-							{
-								"color": "#ece9d5"
-							}
-						]
-					},
-					{
-						"featureType": "poi.park",
-						"elementType": "labels",
-						"stylers": [
-							{
-								"visibility": "on"
-							},
-						]
-					},
-					{
-						"featureType": "road",
-						"elementType": "all",
-						"stylers": [
-							{
-								"lightness": 20
-							}
-						]
-					},
-					{
-						"featureType": "road.highway",
-						"elementType": "geometry",
-						"stylers": [
-							{
-								"color": "#f4bf3f"
-							}
-						]
-					},
-					{
-						"featureType": "road.arterial",
-						"elementType": "geometry",
-						"stylers": [
-							{
-								"color": "#efd084"
-							}
-						]
-					},
-					{
-						"featureType": "road.local",
-						"elementType": "geometry",
-						"stylers": [
-							{
-								"color": "#f0e2bf"
-							}
-						]
-					},
-					{
-						"featureType": "water",
-						"elementType": "all",
-						"stylers": [
-							{
-								"visibility": "on"
-							},
-							{
-								"color": "#acbcc9"
-							}
-						]
-					}
-				]
-			var options = {
-				mapTypeControlOptions: {
-					mapTypeIds: ['Styled']
-				},
-				center: new google.maps.LatLng(belgium.lat, belgium.lng),
-				zoom: parseInt(zoom),
-				disableDefaultUI: true,
-				//draggable: false,
-				scrollwheel: false,
-				mapTypeId: 'Styled'
-			};
-
-			// marker
-			var markerBe = new google.maps.Marker({
-				position: new google.maps.LatLng(belgium.lat, belgium.lng),
-				title: belgium.title,
-				locationId: belgium.id
-			});
-
-
-			var currentMark;
-			var infoWindowBe = new google.maps.InfoWindow({
-				content: '<h3>'+ belgium.title + '</h3>' + belgium.street + ' ' + belgium.number  + '<br />' + belgium.zip + ' ' + belgium.city
-			});
-
-			google.maps.event.addListener(markerBe, 'click', function () {
-				infoWindowBe.open(map, this);
-				currentMark = this;
-
-			});
-			google.maps.event.addListener(markerBe, 'closeclick', function () {
-				currentMark.setMap(null); //removes the marker
-				// then, remove the infowindows name from the array
-			});
-
-
-			var div = document.getElementById('mappie');
-			var map = new google.maps.Map(div, options);
-			var styledMapType = new google.maps.StyledMapType(styles, {name: 'Styled'});
-			map.mapTypes.set('Styled', styledMapType);
-			markerBe.setMap(map);
-		}
-
-	}
 };
 
 $(jsFrontend.copacobana.init());

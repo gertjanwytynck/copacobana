@@ -178,12 +178,15 @@ class AddArtist extends ActionAdd
     private function validateForm()
     {
         $arrDates = array();
-        if (!empty($_POST['dates']) && !empty($_POST['times'])) {
+        if (!empty($_POST['dates']) && !empty($_POST['startTimes']) && !empty($_POST['endTimes'])) {
             foreach($_POST['dates'] as $key=>$date) {
                 if (!empty($date)) {
                     $startOn = new \DateTime();
-                    $timeStamp = \DateTime::createFromFormat('d/m/Y H:i', $date . ' ' . $_POST['times'][$key])->format('U');
-                    $arrDates[$key]['date'] = $startOn->setTimestamp($timeStamp);
+                    $endOn = new \DateTime();
+                    $startTime = \DateTime::createFromFormat('d/m/Y H:i', $date . ' ' . $_POST['startTimes'][$key])->format('U');
+                    $endTime = \DateTime::createFromFormat('d/m/Y H:i', $date . ' ' . $_POST['endTimes'][$key])->format('U');
+                    $arrDates[$key]['startDate'] = $startOn->setTimestamp($startTime);
+                    $arrDates[$key]['endDate'] = $endOn->setTimestamp($endTime);
                     $arrDates[$key]['stage'] = $_POST['stages'][$key];
                     $arrDates[$key]['category'] = $_POST['categories'][$key];
                 }
@@ -234,6 +237,7 @@ class AddArtist extends ActionAdd
                 // set artist
                 $artist->setYear($this->settings['year']);
                 $artist->setStartOn($startOn);
+                $artist->setEndOn($endOn);
                 $artist->setSignUpOpen($this->frm->getField('signUpOpen')->isChecked());
                 $artist->setFinalized($this->frm->getField('finalized')->isChecked());
                 $artist->setSpotlight($this->frm->getField('spotlight')->isChecked());
@@ -255,7 +259,8 @@ class AddArtist extends ActionAdd
                     if ($stageRepo != null && $categoryRepo != null) {
                         $artistDate = new ArtistDate();
                         $artistDate->setArtist($artist);
-                        $artistDate->setStartOn($date['date']);
+                        $artistDate->setStartOn($date['startDate']);
+                        $artistDate->setEndOn($date['endDate']);
                         $artistDate->setStage($stageRepo);
                         $artistDate->setCategory($categoryRepo);
                         $em->persist($artistDate);

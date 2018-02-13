@@ -63,29 +63,30 @@ class EditCategory extends ActionEdit
         $this->frm = new Form('editCategory');
         $this->frm->addText('backend_title', $this->record->getBackendTitle(), 255, 'inputText title', 'inputTextError title');
 
-        // add language fields and meta
-        foreach ($this->languages as $abbreviation => $language) {
-            $locale = $this->record->getLocale($abbreviation);
-
-            $this->languages[$abbreviation]['formElements'] = array(
-                'txtTitle' => $this->frm->addText('title_' . $abbreviation, $locale->getTitle(), 255, 'inputText title', 'inputTextError title')
-            );
-
-            // create meta object
-            $meta = new MetaMultilanguage($this->frm, $abbreviation, $locale->getMeta(), 'title', true);
-            $this->meta[$abbreviation] = array(
-                'language' => $abbreviation,
-                'meta' => $meta,
-                'template' => $meta->createTemplate($abbreviation)
-            );
-
-            // set meta callback
-            $meta->setURLCallback(
-                'Backend\\Modules\\' . $this->URL->getModule() . '\\Engine\\Model',
-                'getCategoryURL',
-                array($abbreviation, $locale->getId())
-            );
-        }
+        // // add language fields and meta
+        // foreach ($this->languages as $abbreviation => $language) {
+        //     $locale = $this->record->getLocale($abbreviation);
+        //
+        //
+        //     $this->languages[$abbreviation]['formElements'] = array(
+        //         'txtTitle' => $this->frm->addText('title_' . $abbreviation, "", 255, 'inputText title', 'inputTextError title')
+        //     );
+        //
+        //     // create meta object
+        //     $meta = new MetaMultilanguage($this->frm, $abbreviation, $locale->getMeta(), 'title', true);
+        //     $this->meta[$abbreviation] = array(
+        //         'language' => $abbreviation,
+        //         'meta' => $meta,
+        //         'template' => $meta->createTemplate($abbreviation)
+        //     );
+        //
+        //     // set meta callback
+        //     $meta->setURLCallback(
+        //         'Backend\\Modules\\' . $this->URL->getModule() . '\\Engine\\Model',
+        //         'getCategoryURL',
+        //         array($abbreviation, $locale->getId())
+        //     );
+        // }
     }
 
     /**

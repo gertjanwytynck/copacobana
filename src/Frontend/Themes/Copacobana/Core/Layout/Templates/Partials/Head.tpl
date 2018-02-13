@@ -18,18 +18,22 @@
 	{* Favicon and Apple touch icon *}
 	<link rel="shortcut icon" href="{$THEME_URL}/favicon.png" type="image/x-icon"/>
 	<link rel="apple-touch-icon" href="{$THEME_URL}/apple-touch-icon.png" />
-
+<link rel="icon" href="{$THEME_URL}/favicon.ico" />
 	{* Windows 8 tile *}
 	<meta name="application-name" content="{$siteTitle}"/>
 	<meta name="msapplication-TileColor" content="#3380aa"/>
 	<meta name="msapplication-TileImage" content="{$THEME_URL}/tile.png"/>
 
-    <!-- Typekit -->
-    <script src="//use.typekit.net/swj0ucl.js"></script>
-    <script>try{Typekit.load();}catch(e){}</script>
+  <!-- Typekit -->
+  <script src="//use.typekit.net/swj0ucl.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
 
-    <!-- Google Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <!-- Google Fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+  <!-- MapBox -->
+  <script src='https://api.mapbox.com/mapbox-gl-js/v0.34.0/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v0.34.0/mapbox-gl.css' rel='stylesheet' />
 
 	{* Stylesheets *}
 	{iteration:cssFiles}
