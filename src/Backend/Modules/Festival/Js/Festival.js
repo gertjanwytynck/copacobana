@@ -10,13 +10,14 @@ jsBackend.festival =
             $('.generatePicker').datepicker({
                 dateFormat: 'dd/mm/yy',
                 firstDate: 1,
-            }).datepicker("setDate", '24/06/2016');
+            }).datepicker("setDate", '24/06/2017');
         }
 
         if (jsBackend.current.action == 'EditArtist') {
             var dates = jsBackend.data.get('Festival.dates');
             var inputDates = document.querySelectorAll("input[name='dates[]']");
-            var inputTimes = document.querySelectorAll("input[name='times[]']");
+            var inputTimes = document.querySelectorAll("input[name='startTime[]']");
+            var endTimes = document.querySelectorAll("input[name='endTime[]']");
             var selectStages = document.querySelectorAll("select[name='stages[]']");
             var selectCategories = document.querySelectorAll("select[name='categories[]']");
 
@@ -35,7 +36,12 @@ jsBackend.festival =
 
             // set times
             for (i = 0; i < inputTimes.length; i++) {
-                $(inputTimes[i]).attr('value', dates[i]['time'])
+                $(inputTimes[i]).attr('value', dates[i]['startTime'])
+            }
+
+            // set times
+            for (i = 0; i < endTimes.length; i++) {
+                $(endTimes[i]).attr('value', dates[i]['endTime'])
             }
 
             // set stages
@@ -57,8 +63,7 @@ jsBackend.festival =
             }
         }
 
-		if(jsBackend.current.action == 'AddArtist' || jsBackend.current.action == 'EditArtist')
-		{
+		if (jsBackend.current.action == 'AddArtist' || jsBackend.current.action == 'EditArtist') {
             jsBackend.festival.optionalMultilanguage.init();
 
             $('#backstage').keyValueBox({
@@ -103,8 +108,7 @@ jsBackend.festival =
 			});
 		}
 
-
-        if($('#name').length > 0) $('#name').doMeta();
+        if ($('#name').length > 0) $('#name').doMeta();
 
         $('.copyDate').click(function(e) {
             var last = ($('.playDates .pickDate').last());

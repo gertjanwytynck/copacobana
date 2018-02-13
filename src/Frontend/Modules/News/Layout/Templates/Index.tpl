@@ -41,7 +41,7 @@
                     </header>
                     <div class="bd content">
                         <h3><a href="{$items.full_url}" title="{$items.title}">{$items.title}</a></h3>
-                        <p class="text">{$items.content|truncate:200:true:true}<br /><a href="{$items.full_url}" class="rm">Lees meer</a></p>
+                        <p class="text">{$items.content|truncate:200:true:true}<br /><a href="{$items.full_url}" class="rm">{$lblReadMore|ucfirst}</a></p>
                     </div>
                 </div>
             </article>

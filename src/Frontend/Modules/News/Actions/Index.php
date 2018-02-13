@@ -55,7 +55,7 @@ class Index extends Block
         // set URL and limit
         $this->pagination['url'] = Navigation::getURLForBlock('News', 'Index');
         //$this->pagination['limit'] = Model::get('fork.settings')->getForModule('News', 'overview_num_items', 10);
-        $this->pagination['limit'] = 10;
+        $this->pagination['limit'] = 30;
 
         // populate count fields in pagination
         $this->pagination['num_items'] = FrontendNewsModel::getAllCount();
