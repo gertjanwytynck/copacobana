@@ -5,16 +5,8 @@
 						if(isset($this->variables['widgetNewsRecentArticlesList']) && count($this->variables['widgetNewsRecentArticlesList']) != 0 && $this->variables['widgetNewsRecentArticlesList'] != '' && $this->variables['widgetNewsRecentArticlesList'] !== false)
 						{
 							?>
-
     <div class="row">
-        <div class="col-md-12 text-center vers-pers">
-            <img src="<?php if(array_key_exists('THEME_URL', (array) $this->variables)) { echo $this->variables['THEME_URL']; } elseif(is_object($this->variables) && method_exists($this->variables, 'getTHEMEURL')) { echo $this->variables->getTHEMEURL(); } else { ?>{$THEME_URL}<?php } ?>/Core/Layout/images/vers-van-de-pers.svg" title="vers-van-de-pers" alt="vers-van-de-pers"  class=""/>
-        </div>
-    </div>
-
-    <div class="row">
-<!--     <hr class="index-hr">
- -->    <?php
+      <?php
 						if(!isset($this->variables['widgetNewsRecentArticlesList']))
 						{
 							?>{iteration:widgetNewsRecentArticlesList}<?php
@@ -40,23 +32,20 @@
 							}
 						}
 					}?>
-        <article class="col-sm-4 item">
-            <div class="news-img<?php
-						if(
-							(is_object(${'widgetNewsRecentArticlesList'}) && ${'widgetNewsRecentArticlesList'}->getFirst() && ${'widgetNewsRecentArticlesList'}->getFirst() != '' && ${'widgetNewsRecentArticlesList'}->getFirst() !== false)
-							|| (is_array(${'widgetNewsRecentArticlesList'}) && isset(${'widgetNewsRecentArticlesList'}['first']) && count(${'widgetNewsRecentArticlesList'}['first']) != 0 && ${'widgetNewsRecentArticlesList'}['first'] != '' && ${'widgetNewsRecentArticlesList'}['first'] !== false))
-						{
-							?>active<?php } ?>">
+        <article class="col-sm-12 item">
+            <div class="news-img col-sm-4">
                 <a href="<?php if(array_key_exists('full_url', (array) ${'widgetNewsRecentArticlesList'})) { echo ${'widgetNewsRecentArticlesList'}['full_url']; } elseif(is_object(${'widgetNewsRecentArticlesList'}) && method_exists(${'widgetNewsRecentArticlesList'}, 'getFullUrl')) { echo ${'widgetNewsRecentArticlesList'}->getFullUrl(); } else { ?>{$widgetNewsRecentArticlesList->full_url}<?php } ?>"><img src="<?php if(array_key_exists('FRONTEND_FILES_URL', (array) $this->variables)) { echo $this->variables['FRONTEND_FILES_URL']; } elseif(is_object($this->variables) && method_exists($this->variables, 'getFRONTENDFILESURL')) { echo $this->variables->getFRONTENDFILESURL(); } else { ?>{$FRONTEND_FILES_URL}<?php } ?>/news/covers/400x400/<?php if(array_key_exists('cover_image', (array) ${'widgetNewsRecentArticlesList'})) { echo ${'widgetNewsRecentArticlesList'}['cover_image']; } elseif(is_object(${'widgetNewsRecentArticlesList'}) && method_exists(${'widgetNewsRecentArticlesList'}, 'getCoverImage')) { echo ${'widgetNewsRecentArticlesList'}->getCoverImage(); } else { ?>{$widgetNewsRecentArticlesList->cover_image}<?php } ?>" alt="<?php if(array_key_exists('title', (array) ${'widgetNewsRecentArticlesList'})) { echo ${'widgetNewsRecentArticlesList'}['title']; } elseif(is_object(${'widgetNewsRecentArticlesList'}) && method_exists(${'widgetNewsRecentArticlesList'}, 'getTitle')) { echo ${'widgetNewsRecentArticlesList'}->getTitle(); } else { ?>{$widgetNewsRecentArticlesList->title}<?php } ?>" /></a>
             </div>
-            <div class="news-content">
-                <h2><?php if(array_key_exists('publish_on', (array) ${'widgetNewsRecentArticlesList'}) && array_key_exists('LANGUAGE', (array) $this->variables)) { echo SpoonFilter::ucfirst(SpoonTemplateModifiers::date(${'widgetNewsRecentArticlesList'}['publish_on'], 'd/m/Y', $this->variables['LANGUAGE'])); } elseif(is_object($this->variables) && method_exists($this->variables, 'getLANGUAGE')) { echo $this->variables->getLANGUAGE(); } else { ?>{$widgetNewsRecentArticlesList->publish_on|date:'d/m/Y':<?php if(array_key_exists('LANGUAGE', (array) $this->variables)) { echo $this->variables['LANGUAGE']; } elseif(is_object($this->variables) && method_exists($this->variables, 'getLANGUAGE')) { echo $this->variables->getLANGUAGE(); } else { ?>{$LANGUAGE}<?php } ?>|ucfirst}<?php } ?></h2>
-                <h1><?php if(array_key_exists('title', (array) ${'widgetNewsRecentArticlesList'})) { echo ${'widgetNewsRecentArticlesList'}['title']; } elseif(is_object(${'widgetNewsRecentArticlesList'}) && method_exists(${'widgetNewsRecentArticlesList'}, 'getTitle')) { echo ${'widgetNewsRecentArticlesList'}->getTitle(); } else { ?>{$widgetNewsRecentArticlesList->title}<?php } ?></h1>
-                <p><?php if(array_key_exists('content', (array) ${'widgetNewsRecentArticlesList'})) { echo Frontend\Core\Engine\TemplateModifiers::truncate(${'widgetNewsRecentArticlesList'}['content'], 150, true, true); } elseif(is_object(${'widgetNewsRecentArticlesList'}) && method_exists(${'widgetNewsRecentArticlesList'}, 'getContent')) { echo ${'widgetNewsRecentArticlesList'}->getContent(); } else { ?>{$widgetNewsRecentArticlesList->content|truncate:150:true:true}<?php } ?></p>
-                <p class="read-more"><a href="<?php if(array_key_exists('full_url', (array) ${'widgetNewsRecentArticlesList'})) { echo ${'widgetNewsRecentArticlesList'}['full_url']; } elseif(is_object(${'widgetNewsRecentArticlesList'}) && method_exists(${'widgetNewsRecentArticlesList'}, 'getFullUrl')) { echo ${'widgetNewsRecentArticlesList'}->getFullUrl(); } else { ?>{$widgetNewsRecentArticlesList->full_url}<?php } ?>">Lees meer <span>&#10095;</span></a></p>
+            <div class="news-content col-sm-8">
+                <h2><a href="<?php if(array_key_exists('full_url', (array) ${'widgetNewsRecentArticlesList'})) { echo ${'widgetNewsRecentArticlesList'}['full_url']; } elseif(is_object(${'widgetNewsRecentArticlesList'}) && method_exists(${'widgetNewsRecentArticlesList'}, 'getFullUrl')) { echo ${'widgetNewsRecentArticlesList'}->getFullUrl(); } else { ?>{$widgetNewsRecentArticlesList->full_url}<?php } ?>"><?php if(array_key_exists('publish_on', (array) ${'widgetNewsRecentArticlesList'}) && array_key_exists('LANGUAGE', (array) $this->variables)) { echo SpoonFilter::ucfirst(SpoonTemplateModifiers::date(${'widgetNewsRecentArticlesList'}['publish_on'], 'd/m/Y', $this->variables['LANGUAGE'])); } elseif(is_object($this->variables) && method_exists($this->variables, 'getLANGUAGE')) { echo $this->variables->getLANGUAGE(); } else { ?>{$widgetNewsRecentArticlesList->publish_on|date:'d/m/Y':<?php if(array_key_exists('LANGUAGE', (array) $this->variables)) { echo $this->variables['LANGUAGE']; } elseif(is_object($this->variables) && method_exists($this->variables, 'getLANGUAGE')) { echo $this->variables->getLANGUAGE(); } else { ?>{$LANGUAGE}<?php } ?>|ucfirst}<?php } ?> | <span class="latest-news"><?php if(array_key_exists('lblLatestNews', (array) $this->variables)) { echo SpoonFilter::ucfirst($this->variables['lblLatestNews']); } elseif(is_object($this->variables) && method_exists($this->variables, 'getLblLatestNews')) { echo $this->variables->getLblLatestNews(); } else { ?>{$lblLatestNews|ucfirst}<?php } ?></span></a></h2>
+                <h1><a href="<?php if(array_key_exists('full_url', (array) ${'widgetNewsRecentArticlesList'})) { echo ${'widgetNewsRecentArticlesList'}['full_url']; } elseif(is_object(${'widgetNewsRecentArticlesList'}) && method_exists(${'widgetNewsRecentArticlesList'}, 'getFullUrl')) { echo ${'widgetNewsRecentArticlesList'}->getFullUrl(); } else { ?>{$widgetNewsRecentArticlesList->full_url}<?php } ?>"><?php if(array_key_exists('title', (array) ${'widgetNewsRecentArticlesList'})) { echo ${'widgetNewsRecentArticlesList'}['title']; } elseif(is_object(${'widgetNewsRecentArticlesList'}) && method_exists(${'widgetNewsRecentArticlesList'}, 'getTitle')) { echo ${'widgetNewsRecentArticlesList'}->getTitle(); } else { ?>{$widgetNewsRecentArticlesList->title}<?php } ?></a></h1>
+                <p><?php if(array_key_exists('content', (array) ${'widgetNewsRecentArticlesList'})) { echo Frontend\Core\Engine\TemplateModifiers::truncate(${'widgetNewsRecentArticlesList'}['content'], 550, true, true); } elseif(is_object(${'widgetNewsRecentArticlesList'}) && method_exists(${'widgetNewsRecentArticlesList'}, 'getContent')) { echo ${'widgetNewsRecentArticlesList'}->getContent(); } else { ?>{$widgetNewsRecentArticlesList->content|truncate:550:true:true}<?php } ?></p>
+                <div class="btn-all-news">
+                  <a href="<?php if(array_key_exists('var', (array) $this->variables)) { echo Frontend\Core\Engine\TemplateModifiers::getURLForBlock($this->variables['var'], 'News'); } elseif(is_object($this->variables) && method_exists($this->variables, 'getVar')) { echo $this->variables->getVar(); } else { ?>{$var|geturlforblock:'News'}<?php } ?>"><?php if(array_key_exists('lblAllNewsItems', (array) $this->variables)) { echo SpoonFilter::ucfirst($this->variables['lblAllNewsItems']); } elseif(is_object($this->variables) && method_exists($this->variables, 'getLblAllNewsItems')) { echo $this->variables->getLblAllNewsItems(); } else { ?>{$lblAllNewsItems|ucfirst}<?php } ?></a>
+                </div>
             </div>
         </article>
-    <?php
+      <?php
 					$this->iterations['b2271e73bfed5190a1c967d78708ea89_RecentArticlesList.tpl.php_1']['i']++;
 				}
 					if(isset($this->iterations['b2271e73bfed5190a1c967d78708ea89_RecentArticlesList.tpl.php_1']['fail']) && $this->iterations['b2271e73bfed5190a1c967d78708ea89_RecentArticlesList.tpl.php_1']['fail'] == true)
@@ -66,6 +55,5 @@
 				if(isset($this->iterations['b2271e73bfed5190a1c967d78708ea89_RecentArticlesList.tpl.php_1']['old'])) ${'widgetNewsRecentArticlesList'} = $this->iterations['b2271e73bfed5190a1c967d78708ea89_RecentArticlesList.tpl.php_1']['old'];
 				else unset($this->iterations['b2271e73bfed5190a1c967d78708ea89_RecentArticlesList.tpl.php_1']);
 				?>
-        <div class="col-sm-12"><div class="btn-all-news"><a href="/nl/nieuws">Bekijk alle nieuwsitems</a></div></div>
     </div>
 <?php } ?>

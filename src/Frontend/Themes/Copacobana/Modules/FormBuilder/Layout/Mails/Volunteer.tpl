@@ -27,7 +27,7 @@
     .info br {display: block; margin: 3px 0px;}
     .shift {font-weight: bolder; font-size: 1.2em;}
     strong { color: #0b3a4c; }
-    pre { font-family:  Arial, sans-serif; background: #eee; border-radius: 5px; margin: 15px 0px; padding:15px;}
+    pre { font-family: Arial, sans-serif; background: #eee; border-radius: 5px; margin: 15px 0px; padding:15px;}
   </style>
 </head>
 <body>
@@ -37,30 +37,37 @@
       <table border="0" id="inner">
         <tr>
           <td class="wider">
-            <h2>Liefste vrijwilliger</h2>
+            <h2 style="text-transform: capitalize;">Liefste {$name}</h2>
             <hr/>
 
             <div class="content">
-              <h3></h3>
+              <p>We hebben onlangs met jou contact opgenomen in verband met de planning van de vrijwilligers op het festival.</p>
 
-              <p>Een tijdje geleden hebben we je gebeld om met jou af te spreken wanneer je een shift zal doen tijdens Copacobana Festival.</p>
               <p>Hierbij een overzicht waar en wanneer je het Copacobana team versterkt:</p>
 
-              {$shift}
+              <pre>{$shift}</pre>
 
-              <p>Een kwartier voor elke shift kom je je aanmelden aan het infopunt naast de kassa bij Jochen of Wouter. Zij geven je een eerste uitleg, je T-shirt, een polsbandje en drankbonnetjes.</p>
+              <p>Komt dit niet overeen met wat we telefonisch afgesproken hebben? Gelieve ons zo snel mogelijk te contacteren via <a href="mailto:siel@copacobana.be">siel@copacobana.be</a>. Kan je niet aanwezig zijn tijdens je shifts (ziekte,...), gelieve ons tijdig te verwittigen via mail.</p>
 
-              <p>Maar wie niet kan wachten, is al welkom op onze vrijwilligers kick-off op <a href="https://www.facebook.com/events/637967403032527/" target="_blank">donderdag 23 juni 2016</a>. Kom langs om 21u voor een eerste kennismaking, een rondleiding op het terrein én een eerste blik op hoe het festival er dit jaar zal uitzien. </p>
+              <p>Kom je tijdens het festival 15 minuten voor het begin van <strong>iedere</strong> shift aanmelden aan de infostand bij Wouter, Siel of Jochen, daar krijg je een Copacobana T-shirt, een bandje, bonnetjes en misschien wel een verrassing.</p>
 
-              <p>De bijlagen bij deze mail bevatten belangrijke informative voor jou: algemene informatie over het festival en vzw Anamma, een grondplannetje, het reglement en het rampenplan. Neem deze info zeker door.</p>
+              <p>Voor een vlotte werking op het festival houden we <strong>donderdag 28 juni</strong> een vrijwilligersmoment. Dit houdt in dat je onder andere de bar, kassa, eetstand of backstagewerking leert kennen, gezellig een pintje drinkt, een babbeltje kan maken met de medevrijwilligers en een eerste blik op het terrein kan werpen. We spreken om 21u af in de Barbarak (Zie plan als bijlage), in het Rozebroekenpark op het festivalterrein. Wees welgekomen!</p>
 
-              <p>Heb je in de tussentijd nog vragen, opmerkingen of ideeën, dan horen we het graag.</p>
+              <p>Als bijlage vind je nog wat meer info over het vrijwilliger zijn en de vzw, een kaartje van het festival, het festival reglement en het rampenplan, gelieve dit even door te nemen.</p>
 
-              <p>Alvast heel erg bedankt voor jouw inzet en graag tot gauw.!</p>
+              <p>Heb je vragen, opmerkingen of ideeën, laat maar weten!
 
-              <p>Groetjes,<br />Jochen</p>
+              <p>Hou alvast zaterdagavond 22 september vrij voor het Copacobana Vrijwilligers bedankingsfeest!</p>
 
-              <p>PS: Hou 17 september vrij in je agenda, voor ons legendarische bedankingsfeest voor alle vrijwilligers!</p>
+              <p>Wil je op de hoogte blijven over het Copacobana Festival en zijn vrijwilligers, word lid van onze vrijwilligersgroep via onderstaande link:
+               <a href="https://www.facebook.com/groups/514043915414594" target="_blank">https://www.facebook.com/groups/514043915414594/</a></p>
+
+              <p>Wil je op de hoogte blijven van wat Anamma allemaal doet? Schrijf je dan in op onze nieuwsbrief! <a href="http://nieuwsbrief.anamma.be" target="_blank">http://nieuwsbrief.anamma.be</a></p>
+
+              <p>We zijn ook steeds op zoek naar helpende handen voor de opbouw, elke dag (vanaf 20 juni) beginnen we om 9u ‘s ochtends en gaan we door tot minstens 21u .  Er zijn tal van taken, voor ieder wat wils. Alle hulp is welkom!</p>
+
+              <p>Al ontzettend bedankt en tot gauw!<br />
+              Het Copacobana Team</p>
             </div>
 <br/>
 <hr />

@@ -53,6 +53,7 @@ class MailVolunteers extends ActionIndex
         $failedRecipients = array();
         $successRecipients = array();
 
+        //  BACKEND_MODULES_PATH . '/Festival/Layout/Files/belangrijke_informatie.docx', BACKEND_MODULES_PATH . '/Festival/Layout/Files/rampenplan.docx', BACKEND_MODULES_PATH . '/Festival/Layout/Files/reglement.docx'
         foreach ($this->volunteers as $key=>$volunteer) {
             try {
                 $message = \Common\Mailer\Message::newInstance("Jouw shift op Copacobana Festival")
@@ -60,12 +61,14 @@ class MailVolunteers extends ActionIndex
                         FRONTEND_PATH . '/Themes/Copacobana/Modules/FormBuilder/Layout/Mails/Volunteer.tpl',
                         array(
                             'shift' => $volunteer["shifts_summary"],
+                            'name' => $volunteer["name"],
                         ),
                         true
                     )
                     ->setTo($volunteer["email"])
+                    // ->setTo('gertjan.wytynck@gmail.com')
                     ->setFrom(array("vrijwilliger@copacobana.be" => "Jochen"))
-                    ->addAttachments(array(BACKEND_MODULES_PATH . '/Festival/Layout/Files/copacobana_plein.png', BACKEND_MODULES_PATH . '/Festival/Layout/Files/belangrijke_informatie.docx', BACKEND_MODULES_PATH . '/Festival/Layout/Files/rampenplan.docx', BACKEND_MODULES_PATH . '/Festival/Layout/Files/reglement.docx'))
+                    ->addAttachments(array(BACKEND_MODULES_PATH . '/Festival/Layout/Files/copacobana_plein.jpeg',  BACKEND_MODULES_PATH . '/Festival/Layout/Files/infofiche.docx',))
                 ;
 
                 $message->setReplyTo(array('vrijwilliger@copacobana.be' => 'Jochen'));

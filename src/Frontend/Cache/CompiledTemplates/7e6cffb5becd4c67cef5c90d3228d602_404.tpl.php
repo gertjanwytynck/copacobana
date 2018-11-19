@@ -88,7 +88,7 @@ if($return === false) {
     </section>
 </main>
 <footer>
-    <a href="/"><img src="<?php if(array_key_exists('THEME_URL', (array) $this->variables)) { echo $this->variables['THEME_URL']; } elseif(is_object($this->variables) && method_exists($this->variables, 'getTHEMEURL')) { echo $this->variables->getTHEMEURL(); } else { ?>{$THEME_URL}<?php } ?>/Core/Layout/images/copacobana.png" title="copacobana" alt="copacobana" class="copa-footer" /></a>
+    <a href="/"><img src="<?php if(array_key_exists('THEME_URL', (array) $this->variables)) { echo $this->variables['THEME_URL']; } elseif(is_object($this->variables) && method_exists($this->variables, 'getTHEMEURL')) { echo $this->variables->getTHEMEURL(); } else { ?>{$THEME_URL}<?php } ?>/Core/Layout/images/copacobana.svg" title="copacobana" alt="copacobana" class="copa-footer" /></a>
     <?php $includes = array();
                 ob_start();
                 ?>Core/Layout/Templates/Partials/Footer.tpl<?php

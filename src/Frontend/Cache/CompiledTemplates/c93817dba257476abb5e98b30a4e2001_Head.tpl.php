@@ -19,18 +19,22 @@
 	
 	<link rel="shortcut icon" href="<?php if(array_key_exists('THEME_URL', (array) $this->variables)) { echo $this->variables['THEME_URL']; } elseif(is_object($this->variables) && method_exists($this->variables, 'getTHEMEURL')) { echo $this->variables->getTHEMEURL(); } else { ?>{$THEME_URL}<?php } ?>/favicon.png" type="image/x-icon"/>
 	<link rel="apple-touch-icon" href="<?php if(array_key_exists('THEME_URL', (array) $this->variables)) { echo $this->variables['THEME_URL']; } elseif(is_object($this->variables) && method_exists($this->variables, 'getTHEMEURL')) { echo $this->variables->getTHEMEURL(); } else { ?>{$THEME_URL}<?php } ?>/apple-touch-icon.png" />
-
+<link rel="icon" href="<?php if(array_key_exists('THEME_URL', (array) $this->variables)) { echo $this->variables['THEME_URL']; } elseif(is_object($this->variables) && method_exists($this->variables, 'getTHEMEURL')) { echo $this->variables->getTHEMEURL(); } else { ?>{$THEME_URL}<?php } ?>/favicon.ico" />
 	
 	<meta name="application-name" content="<?php if(array_key_exists('siteTitle', (array) $this->variables)) { echo $this->variables['siteTitle']; } elseif(is_object($this->variables) && method_exists($this->variables, 'getSiteTitle')) { echo $this->variables->getSiteTitle(); } else { ?>{$siteTitle}<?php } ?>"/>
 	<meta name="msapplication-TileColor" content="#3380aa"/>
 	<meta name="msapplication-TileImage" content="<?php if(array_key_exists('THEME_URL', (array) $this->variables)) { echo $this->variables['THEME_URL']; } elseif(is_object($this->variables) && method_exists($this->variables, 'getTHEMEURL')) { echo $this->variables->getTHEMEURL(); } else { ?>{$THEME_URL}<?php } ?>/tile.png"/>
 
-    <!-- Typekit -->
-    <script src="//use.typekit.net/swj0ucl.js"></script>
-    <script>try{Typekit.load();}catch(e){}</script>
+  <!-- Typekit -->
+  <script src="//use.typekit.net/swj0ucl.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
 
-    <!-- Google Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <!-- Google Fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+  <!-- MapBox -->
+  <script src='https://api.mapbox.com/mapbox-gl-js/v0.34.0/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v0.34.0/mapbox-gl.css' rel='stylesheet' />
 
 	
 	<?php
