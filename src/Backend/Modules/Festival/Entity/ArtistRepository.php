@@ -96,8 +96,12 @@ class ArtistRepository extends EntityRepository
             ->leftJoin('ad.category', 'c')
             ->leftJoin('ap.car', 'ac')
             ->where('m.url = :url')
+            ->andWhere('a.isHidden = :hidden' )
+            ->andWhere('a.year = :year' )
             ->setParameters(array(
-                'url' => $url
+                'url' => $url,
+                'hidden' => 0,
+                'year' => 2019
             ))
         ;
 
@@ -127,7 +131,7 @@ class ArtistRepository extends EntityRepository
             ->orderBy('a.name', 'ASC')
             ->setParameters(array(
                 'hidden' => '0',
-                'year' => '2017'
+                'year' => '2019'
             ))
 
         ;
@@ -150,7 +154,7 @@ class ArtistRepository extends EntityRepository
             ->where('a.year = :year' )
             ->orderBy('a.name', 'ASC')
             ->setParameters(array(
-                'year' => '2017'
+                'year' => '2019'
             ))
 
         ;
@@ -200,7 +204,7 @@ class ArtistRepository extends EntityRepository
             ->orderBy('a.name', 'ASC')
             ->setParameters(array(
                 'hidden' => '0',
-                'year' => '2017'
+                'year' => '2019'
             ))
 
         ;
@@ -228,7 +232,7 @@ class ArtistRepository extends EntityRepository
             ->setParameters(array(
                 'hidden' => '0',
                 'spotlight' => '1',
-                'year' => '2017'
+                'year' => '2019'
             ))
 
         ;
@@ -253,7 +257,7 @@ class ArtistRepository extends EntityRepository
             ->andWhere('a.year = :year' )
             ->setParameters(array(
                 'hidden' => '0',
-                'year' => '2017'
+                'year' => '2019'
             ))
         ;
 

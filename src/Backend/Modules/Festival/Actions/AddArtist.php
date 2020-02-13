@@ -119,9 +119,9 @@ class AddArtist extends ActionAdd
         $this->frm->addText('contactPhone',  null, 255, 'inputText title', 'inputTextError title');
         $this->frm->addText('contactEmail',  null, 255, 'inputText title', 'inputTextError title');
         $this->frm->addCheckbox('soundEngineer');
-        $this->frm->addText('hotMeal', null, 255, 'inputText title', 'inputTextError title');
-        $this->frm->addText('veggieMeal', null, 255, 'inputText title', 'inputTextError title');
-        $this->frm->addText('veganMeal', null, 255, 'inputText title', 'inputTextError title');
+        $this->frm->addText('hotMeal', 0, 255, 'inputText title', 'inputTextError title');
+        $this->frm->addText('veggieMeal', 0, 255, 'inputText title', 'inputTextError title');
+        $this->frm->addText('veganMeal', 0, 255, 'inputText title', 'inputTextError title');
         $this->frm->addFile('technicalFile');
         $this->frm->addFile('contractFile');
         $this->frm->addFile('stageFile');

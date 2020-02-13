@@ -49,6 +49,8 @@ class Detail extends Block
         $this->record = $em ->getRepository(FrontendFestivalModel::ARTIST_ENTITY_CLASS)
             ->_findByUrl($this->URL->getParameter(0), FRONTEND_LANGUAGE);
 
+        if ($this->record === null) $this->redirect(FrontendNavigation::getURL(404));
+
         $link = FrontendNavigation::getURLForBlock('Festival', 'Detail');
 
         $this->record['full_url'] = $link . '/' . $this->record['meta']['url'];

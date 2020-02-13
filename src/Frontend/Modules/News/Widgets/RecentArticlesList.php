@@ -32,14 +32,24 @@ class RecentArticlesList extends Widget
         // get the item
         // $items = FrontendNewsModel::getAll(Model::get('fork.settings')->getForModule('News', 'recent_articles_list_num_items', 3), 0, null, true);
         //
+
+        $items = array();
+
+
         $items = FrontendNewsModel::getAll(3, 0, null, true);
 
         // append slideKey
         $i = 0;
         foreach ($items as $key => $item) {
-            $items[$key]['dataSlide'] = $i;
-            if ( $i == 0 ){ $items[$key]['dataSlideActive'] = true; }
+            $item['dataSlide'] = $i;
+            if ( $i == 0 ) {
+                $item['dataSlideActive'] = true;
+            } else {
+                $item['dataSlideActive'] = false;
+            }
+
             $i++;
+            $items[$key] = $item;
         }
 
         // assign comments

@@ -1,6 +1,6 @@
 <?php error_reporting(E_ALL | E_STRICT); ini_set('display_errors', 'On'); ?>
 <?php
-						if(isset($this->variables['navigation']) && count($this->variables['navigation']) != 0 && $this->variables['navigation'] != '' && $this->variables['navigation'] !== false)
+						if(isset($this->variables['navigation']) && empty($this->variables['navigation']) === false)
 						{
 							?>
 	<ul>
@@ -34,7 +34,7 @@
 				<a href="<?php if(array_key_exists('link', (array) ${'navigation'})) { echo ${'navigation'}['link']; } elseif(is_object(${'navigation'}) && method_exists(${'navigation'}, 'getLink')) { echo ${'navigation'}->getLink(); } else { ?>{$navigation->link}<?php } ?>" title="<?php if(array_key_exists('navigation_title', (array) ${'navigation'})) { echo ${'navigation'}['navigation_title']; } elseif(is_object(${'navigation'}) && method_exists(${'navigation'}, 'getNavigationTitle')) { echo ${'navigation'}->getNavigationTitle(); } else { ?>{$navigation->navigation_title}<?php } ?>"<?php
 						if(
 							(is_object(${'navigation'}) && ${'navigation'}->getNofollow() && ${'navigation'}->getNofollow() != '' && ${'navigation'}->getNofollow() !== false)
-							|| (is_array(${'navigation'}) && isset(${'navigation'}['nofollow']) && count(${'navigation'}['nofollow']) != 0 && ${'navigation'}['nofollow'] != '' && ${'navigation'}['nofollow'] !== false))
+							|| (is_array(${'navigation'}) && isset(${'navigation'}['nofollow']) && empty(${'navigation'}['nofollow']) === false))
 						{
 							?> rel="nofollow"<?php } ?>><?php if(array_key_exists('navigation_title', (array) ${'navigation'})) { echo ${'navigation'}['navigation_title']; } elseif(is_object(${'navigation'}) && method_exists(${'navigation'}, 'getNavigationTitle')) { echo ${'navigation'}->getNavigationTitle(); } else { ?>{$navigation->navigation_title}<?php } ?></a>
 				<?php if(array_key_exists('children', (array) ${'navigation'})) { echo ${'navigation'}['children']; } elseif(is_object(${'navigation'}) && method_exists(${'navigation'}, 'getChildren')) { echo ${'navigation'}->getChildren(); } else { ?>{$navigation->children}<?php } ?>

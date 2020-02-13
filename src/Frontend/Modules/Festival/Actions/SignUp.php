@@ -74,11 +74,13 @@ class SignUp extends Block
         $token = $em ->getRepository(FrontendFestivalModel::ARTIST_ENTITY_CLASS)
             ->_checkToken($this->record['id'], $_GET['token']);
 
+
         // redirect if token is null
         if (!$token) $this->redirect(Navigation::getURL(404));
 
         // anything found?
         if ($this->record === null) $this->redirect(Navigation::getURL(404));
+
 
         // check if the sign up is open
         if ($this->record['signUpOpen'] != 1) $this->closed = true;
